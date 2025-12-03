@@ -601,6 +601,18 @@ section .container {
   word-wrap: break-word;
 }
 
+/* Align education and skills sections properly on all screens */
+.code-style {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.code-style li.badge {
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+}
+
 /* Footer */
 footer {
   background-color: rgba(0, 0, 0, 0.95);
