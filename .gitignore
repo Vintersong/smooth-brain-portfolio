@@ -4,6 +4,7 @@
 # But include these specific files and folders
 !.gitignore
 !.nojekyll
+!README.md
 !index.html
 !404.html
 !css/
@@ -24,7 +25,6 @@ tests/
 *.json
 
 # Ignore documentation (optional - remove these lines if you want to include them)
-README.md
 README_TESTS.md
 VALIDATION_GUIDE.md
 requirements.txt
