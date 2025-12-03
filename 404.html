@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — The Void Remembers</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    body {
+      background-color: #000000;
+      overflow: hidden;
+    }
+
+    .void-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 70%);
+    }
+
+    .void-content {
+      text-align: center;
+      z-index: 10;
+      position: relative;
+      padding: 2rem;
+    }
+
+    .error-code {
+      font-size: clamp(8rem, 20vw, 15rem);
+      font-family: 'Courier New', monospace;
+      font-weight: 900;
+      color: #B794F4;
+      text-shadow:
+        0 0 10px rgba(183, 148, 244, 0.8),
+        0 0 20px rgba(183, 148, 244, 0.6),
+        0 0 30px rgba(183, 148, 244, 0.4),
+        0 0 40px rgba(183, 148, 244, 0.2);
+      animation: glitchError 3s infinite;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes glitchError {
+      0%, 90%, 100% {
+        transform: translate(0);
+        text-shadow:
+          0 0 10px rgba(183, 148, 244, 0.8),
+          0 0 20px rgba(183, 148, 244, 0.6),
+          0 0 30px rgba(183, 148, 244, 0.4);
+      }
+      92% {
+        transform: translate(-5px, 2px);
+        text-shadow:
+          -5px 0 10px rgba(0, 255, 255, 0.8),
+          5px 0 10px rgba(255, 46, 46, 0.8);
+      }
+      94% {
+        transform: translate(5px, -2px);
+        text-shadow:
+          5px 0 10px rgba(255, 46, 46, 0.8),
+          -5px 0 10px rgba(0, 255, 255, 0.8);
+      }
+      96% {
+        transform: translate(-3px, 1px);
+      }
+    }
+
+    .void-title {
+      font-family: 'Courier New', monospace;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: #00FFFF;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+      margin-bottom: 1.5rem;
+      animation: flicker 2s infinite;
+    }
+
+    .void-message {
+      font-family: 'Bahnschrift', sans-serif;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .void-incident {
+      font-family: 'Courier New', monospace;
+      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+      color: #B794F4;
+      margin: 2rem auto;
+      max-width: 500px;
+      padding: 1.5rem;
+      border: 2px solid rgba(183, 148, 244, 0.3);
+      background: rgba(183, 148, 244, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .void-incident::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #00FFFF, #B794F4);
+      z-index: -1;
+      opacity: 0;
+      animation: borderPulse 3s infinite;
+    }
+
+    @keyframes borderPulse {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 0.3; }
+    }
+
+    .pigeon-ascii {
+      font-size: 0.7rem;
+      line-height: 1.2;
+      color: rgba(255, 46, 46, 0.7);
+      margin-bottom: 1rem;
+      white-space: pre;
+      font-family: 'Courier New', monospace;
+    }
+
+    .home-btn {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      color: rgba(255, 46, 46, 0.8);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      border: none;
+      background: transparent;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+    }
+
+    .home-btn:hover {
+      color: rgba(255, 46, 46, 1);
+      text-shadow: 0 0 10px rgba(255, 46, 46, 0.8);
+      transform: translateY(-2px);
+    }
+
+    /* Floating particles in the void */
+    .void-particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #B794F4;
+      border-radius: 50%;
+      animation: float 20s infinite;
+      opacity: 0.3;
+      box-shadow: 0 0 4px #B794F4;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.3;
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translate(var(--tx), var(--ty));
+        opacity: 0;
+      }
+    }
+
+    .corrupted-text {
+      animation: textCorrupt 0.5s infinite;
+    }
+
+    @keyframes textCorrupt {
+      0%, 90% {
+        opacity: 1;
+      }
+      95% {
+        opacity: 0.3;
+        transform: translateX(2px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="void-container">
+    <!-- Generate void particles -->
+    <div class="void-particles"></div>
+
+    <div class="void-content">
+      <div class="error-code">404</div>
+      <h1 class="void-title">.page-not-found</h1>
+
+      <p class="void-message">
+        You've wandered into the void where lost pages drift eternally.
+        The carrier pigeons were supposed to deliver this content, but...
+        well, there was an incident.
+      </p>
+
+      <div class="void-incident">
+        <div class="pigeon-ascii">
+    __
+  /    \
+ | ^  ^ |
+ |  &gt;&lt;  |    *poof*
+  \____/
+   |  |
+  _|  |_
+        </div>
+        <p style="margin-bottom: 0.5rem;"><strong>.INCIDENT-REPORT-2024-11-07</strong></p>
+        <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">
+          Carrier Pigeon Unit #47 ("Sir Flapsalot") failed to deliver page coordinates
+          due to <span class="corrupted-text">existential crisis</span> encountered at
+          coordinate intersection NULL/VOID. Last known transmission:
+          <em>"coo... coo... c̴̢̛͓̈́o̷̰͝o̶̙̍.̷̰̚.̸͎̈́.̴̰̀"</em>
+        </p>
+        <p style="font-size: 0.75rem; margin-top: 1rem; opacity: 0.7;">
+          Status: Lost to the abyss. Presumed absorbed by LinkedIn influencers.
+        </p>
+      </div>
+
+      <a href="index.html" class="home-btn">.return-to-reality</a>
+
+      <p style="margin-top: 2rem; font-family: 'Courier New', monospace; font-size: 0.8rem; color: rgba(183, 148, 244, 0.5);">
+        The void is patient. The void remembers. The void has excellent SEO.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Generate floating particles in the void
+    const container = document.querySelector('.void-particles');
+    const particleCount = 30;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'void-particle';
+
+      // Random starting position
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+
+      // Random movement direction
+      particle.style.setProperty('--tx', (Math.random() - 0.5) * 500 + 'px');
+      particle.style.setProperty('--ty', (Math.random() - 0.5) * 500 + 'px');
+
+      // Random delay
+      particle.style.animationDelay = Math.random() * 20 + 's';
+      particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+
+      container.appendChild(particle);
+    }
+
+    // Add random glitch effect to error code
+    const errorCode = document.querySelector('.error-code');
+    setInterval(() => {
+      if (Math.random() > 0.95) {
+        errorCode.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+        setTimeout(() => {
+          errorCode.style.transform = 'translate(0, 0)';
+        }, 50);
+      }
+    }, 100);
+  </script>
+
+</body>
+</html>
