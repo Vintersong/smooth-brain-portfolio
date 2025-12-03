@@ -3,6 +3,7 @@
 
 # But include these specific files and folders
 !.gitignore
+!.nojekyll
 !index.html
 !404.html
 !css/
