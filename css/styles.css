@@ -363,6 +363,23 @@ header h4.tagline {
   font-weight: 400;
 }
 
+/* Source link in hero */
+.source-link {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: rgba(183, 148, 244, 0.5);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.source-link:hover {
+  color: #B794F4;
+  text-shadow: 0 0 8px rgba(183, 148, 244, 0.6);
+}
+
 /* Glowing Buttons */
 .btn-outline-pink {
   color: var(--pink);
