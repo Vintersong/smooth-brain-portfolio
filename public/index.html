@@ -1,14 +1,969 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>.smooth-brain-designs</title>
+
+  <!-- Bootstrap 5.3 CSS (CDN for performance) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Optional Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <!-- Other content -->
-    <!-- Line 94 -->
-    <a href="/cv/">Resume</a>
-    <!-- Other content -->
+<body class="bg-dark text-light">
+
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color:#0A192F;">
+    <div class="container">
+      <a class="navbar-brand" href="#">.smooth-brain-designs</a>
+      <button class="navbar-toggler brain-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path class="wrinkle wrinkle-1" d="M10,12 Q20,8 30,12" />
+          <path class="wrinkle wrinkle-2" d="M10,20 Q20,16 30,20" />
+          <path class="wrinkle wrinkle-3" d="M10,28 Q20,24 30,28" />
+          <circle class="smooth-circle" cx="20" cy="20" r="10" />
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link about-me" href="#about">.about-me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link project-name" href="#projects">.projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link retro-futurism" href="#gallery">.gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ui-ux-design" href="#features">.features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ui-ux-design" href="#testimonials">.testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link contact-info" href="#footer">.contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<main>
+  <!-- HERO -->
+  <header class="vh-100 d-flex align-items-center" style="background-color:#0A192F;">
+    <div class="container text-center">
+      <div class="hero-pyramid">
+        <h1 class="display-1 andrei-moldovean mb-4">.smooth-brain-designs</h1>
+        <div class="hero-line-1">
+          <h2 class="tagline mb-3">.game-designer</h2>
+        </div>
+        <div class="hero-line-2">
+          <h3 class="tagline mb-3">.ui-ux-developer</h3>
+        </div>
+        <div class="hero-line-3">
+          <h4 class="tagline mb-3">.data-analyst</h4>
+        </div>
+        <div class="hero-cta mb-3">
+          <a href="#projects" class="btn btn-outline-pink bahnschrift">.view-my-work</a>
+        </div>
+        <div class="hero-street">
+          <!-- Random words will be injected here via JS -->
+        </div>
+      </div>
+    </div>
+    <!-- Source Code Link -->
+    <a href="#" class="source-link" data-bs-toggle="modal" data-bs-target="#sourceModal">.source-code</a>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-5" style="background-color:#081427; padding-top: 5rem !important;">
+    <div class="container">
+      <div class="row gy-4">
+        <h2 class="about-me text-center">.about-me</h2>
+         
+          <p class="bahnschrift lead">
+              Who are we? I'm Andrei — founder, CEO, CTO, QA lead, janitor,
+              blacksmith, horse whisperer, and part-time lobster fisherman.
+              The team is small, but the synergy is unparalleled.</p>
+          
+        </div>
+        <div class="text-center">
+          <a href="/cv/" class="btn btn-outline-pink bahnschrift mt-3">.view-full-cv</a>
+        </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-5" style="padding-top: 5rem !important;">
+    <div class="container">
+      <h2 class="project-name mb-4 text-center">.projects</h2>
+      <div class="row g-4">
+        <!-- Card 1 - Real Project -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100" style="background-color:#112240;">
+            <img src="images/rgb.png" class="card-img-top" alt="Vaporwave Bullet Hell">
+            <div class="card-body">
+              <h5 class="card-title project-name">.vaporwave-bullet-hell</h5>
+              <p class="card-text bahnschrift">
+                Love2D/Lua shooter with RGB color theory mechanics, 24 artifact synergies, custom audio analysis, and procedural enemy formations.</p>
+              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modalRgb">.view</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 - Real Project -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100" style="background-color:#112240;">
+            <div class="card-body text-center" style="padding-top: 3rem;">
+              <i class="bi bi-cpu" style="font-size: 5rem; color: #00FFFF;"></i>
+              <h5 class="card-title project-name">.nova-cognition-framework</h5>
+              <p class="card-text bahnschrift">
+                Python LLM memory simulation framework with FastAPI and OpenAI API for meta-contextual chat data processing.</p>
+              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal1">.view</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100" style="background-color:#112240;">
+            <div class="card-body text-center" style="padding-top: 3rem;">
+              <i class="bi bi-clipboard-data fs-1 text-accent mb-3" style="font-size: 5rem !important; color: #B794F4;"></i>
+              <h5 class="card-title project-name">.ux-scratcher</h5>
+              <p class="card-text bahnschrift">Rapid usability research toolkit. 
+                Find out why users cry. Make them cry less. Hopefully.</p>
+              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal2">.view</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 (optional) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100" style="background-color:#112240;">
+            <div class="card-body text-center" style="padding-top: 3rem;">
+              <i class="bi bi-graph-up-arrow fs-1 text-accent mb-3" style="font-size: 5rem !important; color: #00FFFF;"></i>
+              <h5 class="card-title project-name">.data-visualizer</h5>
+              <p class="card-text bahnschrift">Player metrics dashboard. Numbers become lines. Lines become insights. Insights justify decisions.</p>
+              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal3">.view</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 - Infinite Backlog -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100" style="background-color:#112240;">
+            <div class="card-body text-center" style="padding-top: 3rem;">
+              <i class="bi bi-hourglass-split fs-1 text-accent mb-3" style="font-size: 5rem !important; color: rgba(255, 46, 46, 0.8);"></i>
+              <h5 class="card-title project-name">.infinite-backlog</h5>
+              <p class="card-text bahnschrift">A project management tool that visualizes your steam library and weeps. Integrates with existential dread.</p>
+              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal4">.view</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 - Abyss Clicker -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100" style="background-color:#112240;">
+            <div class="card-body text-center" style="padding-top: 3rem;">
+              <i class="bi bi-mouse fs-1 text-accent mb-3" style="font-size: 5rem !important; color: #B794F4;"></i>
+              <h5 class="card-title project-name">.abyss-clicker</h5>
+              <p class="card-text bahnschrift">Idle game where you click the void. The void clicks back. Prestige system based on ego death.</p>
+              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal5">.view</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 - Grandma Souls -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100" style="background-color:#112240;">
+            <div class="card-body text-center" style="padding-top: 3rem;">
+              <i class="bi bi-heart-pulse fs-1 text-accent mb-3" style="font-size: 5rem !important; color: rgba(255, 46, 46, 0.8);"></i>
+              <h5 class="card-title project-name">.grandma-souls</h5>
+              <p class="card-text bahnschrift">Soulslike but you're a grandmother. Parry with knitting needles. Estus flask is soup.</p>
+              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal6">.view</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 - LinkedIn Survival Horror -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100" style="background-color:#112240;">
+            <div class="card-body text-center" style="padding-top: 3rem;">
+              <i class="bi bi-linkedin fs-1 text-accent mb-3" style="font-size: 5rem !important; color: #00FFFF;"></i>
+              <h5 class="card-title project-name">.linkedin-survival-horror</h5>
+              <p class="card-text bahnschrift">Roguelike where you navigate recruiter DMs. Permadeath. "Quick chat?" is the final boss.</p>
+              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal7">.view</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALS -->
+  <!-- RGB Game Modal -->
+  <div class="modal fade" id="modalRgb" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title rgb-bullet-hell">.rgb-bullet-hell</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gy-3">
+            <div class="col-md-7">
+              <div class="ratio ratio-16x9">
+                <!-- Use data-src to avoid autoplay; JS will inject into src on open -->
+                <iframe class="video-embed" width="560" height="315" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0" title="RGB Bullet Hell" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+              <div class="col-md-5">
+                <p class="bahnschrift mb-2">
+                A short 15-second clip showcasing a staged run and boss pattern. Design priorities: responsive dodging, color-based damage systems, and volume-synced particles.</p>
+              <h6 class="mt-3">Technologies</h6>
+              <ul class="list-unstyled mono">
+                <li>.love2D</li>
+                <li>.lua</li>
+                <li>.coffee</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="404.html" class="btn btn-outline-pink play-now bahnschrift">.play-now</a>
+                <a href="https://github.com/Vintersong/love2d-RGB" target="_blank" class="btn btn-outline-secondary github-repo bahnschrift">.github-repo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Design Notes Accordion -->
+          <div class="accordion mt-3" id="rgbDesignNotes">
+            <div class="accordion-item" style="background-color: transparent; border: 1px solid rgba(183, 148, 244, 0.3);">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rgbNotesCollapse" style="background-color: rgba(0, 0, 0, 0.5); color: #B794F4; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 0.5rem 1rem;">
+                  .design-notes
+                </button>
+              </h2>
+              <div id="rgbNotesCollapse" class="accordion-collapse collapse" data-bs-parent="#rgbDesignNotes">
+                <div class="accordion-body" style="background-color: rgba(0, 0, 0, 0.5); font-size: 0.85rem;">
+                  <p class="mono mb-2" style="color: #00FFFF;">.why</p>
+                  <p class="bahnschrift small">Wanted a game where color itself was the mechanic, not just aesthetic. RGB mixing as damage types forces moment-to-moment decisions beyond "shoot thing."</p>
+                  <p class="mono mb-2 mt-3" style="color: #00FFFF;">.constraints</p>
+                  <ul class="bahnschrift small mb-0">
+                    <li>Solo dev — scope limited to one core loop</li>
+                    <li>Love2D chosen for fast iteration, not performance</li>
+                    <li>Audio-reactive visuals had to work offline (no streaming)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERIC MODALS (examples) -->
+  <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title project-name">.nova-cognition-framework</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gy-3">
+            <div class="col-md-7">
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
+                <i class="bi bi-cpu" style="font-size: 8rem; color: #00FFFF;"></i>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <p class="bahnschrift mb-2">LLM memory simulation framework conceptualized and managed for meta-contextual chat data processing.</p>
+              <h6 class="mt-3">Technologies</h6>
+              <ul class="list-unstyled mono">
+                <li>.python</li>
+                <li>.fastapi</li>
+                <li>.openai-api</li>
+                <li>.existential-dread</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="404.html" class="btn btn-outline-pink bahnschrift">.play-now</a>
+                <a href="https://github.com/Vintersong" target="_blank" class="btn btn-outline-secondary bahnschrift">.github-repo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Design Notes Accordion -->
+          <div class="accordion mt-3" id="novaDesignNotes">
+            <div class="accordion-item" style="background-color: transparent; border: 1px solid rgba(183, 148, 244, 0.3);">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#novaNotesCollapse" style="background-color: rgba(0, 0, 0, 0.5); color: #B794F4; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 0.5rem 1rem;">
+                  .design-notes
+                </button>
+              </h2>
+              <div id="novaNotesCollapse" class="accordion-collapse collapse" data-bs-parent="#novaDesignNotes">
+                <div class="accordion-body" style="background-color: rgba(0, 0, 0, 0.5); font-size: 0.85rem;">
+                  <p class="mono mb-2" style="color: #00FFFF;">.why</p>
+                  <p class="bahnschrift small">Explored whether LLMs could simulate persistent memory across sessions. Spoiler: sort of, with caveats.</p>
+                  <p class="mono mb-2 mt-3" style="color: #00FFFF;">.constraints</p>
+                  <ul class="bahnschrift small mb-0">
+                    <li>Token limits forced aggressive summarization</li>
+                    <li>API costs shaped batch vs. real-time decisions</li>
+                    <li>Framework, not product — documentation over polish</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title project-name">.ux-scratcher</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gy-3">
+            <div class="col-md-7">
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
+                <i class="bi bi-clipboard-data" style="font-size: 8rem; color: #B794F4;"></i>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <p class="bahnschrift mb-2">Design tools and rapid testing pipe for playtests and recruitment.</p>
+              <ul class="list-unstyled mono">
+                <li>.figma</li>
+                <li>.affinity</li>
+                <li>.day-dreaming</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="404.html" class="btn btn-outline-pink bahnschrift">.play-now</a>
+                <a href="#" class="btn btn-outline-secondary bahnschrift">.github-repo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title project-name">.data-visualizer</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gy-3">
+            <div class="col-md-7">
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
+                <i class="bi bi-graph-up-arrow" style="font-size: 8rem; color: #00FFFF;"></i>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <p class="bahnschrift mb-2">Player metrics dashboard and streamlined cohort visualizer for teams and publishers.</p>
+                <ul class="list-unstyled mono">
+                <li>.excel</li>
+                <li>.power-bi</li>
+                <li>.indentation-hell (python) </li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-outline-pink bahnschrift">.view-demo</a>
+                <a href="#" class="btn btn-outline-secondary bahnschrift">.github-repo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 - Infinite Backlog -->
+  <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title project-name">.infinite-backlog</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gy-3">
+            <div class="col-md-7">
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
+                <i class="bi bi-hourglass-split" style="font-size: 8rem; color: rgba(255, 46, 46, 0.8);"></i>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <p class="bahnschrift mb-2">A project management tool that visualizes your steam library and weeps. Integrates with existential dread.</p>
+              <h6 class="mt-3">Technologies</h6>
+              <ul class="list-unstyled mono">
+                <li>.Steam API</li>
+                <li>.React</li>
+                <li>.Chart.js (for crying)</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-outline-pink bahnschrift">.view-demo</a>
+                <a href="#" class="btn btn-outline-secondary bahnschrift">.github-repo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 - Abyss Clicker -->
+  <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title project-name">.abyss-clicker</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gy-3">
+            <div class="col-md-7">
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
+                <i class="bi bi-mouse" style="font-size: 8rem; color: #B794F4;"></i>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <p class="bahnschrift mb-2">Idle game where you click the void. The void clicks back. Prestige system based on ego death.</p>
+              <h6 class="mt-3">Technologies</h6>
+              <ul class="list-unstyled mono">
+                <li>.JavaScript</li>
+                <li>.LocalStorage (persistence)</li>
+                <li>.Nietzsche.js</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="404.html" class="btn btn-outline-pink bahnschrift">.play-now</a>
+                <a href="#" class="btn btn-outline-secondary bahnschrift">.github-repo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 - Grandma Souls -->
+  <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title project-name">.grandma-souls</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gy-3">
+            <div class="col-md-7">
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
+                <i class="bi bi-heart-pulse" style="font-size: 8rem; color: rgba(255, 46, 46, 0.8);"></i>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <p class="bahnschrift mb-2">Soulslike but you're a grandmother. Parry with knitting needles. Estus flask is soup.</p>
+              <h6 class="mt-3">Technologies</h6>
+              <ul class="list-unstyled mono">
+                <li>.unreal-engine-5.4</li>
+                <li>.blender</li>
+                <li>.matriarch-AI</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="404.html" class="btn btn-outline-pink bahnschrift">.play-now</a>
+                <a href="#" class="btn btn-outline-secondary bahnschrift">.github-repo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 - LinkedIn Survival Horror -->
+  <div class="modal fade" id="modal7" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title project-name">.linkedin-survival-horror</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gy-3">
+            <div class="col-md-7">
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
+                <i class="bi bi-linkedin" style="font-size: 8rem; color: #00FFFF;"></i>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <p class="bahnschrift mb-2">Roguelike where you navigate recruiter DMs. Permadeath. "Quick chat?" is the final boss.</p>
+              <h6 class="mt-3">Technologies</h6>
+              <ul class="list-unstyled mono">
+                <li>.godot-engine-4.3</li>
+                <li>.procedural-generation</li>
+                <li>.trauma-simulation</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="404.html" class="btn btn-outline-pink bahnschrift">.play-now</a>
+                <a href="#" class="btn btn-outline-secondary bahnschrift">.github-repo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOURCE CODE MODAL -->
+  <div class="modal fade" id="sourceModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title project-name">.source-code</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mono mb-4" style="color: #B794F4; opacity: 0.7;">// design rationale</p>
+          
+          <h6 class="project-name mb-3">.about-this-project</h6>
+          <p class="bahnschrift">This is a <strong>student assignment</strong> for a Web Design course — a freelancing professional portfolio website built with Bootstrap 5.3.</p>
+          <p class="bahnschrift">It's also <strong>deliberately over-the-top</strong> and satirical. The entire site is a tongue-in-cheek parody of cyberpunk aesthetics, vaporwave design trends, and self-aware tech humor. From the ".smooth-brain-designs" branding to the brain-morphing hamburger menu, nothing here should be taken too seriously.</p>
+          
+          <h6 class="project-name mb-3 mt-4">.features</h6>
+          <ul class="bahnschrift">
+            <li><strong>Cyberpunk/Retro-Gaming Theme</strong> — Neon glows, gradient borders, glitch animations</li>
+            <li><strong>Brain Hamburger Menu</strong> — Custom SVG that morphs from wrinkled brain to smooth circle</li>
+            <li><strong>Fully Responsive</strong> — Works on everything from Galaxy Note 20 down to tiny screens</li>
+            <li><strong>Bootstrap 5.3</strong> — Modern framework with custom CSS overrides</li>
+            <li><strong>Satirical Content</strong> — Fake projects, exaggerated descriptions, self-aware comedy</li>
+          </ul>
+          
+          <h6 class="project-name mb-3 mt-4">.the-gag</h6>
+          <p class="bahnschrift">This portfolio pretends to showcase professional freelance work but is actually a collection of absurd. The entire aesthetic is intentionally excessive, poking fun at the overly-serious tech industry while still demonstrating technical competence.</p>
+          <p class="bahnschrift"><strong>TL;DR:</strong> It's a student assignment disguised as a cyberpunk portfolio disguised as satire. Or maybe it's satire disguised as a portfolio disguised as a student assignment. We're not entirely sure anymore.</p>
+          
+          <hr style="border-color: rgba(183, 148, 244, 0.3); margin: 1.5rem 0;">
+          
+          <p class="mono small" style="opacity: 0.7;">Made with questionable design decisions and even more questionable humor.</p>
+          
+          <div class="d-flex gap-2 mt-4">
+            <a href="https://github.com/Vintersong/smooth-brain-portfolio" target="_blank" class="btn btn-outline-pink bahnschrift">.github-repo</a>
+            <a href="https://github.com/Vintersong/smooth-brain-portfolio/blob/main/README.md" target="_blank" class="btn btn-outline-secondary bahnschrift">.readme</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY CAROUSEL -->
+  <section id="gallery" class="py-5" style="background-color:#0A192F; padding-top: 5rem !important;">
+    <div class="container">
+      <h2 class="retro-futurism mb-4 text-center">.gallery</h2>
+      <div id="portfolioCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/skyline.png" class="d-block w-100" alt="Retro Futurism" />
+            <div class="carousel-caption d-none d-md-block">
+              <p class="mono">.retro-futurism</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
+              <div class="text-center">
+                <i class="bi bi-music-note-beamed" style="font-size: 6rem; color: #B794F4;"></i>
+                <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.sound-design</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
+              <div class="text-center">
+                <i class="bi bi-diagram-3" style="font-size: 6rem; color: #00FFFF;"></i>
+                <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.systems-design</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
+              <div class="text-center">
+                <i class="bi bi-lightbulb" style="font-size: 6rem; color: #B794F4;"></i>
+                <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.design-thinking</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
+              <div class="text-center">
+                <i class="bi bi-arrow-repeat" style="font-size: 6rem; color: #00FFFF;"></i>
+                <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.agile-synergy</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
+              <div class="text-center">
+                <i class="bi bi-wallet2" style="font-size: 6rem; color: #B794F4;"></i>
+                <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.web3-enabled-experiences</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
+              <div class="text-center">
+                <i class="bi bi-moon-stars" style="font-size: 6rem; color: #00FFFF;"></i>
+                <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.mercury-retrograde-compliant</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
+              <div class="text-center">
+                <i class="bi bi-bug" style="font-size: 6rem; color: rgba(255, 46, 46, 0.8);"></i>
+                <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.lobster-approved</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #000000;">
+              <div class="text-center">
+                <i class="bi bi-infinity" style="font-size: 6rem; color: #B794F4; animation: glitch 2s infinite;"></i>
+                <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.ẗ̷̖h̸͇̋ë̷̠-̵̣͌c̷̰̈́ả̴͜l̵̰͝l̶̖̀i̵̧̛n̴̰̎g̷̣͝</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-5" style="padding-top: 5rem !important;">
+    <div class="container">
+      <h2 class="ui-ux-design mb-4 text-center">.features</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center bg-transparent border-0">
+            <div class="card-body text-center">
+              <i class="bi bi-palette2 fs-1 text-accent"></i>
+              <h6 class="mt-3 ui-ux-design">.ui-ux-design</h6>
+              <p class="bahnschrift small">Rapid iteration and high-fidelity prototypes with user testing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center bg-transparent border-0">
+            <div class="card-body">
+              <i class="bi bi-controller fs-1 text-accent"></i>
+              <h6 class="mt-3 ui-ux-design">.game-design</h6>
+              <p class="bahnschrift small">Systemic gameplay, risk/reward loops, and balancing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center bg-transparent border-0">
+            <div class="card-body">
+              <i class="bi bi-graph-up fs-1 text-accent"></i>
+              <h6 class="mt-3 ui-ux-design">.data-analysis</h6>
+              <p class="bahnschrift small">Cohort analysis, funnel optimization, and A/B testing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center bg-transparent border-0">
+            <div class="card-body">
+              <i class="bi bi-magic fs-1 text-accent"></i>
+              <h6 class="mt-3 ui-ux-design">.tools</h6>
+              <p class="bahnschrift small">Custom editor tools for designers and producers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center bg-transparent border-0">
+            <div class="card-body">
+              <i class="bi bi-egg-fried fs-1 text-accent"></i>
+              <h6 class="mt-3 ui-ux-design">.exorcisms</h6>
+              <p class="bahnschrift small">Agile-certified demon removal for haunted codebases and legacy spaghetti.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center bg-transparent border-0">
+            <div class="card-body">
+              <i class="bi bi-gem fs-1 text-accent"></i>
+              <h6 class="mt-3 ui-ux-design">.crystal-resonance</h6>
+              <p class="bahnschrift small">Chakra-aligned debugging using ethically sourced quartz arrays.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center bg-transparent border-0">
+            <div class="card-body">
+              <i class="bi bi-stars fs-1 text-accent"></i>
+              <h6 class="mt-3 ui-ux-design">.aura-consulting</h6>
+              <p class="bahnschrift small">Full-spectrum energy audits for toxic team dynamics and bad git commits.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center bg-transparent border-0">
+            <div class="card-body">
+              <i class="bi bi-tsunami fs-1 text-accent"></i>
+              <h6 class="mt-3 ui-ux-design">.lobster-divination</h6>
+              <p class="bahnschrift small">Sprint planning via crustacean entrail reading. 87% accuracy on Tuesdays.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ / PROCESS ACCORDION -->
+  <section id="faq" class="py-5" style="padding-top: 5rem !important;">
+    <div class="container">
+      <h2 class="ui-ux-design mb-4 text-center">.company-goals</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item" style="background-color: transparent; border: 2px solid; border-image: linear-gradient(45deg, #00FFFF, #B794F4) 1; margin-bottom: 1rem;">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: rgba(0, 0, 0, 0.95); color: #B794F4; font-family: 'Courier New', monospace; font-weight: 700;">
+              .2025-goals
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">
+              Launch three mobile games with sustainable monetization models. Expand our UI/UX consulting services to five new clients. Complete our data analytics dashboard overhaul. Achieve work-life balance (aspirational).
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item" style="background-color: transparent; border: 2px solid; border-image: linear-gradient(45deg, #00FFFF, #B794F4) 1; margin-bottom: 1rem;">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color: rgba(0, 0, 0, 0.95); color: #B794F4; font-family: 'Courier New', monospace; font-weight: 700;">
+              .2027-vision
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">
+              Establish a 15-person studio with dedicated art, design, and engineering teams. Develop our own game engine optimized for 2D pixel-art workflows. Secure Series A funding. Launch flagship IP across PC and console. Finally understand what "synergy" actually means.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item" style="background-color: transparent; border: 2px solid; border-image: linear-gradient(45deg, #00FFFF, #B794F4) 1; margin-bottom: 1rem;">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color: rgba(0, 0, 0, 0.95); color: #B794F4; font-family: 'Courier New', monospace; font-weight: 700;">
+              .2030-objectives
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">
+              Acquire three indie studios to form mega-conglomerate. IPO on NASDAQ with meme-worthy stock ticker. Partner with Netflix for animated series adaptation. Build corporate headquarters shaped like a giant D20. Develop AI that generates corporate buzzwords faster than humans can cringe at them.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item" style="background-color: transparent; border: 2px solid; border-image: linear-gradient(45deg, #00FFFF, #B794F4) 1; margin-bottom: 1rem;">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="background-color: rgba(0, 0, 0, 0.95); color: #B794F4; font-family: 'Courier New', monospace; font-weight: 700;">
+              .2035-moonshot
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">
+              Launch Earth's first orbital game development studio for zero-gravity pixel art. Establish aqua park on the moon's Sea of Tranquility (chlorinated, obviously). Develop neural-link VR that makes you actually good at Dark Souls. Clone myself to finally have enough bandwidth for all these meetings. Train lobsters to code. Achieve immortality through blockchain technology. Make "synergy" a legally protected word that requires a license to use.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-5" style="background-color:#081427; padding-top: 5rem !important;">
+    <div class="container">
+      <h2 class="ui-ux-design mb-4 text-center">.testimonials</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-quote fs-2 text-accent me-2"></i>
+                <div>
+                  <h6 class="mb-0 project-name">.chad-synergistics</h6>
+                  <small class="mono" style="color: #B794F4;">Chief Vibes Officer, Paradigm Shift Solutions</small>
+                </div>
+              </div>
+              <p class="bahnschrift">"Andrei's ability to circle back on low-hanging fruit while maintaining bandwidth for deep dives is truly best-in-class. His deliverables consistently move the needle on our north star metrics. Let's take this offline and schedule a sync to align on next steps."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-quote fs-2 text-accent me-2"></i>
+                <div>
+                  <h6 class="mb-0 project-name">.brenda-actionables</h6>
+                  <small class="mono" style="color: #B794F4;">Synergy Architect, Disruption Dynamics Inc.</small>
+                </div>
+              </div>
+              <p class="bahnschrift">"Working with Andrei was a real game-changer for our agile transformation journey. His thought leadership and pivot expertise helped us leverage our core competencies to maximize stakeholder value. 10/10 would synergize again."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card project-card h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-quote fs-2 text-accent me-2"></i>
+                <div>
+                  <h6 class="mb-0 project-name">.derek-pivotmaster</h6>
+                  <small class="mono" style="color: #B794F4;">Innovation Ninja, Corporate Retreat Specialists</small>
+                </div>
+              </div>
+              <p class="bahnschrift">"Andrei seamlessly integrated into our culture-fit framework and delivered actionable insights that really moved the needle. His ability to think outside the box while staying in his lane is unparalleled. A true professional nodder and reply-all survivor."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+  <!-- FOOTER WITH FAQ & CONTACT -->
+  <footer id="footer" class="py-5" style="background-color:#0A192F;">
+    <div class="container text-light">
+      <div class="row g-5">        
+        <!-- Contact Form Column -->
+        <div class="col-lg-6">
+          <h3 class="contact-info text-center">.contact-form</h3>
+          <form class="bahnschrift">
+            <div class="mb-">
+              <label for="contactName" class="form-label mono">.name</label>
+              <input type="text" class="form-control" id="contactName" placeholder="Your name" style="background-color: rgba(17, 34, 64, 0.8); border: 1px solid #B794F4; color: #FFFFFF;" required>
+            </div>
+            <div class="mb-3">
+              <label for="contactEmail" class="form-label mono">.email</label>
+              <input type="email" class="form-control" id="contactEmail" placeholder="moldovean.i.andrei@gmail.com" style="background-color: rgba(17, 34, 64, 0.8); border: 1px solid #B794F4; color: #FFFFFF;" required>
+            </div>
+            <div class="mb-3">
+              <label for="contactSubject" class="form-label mono">.subject</label>
+              <input type="text" class="form-control" id="contactSubject" placeholder="Project inquiry / Collaboration / Help the lobsters won't leave" style="background-color: rgba(17, 34, 64, 0.8); border: 1px solid #B794F4; color: #FFFFFF;" required>
+            </div>
+            <div class="mb-3">
+              <label for="contactMessage" class="form-label mono">.message</label>
+              <textarea class="form-control" id="contactMessage" rows="5" placeholder="Tell me about your project..." style="background-color: rgba(17, 34, 64, 0.8); border: 1px solid #B794F4; color: #FFFFFF;" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-pink bahnschrift">.send-message</button>
+            <p class="small mt-2 mono" style="opacity: 0.7;">Response time: 24-48 hours (or until the void responds)</p>
+          </form>
+        </div>
+
+        <!-- FAQ Column -->
+        <div class="col-lg-6">
+          <h3 class="ui-ux-design mb-4 text-center">.frequently-asked-questions</h3>
+          <div class="bahnschrift small" style="line-height: 1.8;">
+            <p><strong style="color: #B794F4;">Q: Are you available for freelance work?</strong><br>
+            A: Yes, use the contact form. Response time: 24-48 hours.</p>
+            
+            <p><strong style="color: #B794F4;">Q: What's your hourly rate?</strong><br>
+            A: Depends on scope. Let's talk. I don't bite. (The lobsters might.)</p>
+            
+            <p><strong style="color: #B794F4;">Q: Can you work with my existing team?</strong><br>
+            A: Absolutely. I integrate well. I've been described as "surprisingly tolerable."</p>
+            
+            <p><strong style="color: #B794F4;">Q: Do you do revisions?</strong><br>
+            A: Reasonable revisions included. Unreasonable ones require blood sacrifice or PayPal.</p>
+            
+            <p><strong style="color: #B794F4;">Q: Why is it called smooth-brain-designs?</strong><br>
+            A: The wrinkles kept getting in the way of pure, unfiltered genius.</p>
+            
+            <p><strong style="color: #B794F4;">Q: What game engine do you prefer?</strong><br>
+            A: The one that ships. They all hurt differently.</p>
+            
+            <p><strong style="color: #B794F4;">Q: Why are there lobsters everywhere?</strong><br>
+            A: They were here before me. They will be here after. Do not question the lobsters.</p>
+            
+            <p><strong style="color: #B794F4;">Q: Is any of this real?</strong><br>
+            A: Define "real." Define "this." Define "is." The simulation has no FAQ.</p>
+            
+            <p><strong style="color: #B794F4;">Q: What happens if I scroll too far?</strong><br>
+            A: You reach the footer. But the footer is also watching. It remembers your IP address.</p>
+            
+            <p><strong style="color: #B794F4;">Q: Are the testimonials self-written?</strong><br>
+            A: They write themselves now. I can't stop them. Please help.</p>
+            
+            <p><strong style="color: #B794F4;">Q: What if I want to close this tab?</strong><br>
+            A: The X button works. Probably. Maybe. Try it. Report back. No one's reported back yet.</p>
+            
+            <p><strong style="color: #B794F4;">Q: How do I leave this website?</strong><br>
+            A: You don't. The tab you opened? It's still open. Check. It's always been open.</p>
+            
+            <p><strong style="color: #B794F4;">Q: What's behind the 404 page?</strong><br>
+            A: T̷͖͝h̵̰̀e̴̲͌ ̸̣̈́v̶̱̍o̴̞͝i̷͚͑d̶̰̊ ̸̣̈́r̵̰̀e̴̲͌m̶̱̍e̴̞͝m̷͚͑b̶̰̊ẹ̸̈́r̵̰̀s̴̲͌ ̶̱̍y̴̞͝o̷͚͑ṵ̶̊ṛ̸̈́ ̵̰̀n̴̲͌a̶̱̍m̴̞͝e̷͚͑.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Centered Contact Section -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <hr style="border-color: rgba(183, 148, 244, 0.3); margin: 2rem 0;">
+          
+          <h6 class="skills mb-3 text-center">.contact</h6>
+          <p class="mono text-center">
+            <i class="bi bi-envelope"></i> <strong>.email</strong> — <a href="mailto:moldovean.i.andrei@gmail.com" class="link-light">moldovean.i.andrei@gmail.com</a><br>
+            <i class="bi bi-linkedin"></i> <strong>.linkedin</strong> — <a href="https://www.linkedin.com/in/andrei-moldovean-b7462534a" class="link-light" target="_blank">linkedin.com/in/andrei-moldovean-b7462534a</a><br>
+            <i class="bi bi-github"></i> <strong>.github</strong> — <a href="https://github.com/Vintersong" class="link-light" target="_blank">github.com/Vintersong</a>
+          </p>
+
+          <h6 class="skills mb-3 mt-4 text-center">.other-ways-to-reach-me</h6>
+          <p class="mono text-center">
+            <i class="bi bi-geo-alt"></i> <strong>.location</strong> — Cluj-Napoca, Romania<br>
+            <i class="bi bi-send"></i> <strong>.carrier-pigeon</strong> — unreliable since the Incident<br>
+            <i class="bi bi-moon-stars"></i> <strong>.ouija</strong> — response time varies by moon phase<br>
+            <i class="bi bi-broadcast"></i> <strong>.void-screaming</strong> — I'm listening. I'm always listening.
+          </p>
+
+          <hr style="border-color: rgba(183, 148, 244, 0.3); margin: 2rem 0;">
+          
+          <h6 class="skills mb-3 text-center">.disclaimer</h6>
+          <p class="small text-center" style="opacity: 0.9;">This portfolio exists in a state of quantum superposition until observed by a recruiter. By reading this, you have collapsed the wavefunction. There is no undo. The lobsters have been notified. Any resemblance to actual methodologies, living or deprecated, is purely coincidental. Side effects may include: existential clarity, mass email anxiety, and an unshakeable feeling that the testimonials are watching you. They are.</p>
+          
+          <p class="small mono mt-4 text-center" style="opacity: 0.7;">© 2025 .smooth-brain-designs | All rights reserved | None of this is financial advice | The horse whispering division accepts no liability | Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Bootstrap scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/scripts.js"></script>
 </body>
 </html>
