@@ -1,0 +1,22 @@
+---
+interface Props {
+  name: string;
+  project: string;
+  description: string;
+  isJoke?: boolean;
+}
+
+const { name, project, description, isJoke = false } = Astro.props;
+const className = isJoke ? "skill-tag skill-tag-joke" : "skill-tag";
+const tooltipContent = `<strong>${project}</strong><br>${description}`;
+---
+
+<span 
+  class={className}
+  data-bs-toggle="tooltip" 
+  data-bs-html="true" 
+  data-bs-placement="top" 
+  title={tooltipContent}
+>
+  {name}
+</span>

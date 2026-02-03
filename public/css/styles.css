@@ -765,3 +765,41 @@ code, pre {
     font-size: 2rem;
   }
 }
+
+/* Skill grid for CV page */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-tag {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #00FFFF;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  cursor: help;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(0, 255, 255, 0.2);
+  border-color: #00FFFF;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+.skill-tag-joke {
+  color: rgba(255, 46, 46, 0.8);
+  background: rgba(255, 46, 46, 0.1);
+  border-color: rgba(255, 46, 46, 0.3);
+}
+
+.skill-tag-joke:hover {
+  background: rgba(255, 46, 46, 0.2);
+  border-color: rgba(255, 46, 46, 0.6);
+  box-shadow: 0 0 8px rgba(255, 46, 46, 0.4);
+}

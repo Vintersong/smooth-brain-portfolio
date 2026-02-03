@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  items?: string[];
+}
+
+const { title, subtitle, items = [] } = Astro.props;
+---
+
+<div class="cv-entry mb-4">
+  <h5 class="project-name">{title}</h5>
+  <p class="mono small" style="color: #B794F4;">{subtitle}</p>
+  {items.length > 0 && (
+    <ul class="bahnschrift small">
+      {items.map(item => <li>{item}</li>)}
+    </ul>
+  )}
+</div>

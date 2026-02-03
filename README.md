@@ -1,34 +1,43 @@
-# Andrei Moldovean - Portfolio Website
+# Astro Starter Kit: Minimal
 
-## About This Project
+```sh
+npm create astro@latest -- --template minimal
+```
 
-This is a **student assignment** for a Web Design course - a freelancing professional portfolio website built with Bootstrap 5.3. 
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-It's also **deliberately over-the-top** and satirical. The entire site is a tongue-in-cheek parody of cyberpunk aesthetics, vaporwave design trends, and self-aware tech humor. From the ".smooth-brain-designs" branding to the brain-morphing hamburger menu, nothing here should be taken too seriously.
+## 🚀 Project Structure
 
-## Features
+Inside of your Astro project, you'll see the following folders and files:
 
-- **Cyberpunk/Retro-Gaming Theme**: Neon glows, gradient borders, and glitch animations
-- **Brain Hamburger Menu**: Custom SVG animation that transforms from a wrinkled brain into a smooth circle (because we're .smooth-brain-designs)
-- **Fully Responsive**: Works on everything from Galaxy Note 20 down to tiny screens
-- **Bootstrap 5.3**: Modern framework with custom CSS overrides
-- **Satirical Content**: Fake projects, exaggerated descriptions, and self-aware comedy throughout
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-## Assignment Requirements Met
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-✅ All 7 minimal requirements + 1 optional requirement completed  
-✅ Semantic HTML5 structure  
-✅ Bootstrap responsive layout  
-✅ Custom CSS styling  
-✅ Navigation, images, modals, carousel  
-✅ Git version control  
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## The Gag
+Any static assets, like images, can be placed in the `public/` directory.
 
-This portfolio pretends to showcase professional freelance work but is actually a collection of absurd. The entire aesthetic is intentionally excessive, poking fun at the overly-serious tech industry while still demonstrating technical competence.
+## 🧞 Commands
 
-**TL;DR:** It's a student assignment disguised as a cyberpunk portfolio disguised as satire. Or maybe it's satire disguised as a portfolio disguised as a student assignment. We're not entirely sure anymore.
+All commands are run from the root of the project, from a terminal:
 
----
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-*Made with questionable design decisions and even more questionable humor.*
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CVNav from '../components/CVNav.astro';
+import CVEntry from '../components/CVEntry.astro';
+import SkillTag from '../components/SkillTag.astro';
+import CVFooter from '../components/CVFooter.astro';
+
+// Skills data - extracted for cleaner template
+const programmingSkills = [
+  { name: "Lua", project: "RGB Bullet Hell", description: "Core game logic, state machines, collision systems" },
+  { name: "Python", project: "Data Analysis, NOVA Framework", description: "FastAPI backends, pandas pipelines, automation scripts" },
+  { name: "C#", project: "Unity Prototypes", description: "Gameplay systems, editor tools" },
+  { name: "JavaScript", project: "This Portfolio", description: "DOM manipulation, Bootstrap interactivity" },
+  { name: "HTML/CSS", project: "All Web Projects", description: "Responsive layouts, custom animations" },
+  { name: "SQL", project: "Data Visualizer", description: "Query optimization, schema design" },
+  { name: "C", project: "Low-level Experiments", description: "Memory management, performance profiling" },
+];
+
+const engineSkills = [
+  { name: "Love2D", project: "RGB Bullet Hell", description: "2D framework, audio FFT, particle systems" },
+  { name: "Unity", project: "University Projects", description: "3D prototypes, multiplayer experiments" },
+  { name: "Unreal Engine 5", project: "Grandma Souls Concept", description: "Blueprints, Niagara VFX" },
+  { name: "Godot", project: "LinkedIn Survival Horror", description: "GDScript, procedural generation" },
+  { name: "GameMaker", project: "Jam Projects", description: "Rapid prototyping" },
+];
+
+const designTools = [
+  { name: "Photoshop", project: "All Visual Assets", description: "Texture work, UI mockups, sprites" },
+  { name: "Illustrator", project: "Portfolio, Branding", description: "Vector graphics, icons" },
+  { name: "Blender", project: "3D Assets", description: "Low-poly modeling, basic rigging" },
+  { name: "Figma", project: "UX Scratcher", description: "Wireframes, interactive prototypes" },
+];
+
+const researchSkills = [
+  { name: "nVivo", project: "MA Thesis Work", description: "Interview coding, thematic analysis" },
+  { name: "Excel / Power BI", project: "Data Visualizer", description: "Dashboards, pivot tables, macros" },
+  { name: "Mixed Methods", project: "Academic Research", description: "Surveys + interviews + observation" },
+];
+
+const workflowSkills = [
+  { name: "Git", project: "All Projects", description: "Version control, branching, collaboration" },
+  { name: "JIRA", project: "Team Projects", description: "Sprint planning, backlog grooming" },
+  { name: "FastAPI", project: "NOVA Framework", description: "REST endpoints, async operations" },
+];
+
+const bonusSkills = [
+  { name: "Salt Farming", project: "League of Legends", description: "2000+ hours of emotional damage", isJoke: true },
+  { name: "Pro Googling", project: "Every Debug Session", description: "Stack Overflow archaeology", isJoke: true },
+  { name: "Crying in Jira", project: "Sprint Reviews", description: "Therapeutic ticket closure", isJoke: true },
+  { name: "MS Paint (expert)", project: "Placeholder Art", description: "Rectangles with soul", isJoke: true },
+];
+
+const fakeCertifications = [
+  { title: ".certified-agile-scrum-master", note: "(expired)" },
+  { title: ".shaman-chiropractor", note: "(unlicensed)" },
+  { title: ".horseshoe-bending", note: "(correspondence course)" },
+  { title: ".lobster-whispering", note: "(field experience)" },
+  { title: ".linkedin-influencer-bootcamp", note: "(dropped out)" },
+];
+---
+
+<BaseLayout title=".cv | .smooth-brain-designs">
+  <CVNav />
+
+  <main>
+    <section id="cv" class="py-5" style="background-color:#0A192F; min-height: 100vh; padding-top: 5rem !important;">
+      <div class="container">
+        <h1 class="andrei-moldovean mb-4">.cv</h1>
+        <p class="mono mb-5" style="color: #B794F4; opacity: 0.7;">// hover skills for context</p>
+
+        <div class="row">
+          <!-- LEFT COLUMN: Experience & Education -->
+          <div class="col-lg-6 mb-5">
+            <h3 class="skills mb-4">.experience</h3>
+            
+            <CVEntry 
+              title=".game-designer"
+              subtitle="Freelance / Personal Projects • 2022–Present"
+              items={[
+                "RGB bullet-hell with color theory mechanics",
+                "Systems design, balancing, prototyping",
+                "Playtest coordination and iteration"
+              ]}
+            />
+
+            <CVEntry 
+              title=".front-end-developer"
+              subtitle="Freelance • 2018–2022"
+              items={[
+                "Responsive sites, dashboards, landing pages",
+                "Bootstrap, vanilla JS, basic React"
+              ]}
+            />
+
+            <h3 class="skills mb-4 mt-5">.education</h3>
+            
+            <CVEntry title=".ma-digital-media-game-studies" subtitle="Babeș-Bolyai University • 2025–Present" />
+            <CVEntry title=".ba-game-design" subtitle="Uppsala University, Campus Gotland • 2022–2025" />
+            <CVEntry title=".political-science-studies" subtitle="Babeș-Bolyai University • 2020–2022" />
+            <CVEntry title=".front-end-certificate" subtitle="2018" />
+
+            <h3 class="skills mb-4 mt-5">.certifications</h3>
+            {fakeCertifications.map(cert => (
+              <div class="cv-entry mb-3">
+                <h6 class="project-name">{cert.title}</h6>
+                <p class="mono small" style="color: rgba(255, 46, 46, 0.6);">{cert.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <!-- RIGHT COLUMN: Skills -->
+          <div class="col-lg-6">
+            <h3 class="skills mb-4">.skills</h3>
+            
+            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.programming</h6>
+            <div class="skill-grid">
+              {programmingSkills.map(skill => <SkillTag {...skill} />)}
+            </div>
+
+            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.engines</h6>
+            <div class="skill-grid">
+              {engineSkills.map(skill => <SkillTag {...skill} />)}
+            </div>
+
+            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.design-tools</h6>
+            <div class="skill-grid">
+              {designTools.map(skill => <SkillTag {...skill} />)}
+            </div>
+
+            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.research-&-data</h6>
+            <div class="skill-grid">
+              {researchSkills.map(skill => <SkillTag {...skill} />)}
+            </div>
+
+            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.workflow</h6>
+            <div class="skill-grid">
+              {workflowSkills.map(skill => <SkillTag {...skill} />)}
+            </div>
+
+            <h6 class="mono mt-4 mb-3" style="color: rgba(255, 46, 46, 0.6);">.bonus</h6>
+            <div class="skill-grid">
+              {bonusSkills.map(skill => <SkillTag {...skill} isJoke={true} />)}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <CVFooter />
+
+  <Fragment slot="scripts">
+    <script is:inline>
+      // Initialize Bootstrap tooltips
+      document.addEventListener('DOMContentLoaded', function() {
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el, {
+          trigger: 'hover focus',
+          delay: { show: 100, hide: 200 }
+        }));
+      });
+    </script>
+  </Fragment>
+</BaseLayout>
