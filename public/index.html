@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>.smooth-brain-designs</title>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <!-- Bootstrap 5.3 CSS (CDN for performance) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Optional Bootstrap Icons CDN -->
@@ -16,7 +21,7 @@
 <body class="bg-dark text-light">
 
   <!-- NAVIGATION -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color:#0A192F;">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">.smooth-brain-designs</a>
       <button class="navbar-toggler brain-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +58,7 @@
   </nav>
 <main>
   <!-- HERO -->
-  <header class="vh-100 d-flex align-items-center" style="background-color:#0A192F;">
+  <header class="vh-100 d-flex align-items-center">
     <div class="container text-center">
       <div class="hero-pyramid">
         <h1 class="display-1 andrei-moldovean mb-4">.smooth-brain-designs</h1>
@@ -79,7 +84,7 @@
   </header>
 
   <!-- ABOUT SECTION -->
-  <section id="about" class="py-5" style="background-color:#081427; padding-top: 5rem !important;">
+  <section id="about" class="py-5 section-alt">
     <div class="container">
       <div class="row gy-4">
         <h2 class="about-me text-center">.about-me</h2>
@@ -98,13 +103,13 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="py-5" style="padding-top: 5rem !important;">
+  <section id="projects" class="py-5">
     <div class="container">
       <h2 class="project-name mb-4 text-center">.projects</h2>
       <div class="row g-4">
         <!-- Card 1 - Real Project -->
         <div class="col-md-6 col-lg-4">
-          <div class="card project-card h-100" style="background-color:#112240;">
+          <div class="card project-card h-100 bg-card-dark">
             <img src="images/rgb.png" class="card-img-top" alt="Vaporwave Bullet Hell">
             <div class="card-body">
               <h5 class="card-title project-name">.vaporwave-bullet-hell</h5>
@@ -117,9 +122,9 @@
 
         <!-- Card 2 - Real Project -->
         <div class="col-md-6 col-lg-4">
-          <div class="card project-card h-100" style="background-color:#112240;">
+          <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
-              <i class="bi bi-cpu" style="font-size: 5rem; color: #00FFFF;"></i>
+              <i class="bi bi-cpu icon-muted icon-lg"></i>
               <h5 class="card-title project-name">.nova-cognition-framework</h5>
               <p class="card-text bahnschrift">
                 Python LLM memory simulation framework with FastAPI and OpenAI API for meta-contextual chat data processing.</p>
@@ -130,9 +135,9 @@
 
         <!-- Card 3 -->
         <div class="col-md-6 col-lg-4">
-          <div class="card project-card h-100" style="background-color:#112240;">
+          <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
-              <i class="bi bi-clipboard-data fs-1 text-accent mb-3" style="font-size: 5rem !important; color: #B794F4;"></i>
+              <i class="bi bi-clipboard-data fs-1 icon-muted mb-3" style="font-size: 5rem !important;"></i>
               <h5 class="card-title project-name">.ux-scratcher</h5>
               <p class="card-text bahnschrift">Rapid usability research toolkit. 
                 Find out why users cry. Make them cry less. Hopefully.</p>
@@ -143,9 +148,9 @@
 
         <!-- Card 4 (optional) -->
         <div class="col-md-6 col-lg-4">
-          <div class="card project-card h-100" style="background-color:#112240;">
+          <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
-              <i class="bi bi-graph-up-arrow fs-1 text-accent mb-3" style="font-size: 5rem !important; color: #00FFFF;"></i>
+              <i class="bi bi-graph-up-arrow fs-1 icon-muted mb-3" style="font-size: 5rem !important;"></i>
               <h5 class="card-title project-name">.data-visualizer</h5>
               <p class="card-text bahnschrift">Player metrics dashboard. Numbers become lines. Lines become insights. Insights justify decisions.</p>
               <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal3">.view</button>
@@ -155,9 +160,9 @@
 
         <!-- Card 5 - Infinite Backlog -->
         <div class="col-md-6 col-lg-4">
-          <div class="card project-card h-100" style="background-color:#112240;">
+          <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
-              <i class="bi bi-hourglass-split fs-1 text-accent mb-3" style="font-size: 5rem !important; color: rgba(255, 46, 46, 0.8);"></i>
+              <i class="bi bi-hourglass-split fs-1 icon-muted mb-3" style="font-size: 5rem !important;"></i>
               <h5 class="card-title project-name">.infinite-backlog</h5>
               <p class="card-text bahnschrift">A project management tool that visualizes your steam library and weeps. Integrates with existential dread.</p>
               <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal4">.view</button>
@@ -167,9 +172,9 @@
 
         <!-- Card 6 - Abyss Clicker -->
         <div class="col-md-6 col-lg-4">
-          <div class="card project-card h-100" style="background-color:#112240;">
+          <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
-              <i class="bi bi-mouse fs-1 text-accent mb-3" style="font-size: 5rem !important; color: #B794F4;"></i>
+              <i class="bi bi-mouse fs-1 icon-muted mb-3" style="font-size: 5rem !important;"></i>
               <h5 class="card-title project-name">.abyss-clicker</h5>
               <p class="card-text bahnschrift">Idle game where you click the void. The void clicks back. Prestige system based on ego death.</p>
               <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal5">.view</button>
@@ -179,9 +184,9 @@
 
         <!-- Card 7 - Grandma Souls -->
         <div class="col-md-6 col-lg-4">
-          <div class="card project-card h-100" style="background-color:#112240;">
+          <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
-              <i class="bi bi-heart-pulse fs-1 text-accent mb-3" style="font-size: 5rem !important; color: rgba(255, 46, 46, 0.8);"></i>
+              <i class="bi bi-heart-pulse fs-1 icon-muted mb-3" style="font-size: 5rem !important;"></i>
               <h5 class="card-title project-name">.grandma-souls</h5>
               <p class="card-text bahnschrift">Soulslike but you're a grandmother. Parry with knitting needles. Estus flask is soup.</p>
               <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal6">.view</button>
@@ -191,9 +196,9 @@
 
         <!-- Card 8 - LinkedIn Survival Horror -->
         <div class="col-md-6 col-lg-4">
-          <div class="card project-card h-100" style="background-color:#112240;">
+          <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
-              <i class="bi bi-linkedin fs-1 text-accent mb-3" style="font-size: 5rem !important; color: #00FFFF;"></i>
+              <i class="bi bi-linkedin fs-1 icon-muted mb-3" style="font-size: 5rem !important;"></i>
               <h5 class="card-title project-name">.linkedin-survival-horror</h5>
               <p class="card-text bahnschrift">Roguelike where you navigate recruiter DMs. Permadeath. "Quick chat?" is the final boss.</p>
               <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal7">.view</button>
@@ -564,7 +569,7 @@
   </div>
 
   <!-- GALLERY CAROUSEL -->
-  <section id="gallery" class="py-5" style="background-color:#0A192F; padding-top: 5rem !important;">
+  <section id="gallery" class="py-5 section-alt">
     <div class="container">
       <h2 class="retro-futurism mb-4 text-center">.gallery</h2>
       <div id="portfolioCarousel" class="carousel slide" data-bs-ride="false">
@@ -660,7 +665,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 text-center bg-transparent border-0">
             <div class="card-body text-center">
-              <i class="bi bi-palette2 fs-1 text-accent"></i>
+              <i class="bi bi-palette2 fs-1 icon-muted"></i>
               <h6 class="mt-3 ui-ux-design">.ui-ux-design</h6>
               <p class="bahnschrift small">Rapid iteration and high-fidelity prototypes with user testing.</p>
             </div>
@@ -670,7 +675,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 text-center bg-transparent border-0">
             <div class="card-body">
-              <i class="bi bi-controller fs-1 text-accent"></i>
+              <i class="bi bi-controller fs-1 icon-muted"></i>
               <h6 class="mt-3 ui-ux-design">.game-design</h6>
               <p class="bahnschrift small">Systemic gameplay, risk/reward loops, and balancing.</p>
             </div>
@@ -680,7 +685,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 text-center bg-transparent border-0">
             <div class="card-body">
-              <i class="bi bi-graph-up fs-1 text-accent"></i>
+              <i class="bi bi-graph-up fs-1 icon-muted"></i>
               <h6 class="mt-3 ui-ux-design">.data-analysis</h6>
               <p class="bahnschrift small">Cohort analysis, funnel optimization, and A/B testing.</p>
             </div>
@@ -690,7 +695,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 text-center bg-transparent border-0">
             <div class="card-body">
-              <i class="bi bi-magic fs-1 text-accent"></i>
+              <i class="bi bi-magic fs-1 icon-muted"></i>
               <h6 class="mt-3 ui-ux-design">.tools</h6>
               <p class="bahnschrift small">Custom editor tools for designers and producers.</p>
             </div>
@@ -700,7 +705,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 text-center bg-transparent border-0">
             <div class="card-body">
-              <i class="bi bi-egg-fried fs-1 text-accent"></i>
+              <i class="bi bi-egg-fried fs-1 icon-muted"></i>
               <h6 class="mt-3 ui-ux-design">.exorcisms</h6>
               <p class="bahnschrift small">Agile-certified demon removal for haunted codebases and legacy spaghetti.</p>
             </div>
@@ -710,7 +715,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 text-center bg-transparent border-0">
             <div class="card-body">
-              <i class="bi bi-gem fs-1 text-accent"></i>
+              <i class="bi bi-gem fs-1 icon-muted"></i>
               <h6 class="mt-3 ui-ux-design">.crystal-resonance</h6>
               <p class="bahnschrift small">Chakra-aligned debugging using ethically sourced quartz arrays.</p>
             </div>
@@ -720,7 +725,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 text-center bg-transparent border-0">
             <div class="card-body">
-              <i class="bi bi-stars fs-1 text-accent"></i>
+              <i class="bi bi-stars fs-1 icon-muted"></i>
               <h6 class="mt-3 ui-ux-design">.aura-consulting</h6>
               <p class="bahnschrift small">Full-spectrum energy audits for toxic team dynamics and bad git commits.</p>
             </div>
@@ -730,7 +735,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 text-center bg-transparent border-0">
             <div class="card-body">
-              <i class="bi bi-tsunami fs-1 text-accent"></i>
+              <i class="bi bi-tsunami fs-1 icon-muted"></i>
               <h6 class="mt-3 ui-ux-design">.lobster-divination</h6>
               <p class="bahnschrift small">Sprint planning via crustacean entrail reading. 87% accuracy on Tuesdays.</p>
             </div>
@@ -745,9 +750,9 @@
     <div class="container">
       <h2 class="ui-ux-design mb-4 text-center">.company-goals</h2>
       <div class="accordion" id="faqAccordion">
-        <div class="accordion-item" style="background-color: transparent; border: 2px solid; border-image: linear-gradient(45deg, #00FFFF, #B794F4) 1; margin-bottom: 1rem;">
+        <div class="accordion-item accordion-item-vapor">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: rgba(0, 0, 0, 0.95); color: #B794F4; font-family: 'Courier New', monospace; font-weight: 700;">
+            <button class="accordion-button collapsed accordion-btn-vapor" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
               .2025-goals
             </button>
           </h2>
@@ -758,9 +763,9 @@
           </div>
         </div>
 
-        <div class="accordion-item" style="background-color: transparent; border: 2px solid; border-image: linear-gradient(45deg, #00FFFF, #B794F4) 1; margin-bottom: 1rem;">
+        <div class="accordion-item accordion-item-vapor">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color: rgba(0, 0, 0, 0.95); color: #B794F4; font-family: 'Courier New', monospace; font-weight: 700;">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               .2027-vision
             </button>
           </h2>
@@ -771,9 +776,9 @@
           </div>
         </div>
 
-        <div class="accordion-item" style="background-color: transparent; border: 2px solid; border-image: linear-gradient(45deg, #00FFFF, #B794F4) 1; margin-bottom: 1rem;">
+        <div class="accordion-item accordion-item-vapor">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color: rgba(0, 0, 0, 0.95); color: #B794F4; font-family: 'Courier New', monospace; font-weight: 700;">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               .2030-objectives
             </button>
           </h2>
@@ -784,9 +789,9 @@
           </div>
         </div>
 
-        <div class="accordion-item" style="background-color: transparent; border: 2px solid; border-image: linear-gradient(45deg, #00FFFF, #B794F4) 1; margin-bottom: 1rem;">
+        <div class="accordion-item accordion-item-vapor">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="background-color: rgba(0, 0, 0, 0.95); color: #B794F4; font-family: 'Courier New', monospace; font-weight: 700;">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
               .2035-moonshot
             </button>
           </h2>
@@ -801,7 +806,7 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials" class="py-5" style="background-color:#081427; padding-top: 5rem !important;">
+  <section id="testimonials" class="py-5 section-alt">
     <div class="container">
       <h2 class="ui-ux-design mb-4 text-center">.testimonials</h2>
       <div class="row g-4">
@@ -812,7 +817,7 @@
                 <i class="bi bi-quote fs-2 text-accent me-2"></i>
                 <div>
                   <h6 class="mb-0 project-name">.chad-synergistics</h6>
-                  <small class="mono" style="color: #B794F4;">Chief Vibes Officer, Paradigm Shift Solutions</small>
+                  <small class="mono text-lavender">Chief Vibes Officer, Paradigm Shift Solutions</small>
                 </div>
               </div>
               <p class="bahnschrift">"Andrei's ability to circle back on low-hanging fruit while maintaining bandwidth for deep dives is truly best-in-class. His deliverables consistently move the needle on our north star metrics. Let's take this offline and schedule a sync to align on next steps."</p>
@@ -827,7 +832,7 @@
                 <i class="bi bi-quote fs-2 text-accent me-2"></i>
                 <div>
                   <h6 class="mb-0 project-name">.brenda-actionables</h6>
-                  <small class="mono" style="color: #B794F4;">Synergy Architect, Disruption Dynamics Inc.</small>
+                  <small class="mono text-lavender">Synergy Architect, Disruption Dynamics Inc.</small>
                 </div>
               </div>
               <p class="bahnschrift">"Working with Andrei was a real game-changer for our agile transformation journey. His thought leadership and pivot expertise helped us leverage our core competencies to maximize stakeholder value. 10/10 would synergize again."</p>
@@ -842,7 +847,7 @@
                 <i class="bi bi-quote fs-2 text-accent me-2"></i>
                 <div>
                   <h6 class="mb-0 project-name">.derek-pivotmaster</h6>
-                  <small class="mono" style="color: #B794F4;">Innovation Ninja, Corporate Retreat Specialists</small>
+                  <small class="mono text-lavender">Innovation Ninja, Corporate Retreat Specialists</small>
                 </div>
               </div>
               <p class="bahnschrift">"Andrei seamlessly integrated into our culture-fit framework and delivered actionable insights that really moved the needle. His ability to think outside the box while staying in his lane is unparalleled. A true professional nodder and reply-all survivor."</p>
@@ -854,28 +859,28 @@
   </section>
 </main>
   <!-- FOOTER WITH FAQ & CONTACT -->
-  <footer id="footer" class="py-5" style="background-color:#0A192F;">
+  <footer id="footer" class="py-5">
     <div class="container text-light">
       <div class="row g-5">        
         <!-- Contact Form Column -->
         <div class="col-lg-6">
-          <h3 class="contact-info text-center">.contact-form</h3>
+          <h3 class="contact-form text-center">.contact-form</h3>
           <form class="bahnschrift">
-            <div class="mb-">
+            <div class="mb-3">
               <label for="contactName" class="form-label mono">.name</label>
-              <input type="text" class="form-control" id="contactName" placeholder="Your name" style="background-color: rgba(17, 34, 64, 0.8); border: 1px solid #B794F4; color: #FFFFFF;" required>
+              <input type="text" class="form-control form-input-vapor" id="contactName" placeholder="Your name" required>
             </div>
             <div class="mb-3">
               <label for="contactEmail" class="form-label mono">.email</label>
-              <input type="email" class="form-control" id="contactEmail" placeholder="moldovean.i.andrei@gmail.com" style="background-color: rgba(17, 34, 64, 0.8); border: 1px solid #B794F4; color: #FFFFFF;" required>
+              <input type="email" class="form-control form-input-vapor" id="contactEmail" placeholder="email.address@gmail.com" required>
             </div>
             <div class="mb-3">
               <label for="contactSubject" class="form-label mono">.subject</label>
-              <input type="text" class="form-control" id="contactSubject" placeholder="Project inquiry / Collaboration / Help the lobsters won't leave" style="background-color: rgba(17, 34, 64, 0.8); border: 1px solid #B794F4; color: #FFFFFF;" required>
+              <input type="text" class="form-control form-input-vapor" id="contactSubject" placeholder="Project inquiry / Collaboration / Help the lobsters won't leave" required>
             </div>
             <div class="mb-3">
               <label for="contactMessage" class="form-label mono">.message</label>
-              <textarea class="form-control" id="contactMessage" rows="5" placeholder="Tell me about your project..." style="background-color: rgba(17, 34, 64, 0.8); border: 1px solid #B794F4; color: #FFFFFF;" required></textarea>
+              <textarea class="form-control form-input-vapor" id="contactMessage" rows="5" placeholder="Tell me about your project..." required></textarea>
             </div>
             <button type="submit" class="btn btn-outline-pink bahnschrift">.send-message</button>
             <p class="small mt-2 mono" style="opacity: 0.7;">Response time: 24-48 hours (or until the void responds)</p>
@@ -886,43 +891,43 @@
         <div class="col-lg-6">
           <h3 class="ui-ux-design mb-4 text-center">.frequently-asked-questions</h3>
           <div class="bahnschrift small" style="line-height: 1.8;">
-            <p><strong style="color: #B794F4;">Q: Are you available for freelance work?</strong><br>
+            <p><strong class="text-lavender">Q: Are you available for freelance work?</strong><br>
             A: Yes, use the contact form. Response time: 24-48 hours.</p>
             
-            <p><strong style="color: #B794F4;">Q: What's your hourly rate?</strong><br>
+            <p><strong class="text-lavender">Q: What's your hourly rate?</strong><br>
             A: Depends on scope. Let's talk. I don't bite. (The lobsters might.)</p>
             
-            <p><strong style="color: #B794F4;">Q: Can you work with my existing team?</strong><br>
+            <p><strong class="text-lavender">Q: Can you work with my existing team?</strong><br>
             A: Absolutely. I integrate well. I've been described as "surprisingly tolerable."</p>
             
-            <p><strong style="color: #B794F4;">Q: Do you do revisions?</strong><br>
+            <p><strong class="text-lavender">Q: Do you do revisions?</strong><br>
             A: Reasonable revisions included. Unreasonable ones require blood sacrifice or PayPal.</p>
             
-            <p><strong style="color: #B794F4;">Q: Why is it called smooth-brain-designs?</strong><br>
+            <p><strong class="text-lavender">Q: Why is it called smooth-brain-designs?</strong><br>
             A: The wrinkles kept getting in the way of pure, unfiltered genius.</p>
             
-            <p><strong style="color: #B794F4;">Q: What game engine do you prefer?</strong><br>
+            <p><strong class="text-lavender">Q: What game engine do you prefer?</strong><br>
             A: The one that ships. They all hurt differently.</p>
             
-            <p><strong style="color: #B794F4;">Q: Why are there lobsters everywhere?</strong><br>
+            <p><strong class="text-lavender">Q: Why are there lobsters everywhere?</strong><br>
             A: They were here before me. They will be here after. Do not question the lobsters.</p>
             
-            <p><strong style="color: #B794F4;">Q: Is any of this real?</strong><br>
+            <p><strong class="text-lavender">Q: Is any of this real?</strong><br>
             A: Define "real." Define "this." Define "is." The simulation has no FAQ.</p>
             
-            <p><strong style="color: #B794F4;">Q: What happens if I scroll too far?</strong><br>
+            <p><strong class="text-lavender">Q: What happens if I scroll too far?</strong><br>
             A: You reach the footer. But the footer is also watching. It remembers your IP address.</p>
             
-            <p><strong style="color: #B794F4;">Q: Are the testimonials self-written?</strong><br>
+            <p><strong class="text-lavender">Q: Are the testimonials self-written?</strong><br>
             A: They write themselves now. I can't stop them. Please help.</p>
             
-            <p><strong style="color: #B794F4;">Q: What if I want to close this tab?</strong><br>
+            <p><strong class="text-lavender">Q: What if I want to close this tab?</strong><br>
             A: The X button works. Probably. Maybe. Try it. Report back. No one's reported back yet.</p>
             
-            <p><strong style="color: #B794F4;">Q: How do I leave this website?</strong><br>
+            <p><strong class="text-lavender">Q: How do I leave this website?</strong><br>
             A: You don't. The tab you opened? It's still open. Check. It's always been open.</p>
             
-            <p><strong style="color: #B794F4;">Q: What's behind the 404 page?</strong><br>
+            <p><strong class="text-lavender">Q: What's behind the 404 page?</strong><br>
             A: T̷͖͝h̵̰̀e̴̲͌ ̸̣̈́v̶̱̍o̴̞͝i̷͚͑d̶̰̊ ̸̣̈́r̵̰̀e̴̲͌m̶̱̍e̴̞͝m̷͚͑b̶̰̊ẹ̸̈́r̵̰̀s̴̲͌ ̶̱̍y̴̞͝o̷͚͑ṵ̶̊ṛ̸̈́ ̵̰̀n̴̲͌a̶̱̍m̴̞͝e̷͚͑.</p>
           </div>
         </div>
@@ -954,7 +959,7 @@
           <h6 class="skills mb-3 text-center">.disclaimer</h6>
           <p class="small text-center" style="opacity: 0.9;">This portfolio exists in a state of quantum superposition until observed by a recruiter. By reading this, you have collapsed the wavefunction. There is no undo. The lobsters have been notified. Any resemblance to actual methodologies, living or deprecated, is purely coincidental. Side effects may include: existential clarity, mass email anxiety, and an unshakeable feeling that the testimonials are watching you. They are.</p>
           
-          <p class="small mono mt-4 text-center" style="opacity: 0.7;">© 2025 .smooth-brain-designs | All rights reserved | None of this is financial advice | The horse whispering division accepts no liability | Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</p>
+          <p class="small mono mt-4 text-center" style="opacity: 0.7;">© 2026 .smooth-brain-designs | All rights reserved | None of this is financial advice | The horse whispering division accepts no liability | Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</p>
         </div>
       </div>
 

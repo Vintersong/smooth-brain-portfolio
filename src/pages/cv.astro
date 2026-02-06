@@ -1,4 +1,5 @@
 ---
+import CVName  from '../components/CVName.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CVNav from '../components/CVNav.astro';
 import CVEntry from '../components/CVEntry.astro';
@@ -63,10 +64,11 @@ const fakeCertifications = [
   <CVNav />
 
   <main>
-    <section id="cv" class="py-5" style="background-color:#0A192F; min-height: 100vh; padding-top: 5rem !important;">
+    <section id="cv" class="py-5" style="min-height: 100vh; padding-top: 5rem !important;">
       <div class="container">
+        <CVName />
         <h1 class="andrei-moldovean mb-4">.cv</h1>
-        <p class="mono mb-5" style="color: #B794F4; opacity: 0.7;">// hover skills for context</p>
+        <p class="mono mb-5 text-lavender" style="opacity: 0.7;">// hover skills for context</p>
 
         <div class="row">
           <!-- LEFT COLUMN: Experience & Education -->
@@ -103,7 +105,7 @@ const fakeCertifications = [
             {fakeCertifications.map(cert => (
               <div class="cv-entry mb-3">
                 <h6 class="project-name">{cert.title}</h6>
-                <p class="mono small" style="color: rgba(255, 46, 46, 0.6);">{cert.note}</p>
+                <p class="mono small text-lavender" style="opacity: 0.6;">{cert.note}</p>
               </div>
             ))}
           </div>
@@ -112,32 +114,32 @@ const fakeCertifications = [
           <div class="col-lg-6">
             <h3 class="skills mb-4">.skills</h3>
             
-            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.programming</h6>
+            <h6 class="mono mt-4 mb-3 text-accent">.programming</h6>
             <div class="skill-grid">
               {programmingSkills.map(skill => <SkillTag {...skill} />)}
             </div>
 
-            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.engines</h6>
+            <h6 class="mono mt-4 mb-3 text-accent">.engines</h6>
             <div class="skill-grid">
               {engineSkills.map(skill => <SkillTag {...skill} />)}
             </div>
 
-            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.design-tools</h6>
+            <h6 class="mono mt-4 mb-3 text-accent">.design-tools</h6>
             <div class="skill-grid">
               {designTools.map(skill => <SkillTag {...skill} />)}
             </div>
 
-            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.research-&-data</h6>
+            <h6 class="mono mt-4 mb-3 text-accent">.research-&-data</h6>
             <div class="skill-grid">
               {researchSkills.map(skill => <SkillTag {...skill} />)}
             </div>
 
-            <h6 class="mono mt-4 mb-3" style="color: #00FFFF;">.workflow</h6>
+            <h6 class="mono mt-4 mb-3 text-accent">.workflow</h6>
             <div class="skill-grid">
               {workflowSkills.map(skill => <SkillTag {...skill} />)}
             </div>
 
-            <h6 class="mono mt-4 mb-3" style="color: rgba(255, 46, 46, 0.6);">.bonus</h6>
+            <h6 class="mono mt-4 mb-3 text-lavender" style="opacity: 0.6;">.bonus</h6>
             <div class="skill-grid">
               {bonusSkills.map(skill => <SkillTag {...skill} isJoke={true} />)}
             </div>
