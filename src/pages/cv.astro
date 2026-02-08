@@ -6,49 +6,93 @@ import CVEntry from '../components/CVEntry.astro';
 import SkillTag from '../components/SkillTag.astro';
 import CVFooter from '../components/CVFooter.astro';
 
+// Professional Summary
+const professionalSummary = "Systems designer and technical generalist. I like understanding how things work, engines, tools, workflows, people and finding the overlap between creative and technical problems. Background in game design, mixed-methods research, UX, and prototyping across multiple platforms. Currently exploring AI-augmented development.";
+
 // Skills data - extracted for cleaner template
 const programmingSkills = [
-  { name: "Lua", project: "RGB Bullet Hell", description: "Core game logic, state machines, collision systems" },
-  { name: "Python", project: "Data Analysis, NOVA Framework", description: "FastAPI backends, pandas pipelines, automation scripts" },
-  { name: "C#", project: "Unity Prototypes", description: "Gameplay systems, editor tools" },
-  { name: "JavaScript", project: "This Portfolio", description: "DOM manipulation, Bootstrap interactivity" },
-  { name: "HTML/CSS", project: "All Web Projects", description: "Responsive layouts, custom animations" },
-  { name: "SQL", project: "Data Visualizer", description: "Query optimization, schema design" },
-  { name: "C", project: "Low-level Experiments", description: "Memory management, performance profiling" },
+  { name: "Lua", project: "Programming", description: "Gameplay scripting and rapid iteration" },
+  { name: "HTML/CSS", project: "Web", description: "Semantic markup and responsive layout" },
+  { name: "Python", project: "Programming", description: "Data pipelines and tooling" },
+  { name: "C", project: "Programming", description: "Low-level fundamentals" },
+  { name: "C++", project: "Programming", description: "Performance-oriented systems" },
+  { name: "C#", project: "Programming", description: "Unity tooling and gameplay code" },
+  { name: "JavaScript", project: "Web", description: "Interactive UI behavior" },
+  { name: "SQL", project: "Data", description: "Queries and data shaping" },
 ];
 
 const engineSkills = [
-  { name: "Love2D", project: "RGB Bullet Hell", description: "2D framework, audio FFT, particle systems" },
-  { name: "Unity", project: "University Projects", description: "3D prototypes, multiplayer experiments" },
-  { name: "Unreal Engine 5", project: "Grandma Souls Concept", description: "Blueprints, Niagara VFX" },
-  { name: "Godot", project: "LinkedIn Survival Horror", description: "GDScript, procedural generation" },
-  { name: "GameMaker", project: "Jam Projects", description: "Rapid prototyping" },
+  { name: "Unreal Engine 5", project: "Game Engines", description: "Prototyping and systems exploration" },
+  { name: "Love2D", project: "Game Engines", description: "2D systems and audio-driven gameplay" },
+  { name: "Unity", project: "Game Engines", description: "Gameplay prototypes and UI" },
+];
+
+const engineTestedSkills = [
+  { name: "Godot", project: "Engines Tested", description: "Rapid prototyping" },
+  { name: "Raylib", project: "Engines Tested", description: "C-based graphics experiments" },
+  { name: "GameMaker", project: "Engines Tested", description: "Jam-scale prototypes" },
+  { name: "Defold", project: "Engines Tested", description: "2D engine exploration" },
+  { name: "SGDK", project: "Engines Tested", description: "Retro pipeline experimentation" },
+  { name: "MonoGame", project: "Engines Tested", description: "Framework experimentation" },
+  { name: "Flax", project: "Engines Tested", description: "Engine evaluation" },
+  { name: "LOVR", project: "Engines Tested", description: "VR-focused prototypes" },
 ];
 
 const designTools = [
-  { name: "Photoshop", project: "All Visual Assets", description: "Texture work, UI mockups, sprites" },
-  { name: "Illustrator", project: "Portfolio, Branding", description: "Vector graphics, icons" },
-  { name: "Blender", project: "3D Assets", description: "Low-poly modeling, basic rigging" },
-  { name: "Figma", project: "UX Scratcher", description: "Wireframes, interactive prototypes" },
+  { name: "Photoshop", project: "Design Tools", description: "Image editing and compositing" },
+  { name: "Illustrator", project: "Design Tools", description: "Vector design" },
+  { name: "Blender", project: "Design Tools", description: "3D modeling" },
+  { name: "Figma", project: "Design Tools", description: "UI prototyping" },
+  { name: "InDesign", project: "Design Tools", description: "Layout and print design" },
+  { name: "Affinity Designer", project: "Design Tools", description: "Vector illustration" },
+  { name: "Substance Painter", project: "Design Tools", description: "PBR texturing" },
+  { name: "Substance Designer", project: "Design Tools", description: "Material authoring" },
+  { name: "Aseprite", project: "Design Tools", description: "Pixel art" },
+  { name: "After Effects", project: "Design Tools", description: "Motion design" },
 ];
 
 const researchSkills = [
-  { name: "nVivo", project: "MA Thesis Work", description: "Interview coding, thematic analysis" },
-  { name: "Excel / Power BI", project: "Data Visualizer", description: "Dashboards, pivot tables, macros" },
-  { name: "Mixed Methods", project: "Academic Research", description: "Surveys + interviews + observation" },
+  { name: "nVivo", project: "Research & Data", description: "Qualitative analysis" },
+  { name: "Excel / Power BI", project: "Research & Data", description: "Data analysis and dashboards" },
+  { name: "A/B Testing", project: "Research & Data", description: "Experiment design" },
+  { name: "Mixed Methods", project: "Research & Data", description: "Quant + qual synthesis" },
+  { name: "Qualitative Coding", project: "Research & Data", description: "Thematic analysis" },
+  { name: "Transmedia Analysis", project: "Research & Data", description: "Cross-platform narrative study" },
+];
+
+const webFrameworkSkills = [
+  { name: "Bootstrap", project: "Web & Frameworks", description: "Responsive UI" },
+  { name: "Astro", project: "Web & Frameworks", description: "Static-first architecture" },
+  { name: "React (learning)", project: "Web & Frameworks", description: "Component-driven UI" },
+  { name: "Three.js (learning)", project: "Web & Frameworks", description: "WebGL experiments" },
+  { name: "Vite", project: "Web & Frameworks", description: "Modern tooling" },
+  { name: "FastAPI", project: "Web & Frameworks", description: "Python APIs" },
 ];
 
 const workflowSkills = [
-  { name: "Git", project: "All Projects", description: "Version control, branching, collaboration" },
-  { name: "JIRA", project: "Team Projects", description: "Sprint planning, backlog grooming" },
-  { name: "FastAPI", project: "NOVA Framework", description: "REST endpoints, async operations" },
+  { name: "Git", project: "Workflow & Tools", description: "Version control" },
+  { name: "JIRA", project: "Workflow & Tools", description: "Task tracking" },
+  { name: "Atlassian Tools", project: "Workflow & Tools", description: "Team coordination" },
+  { name: "Microsoft Office", project: "Workflow & Tools", description: "Docs and analysis" },
+  { name: "Technical Documentation", project: "Workflow & Tools", description: "Clear process writing" },
+];
+
+const professionalSkills = [
+  { name: "Remote Support", project: "Professional Skills", description: "Client-facing troubleshooting" },
+  { name: "Project Management", project: "Professional Skills", description: "Planning and delivery" },
+  { name: "Problem Solving", project: "Professional Skills", description: "Analytical reasoning" },
+  { name: "Systems Thinking", project: "Professional Skills", description: "Holistic design approach" },
+  { name: "AI-Augmented Workflows", project: "Professional Skills", description: "Tool-assisted development" },
+  { name: "Context Engineering", project: "Professional Skills", description: "Prompting and system framing" },
 ];
 
 const bonusSkills = [
-  { name: "Salt Farming", project: "League of Legends", description: "2000+ hours of emotional damage", isJoke: true },
-  { name: "Pro Googling", project: "Every Debug Session", description: "Stack Overflow archaeology", isJoke: true },
-  { name: "Crying in Jira", project: "Sprint Reviews", description: "Therapeutic ticket closure", isJoke: true },
-  { name: "MS Paint (expert)", project: "Placeholder Art", description: "Rectangles with soul", isJoke: true },
+  { name: "Salt Farming", project: "Bonus Skills", description: "2000+ hours of emotional damage", isJoke: true },
+  { name: "Pro Googling", project: "Bonus Skills", description: "Stack Overflow archaeology", isJoke: true },
+  { name: "Crying in Jira", project: "Bonus Skills", description: "Therapeutic ticket closure", isJoke: true },
+  { name: "MS Paint (expert)", project: "Bonus Skills", description: "Rectangles with soul", isJoke: true },
+  { name: "Balcony Renovation", project: "Bonus Skills", description: "Recurring client base", isJoke: true },
+  { name: "Lobster Communication", project: "Bonus Skills", description: "Non-verbal", isJoke: true },
 ];
 
 const fakeCertifications = [
@@ -57,6 +101,7 @@ const fakeCertifications = [
   { title: ".horseshoe-bending", note: "(correspondence course)" },
   { title: ".lobster-whispering", note: "(field experience)" },
   { title: ".linkedin-influencer-bootcamp", note: "(dropped out)" },
+  { title: ".engine-archaeology", note: "(some engines survived)" },
 ];
 ---
 
@@ -68,46 +113,118 @@ const fakeCertifications = [
       <div class="container">
         <CVName />
         <h1 class="andrei-moldovean mb-4">.cv</h1>
+        <p class="mono mb-3 text-lavender" style="font-size: 0.95rem; line-height: 1.6;">{professionalSummary}</p>
         <p class="mono mb-5 text-lavender" style="opacity: 0.7;">// hover skills for context</p>
-
         <div class="row">
           <!-- LEFT COLUMN: Experience & Education -->
           <div class="col-lg-6 mb-5">
-            <h3 class="skills mb-4">.experience</h3>
+            <h3 class="skills mb-4">.personal-projects</h3>
             
             <CVEntry 
-              title=".game-designer"
-              subtitle="Freelance / Personal Projects • 2022–Present"
+              title=".rgb-bullet-hell"
+              subtitle="LÖVE2D / Lua • 2025 - Present"
               items={[
-                "RGB bullet-hell with color theory mechanics",
-                "Systems design, balancing, prototyping",
-                "Playtest coordination and iteration"
+                "Top-down bullet-hell survivor with RGB color theory mechanics, 8 optical physics-themed artifacts, and 24 synergy combinations",
+                "Skills: Lua, LÖVE2D, Game Design, Systems Architecture, Audio Programming"
               ]}
             />
 
             <CVEntry 
-              title=".front-end-developer"
-              subtitle="Freelance • 2018–2022"
+              title=".nova-cognition-framework"
+              subtitle="Python / FastAPI • 2025 - Present"
               items={[
-                "Responsive sites, dashboards, landing pages",
-                "Bootstrap, vanilla JS, basic React"
+                "Self-organizing LLM memory framework with semantic retrieval, automated taxonomy, and citation validation",
+                "Skills: Python, FastAPI, API Integration, AI/LLM Architecture, RAG Systems"
+              ]}
+            />
+
+            <CVEntry 
+              title=".game-designer-&-technical-artist"
+              subtitle="Freelance • 2022 - Present"
+              items={[
+                "Systems design, balancing, prototyping, and playtesting coordination",
+                "AI-augmented development workflows across multiple platforms"
+              ]}
+            />
+
+            <h3 class="skills mb-4 mt-5">.professional-experience</h3>
+
+            <CVEntry 
+              title=".freelance-renovation-&-construction"
+              subtitle="Gotland, Sweden • 2015 - 2017"
+              items={[
+                "Independent renovation projects: carpentry, drywalling, plastering, electrical work",
+                "Client communication, budgeting, and project delivery"
+              ]}
+            />
+
+            <CVEntry 
+              title=".farm-hand-&-groundskeeper"
+              subtitle="Nickarve Gård / Gotlandsfilter, Gotland, Sweden • 2014 - 2015"
+              items={[
+                "Cultivation, maintenance, equipment upkeep, and seasonal farm tasks",
+                "Skills: Attention to Detail, Manual Dexterity, Physical Work Ethic, Knowing Which End of a Hoe is the Handle"
+              ]}
+            />
+
+            <CVEntry 
+              title=".level-1-tech-support"
+              subtitle="VoiceMailTel, Târgu-Mureș • 2010"
+              items={[
+                "Remote troubleshooting, documentation, and customer support"
+              ]}
+            />
+
+            <CVEntry 
+              title=".graphic-designer"
+              subtitle="Editura Edu, Târgu-Mureș • 2008 - 2009"
+              items={[
+                "Visual assets and UX for educational materials using Adobe Creative Suite",
+                "Flash-based animations and interactive educational content"
               ]}
             />
 
             <h3 class="skills mb-4 mt-5">.education</h3>
             
-            <CVEntry title=".ma-digital-media-game-studies" subtitle="Babeș-Bolyai University • 2025–Present" />
-            <CVEntry title=".ba-game-design" subtitle="Uppsala University, Campus Gotland • 2022–2025" />
-            <CVEntry title=".political-science-studies" subtitle="Babeș-Bolyai University • 2020–2022" />
-            <CVEntry title=".front-end-certificate" subtitle="2018" />
+            <CVEntry
+              title=".ma-digital-media-&-game-studies"
+              subtitle="Babeș-Bolyai University, Cluj-Napoca • 2025 - Present (Expected 2027)" />
+            
+            <CVEntry 
+              title=".ba-game-design" 
+              subtitle="Uppsala University, Campus Gotland • 2022 - 2025"
+              items={[
+                "Coursework: UI/UX principles, player experience design, iterative design",
+                "Hands-on development: Unreal Engine, Unity, Raylib, Love2D",
+                "Experience in game balancing, QA testing, and gameplay analysis"
+              ]}
+            />
+            
+            <CVEntry 
+              title=".ba-political-science" 
+              subtitle="Babeș-Bolyai University, Cluj-Napoca • 2020 - 2022 (On hiatus)"
+              items={[
+                "Focus on research methodologies, qualitative analysis, data interpretation"
+              ]}
+            />
+            
+            <CVEntry
+              title=".vocational-high-school"
+              subtitle="Vuxenutbildning Gotland, Sweden • 2018 - 2020 (Natural Sciences)" />
 
-            <h3 class="skills mb-4 mt-5">.certifications</h3>
-            {fakeCertifications.map(cert => (
-              <div class="cv-entry mb-3">
-                <h6 class="project-name">{cert.title}</h6>
-                <p class="mono small text-lavender" style="opacity: 0.6;">{cert.note}</p>
-              </div>
-            ))}
+            <h3 class="skills mb-4 mt-5">.languages</h3>
+            <div class="cv-entry mb-3">
+              <p class="mono small">
+                <span class="text-accent">Romanian:</span> Native</p>
+            </div>
+            <div class="cv-entry mb-3">
+              <p class="mono small">
+                <span class="text-accent">English:</span> Advanced (C1)</p>
+            </div>
+            <div class="cv-entry">
+              <p class="mono small">
+                <span class="text-accent">Swedish:</span> Intermediate</p>
+            </div>
           </div>
 
           <!-- RIGHT COLUMN: Skills -->
@@ -119,9 +236,14 @@ const fakeCertifications = [
               {programmingSkills.map(skill => <SkillTag {...skill} />)}
             </div>
 
-            <h6 class="mono mt-4 mb-3 text-accent">.engines</h6>
+            <h6 class="mono mt-4 mb-3 text-accent">.game-engines</h6>
             <div class="skill-grid">
               {engineSkills.map(skill => <SkillTag {...skill} />)}
+            </div>
+
+            <h6 class="mono mt-4 mb-3 text-accent">.game-engines-tested</h6>
+            <div class="skill-grid">
+              {engineTestedSkills.map(skill => <SkillTag {...skill} />)}
             </div>
 
             <h6 class="mono mt-4 mb-3 text-accent">.design-tools</h6>
@@ -134,15 +256,33 @@ const fakeCertifications = [
               {researchSkills.map(skill => <SkillTag {...skill} />)}
             </div>
 
-            <h6 class="mono mt-4 mb-3 text-accent">.workflow</h6>
+            <h6 class="mono mt-4 mb-3 text-accent">.web-&-frameworks</h6>
+            <div class="skill-grid">
+              {webFrameworkSkills.map(skill => <SkillTag {...skill} />)}
+            </div>
+
+            <h6 class="mono mt-4 mb-3 text-accent">.workflow-&-tools</h6>
             <div class="skill-grid">
               {workflowSkills.map(skill => <SkillTag {...skill} />)}
             </div>
 
-            <h6 class="mono mt-4 mb-3 text-lavender" style="opacity: 0.6;">.bonus</h6>
+            <h6 class="mono mt-4 mb-3 text-accent">.professional-skills</h6>
+            <div class="skill-grid">
+              {professionalSkills.map(skill => <SkillTag {...skill} />)}
+            </div>
+
+            <h6 class="mono mt-4 mb-3 text-lavender" style="opacity: 0.6;">.bonus-skills</h6>
             <div class="skill-grid">
               {bonusSkills.map(skill => <SkillTag {...skill} isJoke={true} />)}
             </div>
+
+            <h3 class="skills mb-4 mt-5">.certifications</h3>
+            {fakeCertifications.map(cert => (
+              <div class="cv-entry mb-3">
+                <h6 class="project-name">{cert.title}</h6>
+                <p class="mono small text-lavender" style="opacity: 0.6;">{cert.note}</p>
+              </div>
+            ))}
           </div>
         </div>
 
