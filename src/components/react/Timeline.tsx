@@ -106,17 +106,20 @@ const TimelineCard = ({
 
   const card = (
     <div
-      className={`rounded-lg border backdrop-blur-sm p-5 transition-all duration-300 cursor-pointer ${cfg.border} ${cfg.glow}`}
+      className={`rounded-lg border-2 backdrop-blur-sm p-5 transition-all duration-300 cursor-pointer ${cfg.border} ${cfg.glow}`}
       style={{
-        backgroundColor: 'rgba(26, 20, 40, 0.6)',
-        borderColor: milestone.category === 'nova' ? 'rgba(126, 232, 204, 0.5)' :
-                     milestone.category === 'research' ? 'rgba(212, 180, 240, 0.5)' :
-                     milestone.category === 'industry' ? 'rgba(240, 144, 159, 0.5)' :
-                     'rgba(240, 168, 196, 0.5)',
-        boxShadow: milestone.category === 'nova' ? '0 0 20px rgba(126, 232, 204, 0.15)' :
-                   milestone.category === 'research' ? '0 0 20px rgba(212, 180, 240, 0.15)' :
-                   milestone.category === 'industry' ? '0 0 20px rgba(240, 144, 159, 0.15)' :
-                   '0 0 20px rgba(240, 168, 196, 0.15)'
+        backgroundColor: milestone.category === 'nova' ? 'rgba(126, 232, 204, 0.08)' :
+                        milestone.category === 'research' ? 'rgba(212, 180, 240, 0.08)' :
+                        milestone.category === 'industry' ? 'rgba(240, 144, 159, 0.08)' :
+                        'rgba(240, 168, 196, 0.08)',
+        borderColor: milestone.category === 'nova' ? '#7ee8cc' :
+                     milestone.category === 'research' ? '#d4b4f0' :
+                     milestone.category === 'industry' ? '#f0909f' :
+                     '#f0a8c4',
+        boxShadow: milestone.category === 'nova' ? '0 0 24px rgba(126, 232, 204, 0.3), inset 0 0 30px rgba(126, 232, 204, 0.05)' :
+                   milestone.category === 'research' ? '0 0 24px rgba(212, 180, 240, 0.3), inset 0 0 30px rgba(212, 180, 240, 0.05)' :
+                   milestone.category === 'industry' ? '0 0 24px rgba(240, 144, 159, 0.3), inset 0 0 30px rgba(240, 144, 159, 0.05)' :
+                   '0 0 24px rgba(240, 168, 196, 0.3), inset 0 0 30px rgba(240, 168, 196, 0.05)'
       }}
       onClick={() => hasDetails && setExpanded(!expanded)}
     >
