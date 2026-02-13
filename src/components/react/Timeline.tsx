@@ -275,13 +275,13 @@ const SectionHeader = ({ title }: { title: string }) => {
   return (
     <div
       ref={ref}
-      className="opacity-0 transition-opacity duration-700 col-span-full flex items-center gap-4 py-8 md:py-12"
+      className="opacity-0 transition-opacity duration-700 col-span-full flex items-center gap-4 py-8 md:py-12 overflow-hidden max-w-full"
     >
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <h2 className="text-xs sm:text-sm md:text-base font-mono tracking-wide sm:tracking-widest uppercase text-white/30 text-center">
+      <div className="hidden sm:block h-px flex-1 min-w-8 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <h2 className="text-xs sm:text-sm md:text-base font-mono tracking-normal sm:tracking-wide md:tracking-widest uppercase text-white/30 text-center whitespace-normal min-w-0 shrink">
         {title}
       </h2>
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="hidden sm:block h-px flex-1 min-w-8 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
     </div>
   );
 };
