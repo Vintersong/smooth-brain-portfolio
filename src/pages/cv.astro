@@ -1,10 +1,10 @@
 ---
-import CVName  from '../components/CVName.astro';
+import CVName  from '../components/astro/CVName.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CVNav from '../components/CVNav.astro';
-import CVEntry from '../components/CVEntry.astro';
-import SkillTag from '../components/SkillTag.astro';
-import CVFooter from '../components/CVFooter.astro';
+import CVNav from '../components/astro/CVNav.astro';
+import CVEntry from '../components/astro/CVEntry.astro';
+import SkillTag from '../components/astro/SkillTag.astro';
+import CVFooter from '../components/astro/CVFooter.astro';
 
 // Professional Summary
 const professionalSummary = "Systems designer and technical generalist. I like understanding how things work, engines, tools, workflows, people and finding the overlap between creative and technical problems. Background in game design, mixed-methods research, UX, and prototyping across multiple platforms. Currently exploring AI-augmented development.";
@@ -132,6 +132,7 @@ const fakeCertifications = [
             <CVEntry 
               title=".nova-cognition-framework"
               subtitle="Python / FastAPI • 2025 - Present"
+              link="/timeline"
               items={[
                 "Self-organizing LLM memory framework with semantic retrieval, automated taxonomy, and citation validation",
                 "Skills: Python, FastAPI, API Integration, AI/LLM Architecture, RAG Systems"

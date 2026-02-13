@@ -3,13 +3,20 @@ interface Props {
   title: string;
   subtitle: string;
   items?: string[];
+  link?: string;
 }
 
-const { title, subtitle, items = [] } = Astro.props;
+const { title, subtitle, items = [], link } = Astro.props;
 ---
 
 <div class="cv-entry mb-4">
-  <h5 class="project-name">{title}</h5>
+  {link ? (
+    <a href={link} class="project-name-link">
+      <h5 class="project-name">{title}</h5>
+    </a>
+  ) : (
+    <h5 class="project-name">{title}</h5>
+  )}
   <p class="mono small subtitle">{subtitle}</p>
   {items.length > 0 && (
     <ul class="bahnschrift small">
