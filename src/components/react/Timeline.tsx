@@ -278,7 +278,7 @@ const SectionHeader = ({ title }: { title: string }) => {
       className="opacity-0 transition-opacity duration-700 col-span-full flex items-center gap-4 py-8 md:py-12"
     >
       <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <h2 className="text-xs sm:text-sm md:text-base font-mono tracking-widest uppercase text-white/30 text-center shrink-0">
+      <h2 className="text-xs sm:text-sm md:text-base font-mono tracking-wide sm:tracking-widest uppercase text-white/30 text-center">
         {title}
       </h2>
       <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
