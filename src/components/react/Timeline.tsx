@@ -6,38 +6,36 @@ import {
   type MilestoneLink,
 } from "../../data/milestones";
 
-/* ── Category styling ── */
-const categoryConfig: Record<
-  Milestone["category"],
-  { label: string; border: string; glow: string; badge: string }
-> = {
-  nova: {
-    label: "NOVA",
-    border: "hover:border-opacity-90",
-    glow: "shadow-lg",
-    badge: "ring-1",
-  },
-  research: {
-    label: "Research",
-    border: "hover:border-opacity-90",
-    glow: "shadow-lg",
-    badge: "ring-1",
-  },
-  industry: {
-    label: "Industry",
-    border: "hover:border-opacity-90",
-    glow: "shadow-lg",
-    badge: "ring-1",
-  },
-  convergence: {
-    label: "Convergence",
-    border: "hover:border-opacity-90",
-    glow: "shadow-lg",
-    badge: "ring-1",
-  },
+/* ── Category configuration ── */
+const categoryConfig: Record<Milestone["category"], { label: string }> = {
+  nova: { label: "NOVA" },
+  research: { label: "Research" },
+  industry: { label: "Industry" },
+  convergence: { label: "Convergence" },
 };
 
-/* ── Dot colour per category (using main page colors) ── */
+/* ── Color mapping helper ── */
+const getCategoryColor = (category: Milestone["category"]): string => {
+  const colors = {
+    nova: '#7ee8cc',
+    research: '#d4b4f0',
+    industry: '#f0909f',
+    convergence: '#f0a8c4'
+  };
+  return colors[category];
+};
+
+const getCategoryColorRgba = (category: Milestone["category"], opacity: number): string => {
+  const rgbaMap = {
+    nova: `rgba(126, 232, 204, ${opacity})`,
+    research: `rgba(212, 180, 240, ${opacity})`,
+    industry: `rgba(240, 144, 159, ${opacity})`,
+    convergence: `rgba(240, 168, 196, ${opacity})`
+  };
+  return rgbaMap[category];
+};
+
+/* ── Dot colour per category ── */
 const dotColor: Record<Milestone["category"], string> = {
   nova: "border-[#7ee8cc] shadow-[0_0_16px_rgba(126,232,204,0.6)]",
   research: "border-[#d4b4f0] shadow-[0_0_16px_rgba(212,180,240,0.6)]",
@@ -50,17 +48,15 @@ const FilterChip = ({
   label,
   active,
   onClick,
-  className,
 }: {
   label: string;
   active: boolean;
   onClick: () => void;
-  className: string;
 }) => (
   <button
     onClick={onClick}
     className={`px-3 py-1 text-xs font-mono rounded-full ring-1 transition-all duration-200 cursor-pointer ${
-      active ? className + " opacity-100" : "opacity-60 ring-white/20 hover:opacity-80"
+      active ? "opacity-100" : "opacity-60 ring-white/20 hover:opacity-80"
     }`}
     style={!active ? { color: 'rgba(237, 230, 245, 0.6)' } : {}}
   >
@@ -71,11 +67,9 @@ const FilterChip = ({
 /* ── Single timeline card ── */
 const TimelineCard = ({
   milestone,
-  index,
   isEven,
 }: {
   milestone: Milestone;
-  index: number;
   isEven: boolean;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -106,41 +100,19 @@ const TimelineCard = ({
 
   const card = (
     <div
-      className={`rounded-lg border-2 backdrop-blur-sm p-5 transition-all duration-300 cursor-pointer ${cfg.border} ${cfg.glow}`}
+      className="rounded-lg border-2 backdrop-blur-sm p-5 transition-all duration-300 cursor-pointer hover:border-opacity-90 shadow-lg"
       style={{
-        backgroundColor: milestone.category === 'nova' ? 'rgba(126, 232, 204, 0.08)' :
-                        milestone.category === 'research' ? 'rgba(212, 180, 240, 0.08)' :
-                        milestone.category === 'industry' ? 'rgba(240, 144, 159, 0.08)' :
-                        'rgba(240, 168, 196, 0.08)',
-        borderColor: milestone.category === 'nova' ? '#7ee8cc' :
-                     milestone.category === 'research' ? '#d4b4f0' :
-                     milestone.category === 'industry' ? '#f0909f' :
-                     '#f0a8c4',
-        boxShadow: milestone.category === 'nova' ? '0 0 24px rgba(126, 232, 204, 0.3), inset 0 0 30px rgba(126, 232, 204, 0.05)' :
-                   milestone.category === 'research' ? '0 0 24px rgba(212, 180, 240, 0.3), inset 0 0 30px rgba(212, 180, 240, 0.05)' :
-                   milestone.category === 'industry' ? '0 0 24px rgba(240, 144, 159, 0.3), inset 0 0 30px rgba(240, 144, 159, 0.05)' :
-                   '0 0 24px rgba(240, 168, 196, 0.3), inset 0 0 30px rgba(240, 168, 196, 0.05)'
+        backgroundColor: getCategoryColorRgba(milestone.category, 0.08),
+        borderColor: getCategoryColor(milestone.category),
+        boxShadow: `0 0 24px ${getCategoryColorRgba(milestone.category, 0.3)}, inset 0 0 30px ${getCategoryColorRgba(milestone.category, 0.05)}`
       }}
       onClick={() => hasDetails && setExpanded(!expanded)}
     >
       {/* Badge row */}
       <div className="flex items-center gap-2 mb-2 flex-wrap">
         <span
-          className={`text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full ${cfg.badge}`}
-          style={{
-            backgroundColor: milestone.category === 'nova' ? 'rgba(126, 232, 204, 0.2)' :
-                           milestone.category === 'research' ? 'rgba(212, 180, 240, 0.2)' :
-                           milestone.category === 'industry' ? 'rgba(240, 144, 159, 0.2)' :
-                           'rgba(240, 168, 196, 0.2)',
-            color: milestone.category === 'nova' ? '#7ee8cc' :
-                   milestone.category === 'research' ? '#d4b4f0' :
-                   milestone.category === 'industry' ? '#f0909f' :
-                   '#f0a8c4',
-            borderColor: milestone.category === 'nova' ? 'rgba(126, 232, 204, 0.4)' :
-                        milestone.category === 'research' ? 'rgba(212, 180, 240, 0.4)' :
-                        milestone.category === 'industry' ? 'rgba(240, 144, 159, 0.4)' :
-                        'rgba(240, 168, 196, 0.4)'
-          }}
+          className="text-sm font-mono uppercase tracking-widest font-semibold"
+          style={{ color: getCategoryColor(milestone.category) }}
         >
           {cfg.label}
         </span>
@@ -392,7 +364,6 @@ const Timeline = () => {
             label={cfg.label}
             active={activeFilters.has(key)}
             onClick={() => toggleFilter(key)}
-            className={cfg.badge}
           />
         ))}
       </div>
@@ -412,7 +383,6 @@ const Timeline = () => {
               <TimelineCard
                 key={`${m.date}-${m.title}`}
                 milestone={m}
-                index={globalIdx}
                 isEven={globalIdx % 2 === 0}
               />
             );

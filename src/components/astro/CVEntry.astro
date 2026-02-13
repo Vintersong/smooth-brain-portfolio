@@ -7,20 +7,17 @@ interface Props {
 }
 
 const { title, subtitle, items = [], link } = Astro.props;
+const TitleTag = link ? 'a' : 'h5';
 ---
 
-<div class="cv-entry mb-4">
-  {link ? (
-    <a href={link} class="project-name-link">
-      <h5 class="project-name">{title}</h5>
-    </a>
-  ) : (
-    <h5 class="project-name">{title}</h5>
-  )}
+<article class="cv-entry mb-4">
+  <TitleTag href={link} class={link ? "project-name-link" : "project-name"}>
+    {link ? <h5 class="project-name">{title}</h5> : title}
+  </TitleTag>
   <p class="mono small subtitle">{subtitle}</p>
   {items.length > 0 && (
     <ul class="bahnschrift small">
       {items.map(item => <li>{item}</li>)}
     </ul>
   )}
-</div>
+</article>

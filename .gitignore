@@ -27,3 +27,4 @@ pnpm-debug.log*
 .venv-win/
 __pycache__/
 *.pyc
+CODE_REVIEW.md
