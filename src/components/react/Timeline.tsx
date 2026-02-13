@@ -206,7 +206,7 @@ const TimelineCard = ({
       >
         {isEven ? (
           <div className="space-y-1">
-            <span className="text-xs font-mono tracking-widest uppercase text-accent-foreground/50">
+            <span className="text-xs font-mono tracking-widest uppercase text-accent-foreground/50 hidden md:block">
               {milestone.date}
             </span>
           </div>
