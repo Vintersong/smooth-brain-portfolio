@@ -28,3 +28,4 @@ pnpm-debug.log*
 __pycache__/
 *.pyc
 CODE_REVIEW.md
+NOVA_TIMELINE_ALIGNMENT_REVIEW.md
