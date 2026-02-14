@@ -201,9 +201,32 @@ const TimelineCard = ({
       )}
 
       {hasDetails && (
-        <div className="mt-2 text-[10px] font-mono select-none" style={{ color: 'rgba(237, 230, 245, 0.4)' }}>
+        <button
+          className="mt-2 px-3 py-1.5 text-[10px] font-mono select-none rounded transition-all duration-200"
+          style={{
+            backgroundColor: getCategoryColor(milestone.category),
+            color: 'transparent',
+            WebkitTextStroke: '0.5px rgba(13, 10, 20, 0.8)',
+            border: 'none'
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+            setExpanded(!expanded);
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = getCategoryColorRgba(milestone.category, 0.5);
+            e.currentTarget.style.color = getCategoryColor(milestone.category);
+            e.currentTarget.style.WebkitTextStroke = '0px';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = getCategoryColor(milestone.category);
+            e.currentTarget.style.color = 'transparent';
+            e.currentTarget.style.WebkitTextStroke = '0.5px rgba(13, 10, 20, 0.8)';
+          }}
+          aria-label={expanded ? "Collapse details" : "Expand details"}
+        >
           {expanded ? "▲ collapse" : "▼ expand details"}
-        </div>
+        </button>
       )}
     </div>
   );
