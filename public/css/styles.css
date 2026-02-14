@@ -464,6 +464,23 @@ header h4.tagline {
   text-decoration: underline;
 }
 
+/* View buttons on cards - solid button style to match modal buttons */
+.btn-outline-pink.btn-view {
+  border: 2px solid var(--rose);
+  background: transparent;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn-outline-pink.btn-view:hover, .btn-outline-pink.btn-view:focus {
+  background: var(--rose);
+  color: var(--bg-dark);
+  border-color: var(--rose);
+  text-shadow: none;
+  text-decoration: none;
+}
+
 footer .link-light {
   font-family: var(--font-mono);
   color: var(--accent) !important;
