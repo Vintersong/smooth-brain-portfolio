@@ -27,5 +27,6 @@ pnpm-debug.log*
 .venv-win/
 __pycache__/
 *.pyc
+NOVA_TIMELINE_ALIGNMENT_REVIEW.md
 CODE_REVIEW.md
 NOVA_TIMELINE_ALIGNMENT_REVIEW.md
