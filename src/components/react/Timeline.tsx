@@ -223,6 +223,7 @@ const TimelineCard = ({
             e.currentTarget.style.color = 'transparent';
             e.currentTarget.style.WebkitTextStroke = '0.5px rgba(13, 10, 20, 0.8)';
           }}
+          aria-label={expanded ? "Collapse details" : "Expand details"}
         >
           {expanded ? "▲ collapse" : "▼ expand details"}
         </button>
