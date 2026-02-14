@@ -55,7 +55,7 @@ const FilterChip = ({
 }) => (
   <button
     onClick={onClick}
-    className={`px-3 py-1 text-xs font-mono rounded-full ring-1 transition-all duration-200 cursor-pointer ${
+    className={`px-3 py-1 text-xs font-mono rounded-lg ring-1 transition-all duration-200 cursor-pointer ${
       active ? "opacity-100" : "opacity-60 ring-white/20 hover:opacity-80"
     }`}
     style={!active ? { color: 'rgba(237, 230, 245, 0.6)' } : {}}
