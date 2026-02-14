@@ -48,17 +48,22 @@ const FilterChip = ({
   label,
   active,
   onClick,
+  category,
 }: {
   label: string;
   active: boolean;
   onClick: () => void;
+  category: Milestone["category"];
 }) => (
   <button
     onClick={onClick}
-    className={`px-3 py-1 text-xs font-mono rounded-lg ring-1 transition-all duration-200 cursor-pointer ${
-      active ? "opacity-100" : "opacity-60 ring-white/20 hover:opacity-80"
+    className={`px-3 py-1 text-xs font-mono rounded-lg transition-all duration-200 cursor-pointer ${
+      active ? "opacity-100" : "opacity-60 hover:opacity-80"
     }`}
-    style={!active ? { color: 'rgba(237, 230, 245, 0.6)' } : {}}
+    style={{
+      backgroundColor: active ? getCategoryColor(category) : getCategoryColorRgba(category, 0.3),
+      color: active ? 'rgba(13, 10, 20, 0.9)' : 'rgba(237, 230, 245, 0.7)',
+    }}
   >
     {label}
   </button>
@@ -387,6 +392,7 @@ const Timeline = () => {
             label={cfg.label}
             active={activeFilters.has(key)}
             onClick={() => toggleFilter(key)}
+            category={key}
           />
         ))}
       </div>
