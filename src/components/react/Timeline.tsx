@@ -393,9 +393,7 @@ const Timeline = () => {
       {/* Convergence summary at bottom */}
       <div className="mt-16 mb-8 text-center space-y-4">
         <div className="h-px w-48 mx-auto" style={{ background: 'linear-gradient(to right, transparent, rgba(126, 232, 204, 0.5), transparent)' }} />
-        <p className="text-xs font-mono uppercase tracking-[0.2em]" style={{ color: 'rgba(126, 232, 204, 0.8)', textShadow: '0 0 15px rgba(126, 232, 204, 0.3)' }}>
-          Independent Convergence Validated
-        </p>
+
         <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(237, 230, 245, 0.7)' }}>
           External, structured, modular memory with orchestration layers is the
           emerging architectural consensus for AI agent cognition.
