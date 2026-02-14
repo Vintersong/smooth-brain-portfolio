@@ -207,26 +207,28 @@ const TimelineCard = ({
 
       {hasDetails && (
         <button
-          className="mt-2 px-3 py-1.5 text-[10px] font-mono select-none rounded transition-all duration-200"
+          className="mt-2 px-3 py-1.5 text-[10px] font-mono select-none transition-all duration-200"
           style={{
-            backgroundColor: getCategoryColor(milestone.category),
-            color: 'transparent',
-            WebkitTextStroke: '0.5px rgba(13, 10, 20, 0.8)',
-            border: 'none'
+            backgroundColor: 'transparent',
+            color: '#f0909f',
+            border: 'none',
+            fontWeight: 700,
+            textDecoration: 'underline',
+            textUnderlineOffset: '4px'
           }}
           onClick={(e) => {
             e.stopPropagation();
             setExpanded(!expanded);
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = getCategoryColorRgba(milestone.category, 0.5);
-            e.currentTarget.style.color = getCategoryColor(milestone.category);
-            e.currentTarget.style.WebkitTextStroke = '0px';
+            e.currentTarget.style.color = '#f090b8';
+            e.currentTarget.style.textShadow = '0 0 12px rgba(212, 120, 156, 0.4)';
+            e.currentTarget.style.transform = 'translateY(-2px)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = getCategoryColor(milestone.category);
-            e.currentTarget.style.color = 'transparent';
-            e.currentTarget.style.WebkitTextStroke = '0.5px rgba(13, 10, 20, 0.8)';
+            e.currentTarget.style.color = '#f0909f';
+            e.currentTarget.style.textShadow = '';
+            e.currentTarget.style.transform = 'translateY(0)';
           }}
           aria-label={expanded ? "Collapse details" : "Expand details"}
         >
