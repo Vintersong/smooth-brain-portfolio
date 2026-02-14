@@ -3,7 +3,7 @@ import TimelineComponent from '../components/react/Timeline.tsx';
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,30 +13,8 @@ import TimelineComponent from '../components/react/Timeline.tsx';
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/styles.css">
   <style is:global>
-    /* CSS Variables for dark theme */
-    :root {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
-      --border: 217.2 32.6% 17.5%;
-      --accent-foreground: 142.1 76.2% 36.3%;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.5;
-    }
-
     @keyframes fade-in {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
@@ -46,18 +24,18 @@ import TimelineComponent from '../components/react/Timeline.tsx';
     }
   </style>
 </head>
-<body class="bg-background text-foreground">
+<body>
   <div class="min-h-screen">
     <!-- Hero -->
     <header class="flex flex-col items-center justify-center py-24 px-6 text-center max-w-3xl mx-auto">
-      <a href="/" class="text-xs font-mono tracking-widest uppercase text-white/20 hover:text-white/40 transition-colors mb-8">&larr; back</a>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
+      <a href="/" class="text-xs font-mono tracking-widest uppercase hover:text-accent transition-colors mb-8" style="color: rgba(212, 180, 240, 0.6);">&larr; back</a>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4" style="color: var(--lavender); text-shadow: 0 0 30px var(--lavender-glow);">
         N.O.V.A
       </h1>
-      <p class="text-lg text-white/40 mb-2">
+      <p class="text-lg mb-2" style="color: var(--accent); text-shadow: 0 0 15px var(--teal-glow);">
         Framework Timeline: Evolution & Parallel Research
       </p>
-      <p class="text-sm text-white/25 max-w-xl leading-relaxed">
+      <p class="text-sm max-w-xl leading-relaxed" style="color: rgba(237, 230, 245, 0.75);">
         Comparing the independent development of the NOVA framework with parallel research and industry developments in modular AI memory, agent-first development, and structured context management.
       </p>
     </header>

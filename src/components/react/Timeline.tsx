@@ -6,43 +6,41 @@ import {
   type MilestoneLink,
 } from "../../data/milestones";
 
-/* ── Category styling ── */
-const categoryConfig: Record<
-  Milestone["category"],
-  { label: string; border: string; glow: string; badge: string }
-> = {
-  nova: {
-    label: "NOVA",
-    border: "border-emerald-500/50 hover:border-emerald-400/70",
-    glow: "shadow-emerald-500/10",
-    badge: "bg-emerald-500/20 text-emerald-300 ring-emerald-500/30",
-  },
-  research: {
-    label: "Research",
-    border: "border-sky-500/40 hover:border-sky-400/60",
-    glow: "shadow-sky-500/10",
-    badge: "bg-sky-500/20 text-sky-300 ring-sky-500/30",
-  },
-  industry: {
-    label: "Industry",
-    border: "border-violet-500/40 hover:border-violet-400/60",
-    glow: "shadow-violet-500/10",
-    badge: "bg-violet-500/20 text-violet-300 ring-violet-500/30",
-  },
-  convergence: {
-    label: "Convergence",
-    border: "border-amber-500/50 hover:border-amber-400/70",
-    glow: "shadow-amber-500/15",
-    badge: "bg-amber-500/20 text-amber-300 ring-amber-500/30",
-  },
+/* ── Category configuration ── */
+const categoryConfig: Record<Milestone["category"], { label: string }> = {
+  nova: { label: "NOVA" },
+  research: { label: "Research" },
+  industry: { label: "Industry" },
+  convergence: { label: "Convergence" },
+};
+
+/* ── Color mapping helper ── */
+const getCategoryColor = (category: Milestone["category"]): string => {
+  const colors = {
+    nova: '#7ee8cc',
+    research: '#d4b4f0',
+    industry: '#f0909f',
+    convergence: '#f0a8c4'
+  };
+  return colors[category];
+};
+
+const getCategoryColorRgba = (category: Milestone["category"], opacity: number): string => {
+  const rgbaMap = {
+    nova: `rgba(126, 232, 204, ${opacity})`,
+    research: `rgba(212, 180, 240, ${opacity})`,
+    industry: `rgba(240, 144, 159, ${opacity})`,
+    convergence: `rgba(240, 168, 196, ${opacity})`
+  };
+  return rgbaMap[category];
 };
 
 /* ── Dot colour per category ── */
 const dotColor: Record<Milestone["category"], string> = {
-  nova: "border-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.5)]",
-  research: "border-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.4)]",
-  industry: "border-violet-400 shadow-[0_0_12px_rgba(167,139,250,0.4)]",
-  convergence: "border-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.5)]",
+  nova: "border-[#7ee8cc] shadow-[0_0_16px_rgba(126,232,204,0.6)]",
+  research: "border-[#d4b4f0] shadow-[0_0_16px_rgba(212,180,240,0.6)]",
+  industry: "border-[#f0909f] shadow-[0_0_16px_rgba(240,144,159,0.6)]",
+  convergence: "border-[#f0a8c4] shadow-[0_0_16px_rgba(240,168,196,0.6)]",
 };
 
 /* ── Filter chip ── */
@@ -50,18 +48,17 @@ const FilterChip = ({
   label,
   active,
   onClick,
-  className,
 }: {
   label: string;
   active: boolean;
   onClick: () => void;
-  className: string;
 }) => (
   <button
     onClick={onClick}
     className={`px-3 py-1 text-xs font-mono rounded-full ring-1 transition-all duration-200 cursor-pointer ${
-      active ? className + " opacity-100" : "opacity-40 ring-white/10 text-white/40 hover:opacity-60"
+      active ? "opacity-100" : "opacity-60 ring-white/20 hover:opacity-80"
     }`}
+    style={!active ? { color: 'rgba(237, 230, 245, 0.6)' } : {}}
   >
     {label}
   </button>
@@ -70,11 +67,9 @@ const FilterChip = ({
 /* ── Single timeline card ── */
 const TimelineCard = ({
   milestone,
-  index,
   isEven,
 }: {
   milestone: Milestone;
-  index: number;
   isEven: boolean;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -105,32 +100,38 @@ const TimelineCard = ({
 
   const card = (
     <div
-      className={`rounded-lg border ${cfg.border} bg-white/[0.03] backdrop-blur-sm p-5 shadow-lg ${cfg.glow} transition-all duration-300 cursor-pointer`}
+      className="rounded-lg border-2 backdrop-blur-sm p-5 transition-all duration-300 cursor-pointer hover:border-opacity-90 shadow-lg"
+      style={{
+        backgroundColor: getCategoryColorRgba(milestone.category, 0.08),
+        borderColor: getCategoryColor(milestone.category),
+        boxShadow: `0 0 24px ${getCategoryColorRgba(milestone.category, 0.3)}, inset 0 0 30px ${getCategoryColorRgba(milestone.category, 0.05)}`
+      }}
       onClick={() => hasDetails && setExpanded(!expanded)}
     >
       {/* Badge row */}
       <div className="flex items-center gap-2 mb-2 flex-wrap">
         <span
-          className={`text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full ring-1 ${cfg.badge}`}
+          className="text-sm font-mono uppercase tracking-widest font-semibold"
+          style={{ color: getCategoryColor(milestone.category) }}
         >
           {cfg.label}
         </span>
         {milestone.publication && (
-          <span className="text-[10px] font-mono text-white/30 tracking-wide">
+          <span className="text-[10px] font-mono tracking-wide" style={{ color: 'rgba(237, 230, 245, 0.6)' }}>
             {milestone.publication}
           </span>
         )}
         {milestone.authors && (
-          <span className="text-[10px] italic text-white/25 hidden sm:inline">
+          <span className="text-[10px] italic hidden sm:inline" style={{ color: 'rgba(237, 230, 245, 0.5)' }}>
             {milestone.authors}
           </span>
         )}
       </div>
 
-      <h3 className="text-base font-semibold text-white/90 leading-snug mb-1">
+      <h3 className="text-base font-semibold leading-snug mb-1" style={{ color: 'var(--lavender, #d4b4f0)' }}>
         {milestone.title}
       </h3>
-      <p className="text-sm leading-relaxed text-white/50">
+      <p className="text-sm leading-relaxed" style={{ color: 'rgba(237, 230, 245, 0.8)' }}>
         {milestone.description}
       </p>
 
@@ -139,15 +140,17 @@ const TimelineCard = ({
         <div className="mt-4 space-y-3 border-t border-white/10 pt-3 animate-fade-in">
           {milestone.contributions && milestone.contributions.length > 0 && (
             <div>
-              <h4 className="text-xs font-mono uppercase tracking-widest text-white/30 mb-1.5">
+              <h4 className="text-xs font-mono uppercase tracking-widest mb-1.5" style={{ color: 'rgba(212, 180, 240, 0.7)' }}>
                 Key Contributions
               </h4>
               <ul className="space-y-1">
                 {milestone.contributions.map((c, i) => (
                   <li
                     key={i}
-                    className="text-xs text-white/45 leading-relaxed pl-3 relative before:content-['›'] before:absolute before:left-0 before:text-accent-foreground/50"
+                    className="text-xs leading-relaxed pl-3 relative"
+                    style={{ color: 'rgba(237, 230, 245, 0.75)' }}
                   >
+                    <span className="absolute left-0" style={{ color: 'rgba(126, 232, 204, 0.6)' }}>›</span>
                     {c}
                   </li>
                 ))}
@@ -157,10 +160,10 @@ const TimelineCard = ({
 
           {milestone.relation && (
             <div>
-              <h4 className="text-xs font-mono uppercase tracking-widest text-emerald-400/50 mb-1.5">
+              <h4 className="text-xs font-mono uppercase tracking-widest mb-1.5" style={{ color: 'rgba(126, 232, 204, 0.8)' }}>
                 Relation to NOVA
               </h4>
-              <p className="text-xs text-emerald-300/40 leading-relaxed italic">
+              <p className="text-xs leading-relaxed italic" style={{ color: 'rgba(126, 232, 204, 0.7)' }}>
                 {milestone.relation}
               </p>
             </div>
@@ -175,7 +178,19 @@ const TimelineCard = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="text-[10px] font-mono px-2 py-0.5 rounded ring-1 ring-white/10 text-white/40 hover:text-white/70 hover:ring-white/25 transition-colors"
+                  className="text-[10px] font-mono px-2 py-0.5 rounded ring-1 transition-colors"
+                  style={{
+                    borderColor: 'rgba(212, 180, 240, 0.3)',
+                    color: 'rgba(212, 180, 240, 0.8)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#d4b4f0';
+                    e.currentTarget.style.borderColor = 'rgba(212, 180, 240, 0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'rgba(212, 180, 240, 0.8)';
+                    e.currentTarget.style.borderColor = 'rgba(212, 180, 240, 0.3)';
+                  }}
                 >
                   {link.label} ↗
                 </a>
@@ -186,7 +201,7 @@ const TimelineCard = ({
       )}
 
       {hasDetails && (
-        <div className="mt-2 text-[10px] font-mono text-white/20 select-none">
+        <div className="mt-2 text-[10px] font-mono select-none" style={{ color: 'rgba(237, 230, 245, 0.4)' }}>
           {expanded ? "▲ collapse" : "▼ expand details"}
         </div>
       )}
@@ -206,7 +221,7 @@ const TimelineCard = ({
       >
         {isEven ? (
           <div className="space-y-1">
-            <span className="text-xs font-mono tracking-widest uppercase text-accent-foreground/50 hidden md:block">
+            <span className="text-xs font-mono tracking-widest uppercase hidden md:block" style={{ color: 'rgba(126, 232, 204, 0.7)' }}>
               {milestone.date}
             </span>
           </div>
@@ -218,11 +233,12 @@ const TimelineCard = ({
       {/* Center — dot & line */}
       <div className="hidden md:flex flex-col items-center order-2">
         <div
-          className={`relative z-10 h-4 w-4 rounded-full border-2 bg-[hsl(var(--background))] ${
+          className={`relative z-10 h-4 w-4 rounded-full border-2 ${
             dotColor[milestone.category]
           }`}
+          style={{ backgroundColor: 'var(--bg-dark, #0d0a14)' }}
         />
-        <div className="w-px flex-1 bg-gradient-to-b from-white/15 to-white/5" />
+        <div className="w-px flex-1" style={{ background: 'linear-gradient(to bottom, rgba(212, 180, 240, 0.3), rgba(212, 180, 240, 0.1))' }} />
       </div>
 
       {/* Right column */}
@@ -230,18 +246,19 @@ const TimelineCard = ({
         {/* Mobile dot + date */}
         <div className="flex items-center gap-3 md:hidden mb-2">
           <div
-            className={`h-3 w-3 rounded-full border-2 bg-[hsl(var(--background))] ${
+            className={`h-3 w-3 rounded-full border-2 ${
               dotColor[milestone.category]
             }`}
+            style={{ backgroundColor: 'var(--bg-dark, #0d0a14)' }}
           />
-          <span className="text-xs font-mono tracking-widest uppercase text-accent-foreground/50">
+          <span className="text-xs font-mono tracking-widest uppercase" style={{ color: 'rgba(126, 232, 204, 0.7)' }}>
             {milestone.date}
           </span>
         </div>
 
         {isEven ? card : (
           <div className="space-y-1">
-            <span className="text-xs font-mono tracking-widest uppercase text-accent-foreground/50 hidden md:block">
+            <span className="text-xs font-mono tracking-widest uppercase hidden md:block" style={{ color: 'rgba(126, 232, 204, 0.7)' }}>
               {milestone.date}
             </span>
           </div>
@@ -275,13 +292,13 @@ const SectionHeader = ({ title }: { title: string }) => {
   return (
     <div
       ref={ref}
-      className="opacity-0 transition-opacity duration-700 col-span-full flex items-center gap-4 py-8 md:py-12"
+      className="opacity-0 transition-opacity duration-700 col-span-full flex items-center gap-4 py-8 md:py-12 overflow-hidden max-w-full"
     >
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <h2 className="text-xs sm:text-sm md:text-base font-mono tracking-wide sm:tracking-widest uppercase text-white/30 text-center">
+      <div className="hidden sm:block h-px flex-1 min-w-8" style={{ background: 'linear-gradient(to right, transparent, rgba(212, 180, 240, 0.3), transparent)' }} />
+      <h2 className="text-xs sm:text-sm md:text-base font-mono tracking-normal sm:tracking-wide md:tracking-widest uppercase text-center whitespace-normal min-w-0 shrink" style={{ color: 'rgba(212, 180, 240, 0.7)' }}>
         {title}
       </h2>
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="hidden sm:block h-px flex-1 min-w-8" style={{ background: 'linear-gradient(to right, transparent, rgba(212, 180, 240, 0.3), transparent)' }} />
     </div>
   );
 };
@@ -295,7 +312,7 @@ const Legend = () => (
           <div
             className={`h-2.5 w-2.5 rounded-full border ${dotColor[key]} border-opacity-100`}
           />
-          <span className="text-[11px] font-mono text-white/35 tracking-wide">
+          <span className="text-[11px] font-mono tracking-wide" style={{ color: 'rgba(237, 230, 245, 0.7)' }}>
             {cfg.label}
           </span>
         </div>
@@ -347,7 +364,6 @@ const Timeline = () => {
             label={cfg.label}
             active={activeFilters.has(key)}
             onClick={() => toggleFilter(key)}
-            className={cfg.badge}
           />
         ))}
       </div>
@@ -355,7 +371,7 @@ const Timeline = () => {
       <Legend />
 
       {/* Continuous glow line (desktop) */}
-      <div className="hidden md:block absolute left-1/2 top-48 bottom-16 w-px -translate-x-1/2 bg-gradient-to-b from-white/0 via-white/10 to-white/0" />
+      <div className="hidden md:block absolute left-1/2 top-48 bottom-16 w-px -translate-x-1/2" style={{ background: 'linear-gradient(to bottom, transparent, rgba(212, 180, 240, 0.25), transparent)' }} />
 
       {grouped.map((group) => (
         <div key={group.section}>
@@ -367,7 +383,6 @@ const Timeline = () => {
               <TimelineCard
                 key={`${m.date}-${m.title}`}
                 milestone={m}
-                index={globalIdx}
                 isEven={globalIdx % 2 === 0}
               />
             );
@@ -377,11 +392,11 @@ const Timeline = () => {
 
       {/* Convergence summary at bottom */}
       <div className="mt-16 mb-8 text-center space-y-4">
-        <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
-        <p className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-400/40">
+        <div className="h-px w-48 mx-auto" style={{ background: 'linear-gradient(to right, transparent, rgba(126, 232, 204, 0.5), transparent)' }} />
+        <p className="text-xs font-mono uppercase tracking-[0.2em]" style={{ color: 'rgba(126, 232, 204, 0.8)', textShadow: '0 0 15px rgba(126, 232, 204, 0.3)' }}>
           Independent Convergence Validated
         </p>
-        <p className="text-sm text-white/30 max-w-xl mx-auto leading-relaxed">
+        <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(237, 230, 245, 0.7)' }}>
           External, structured, modular memory with orchestration layers is the
           emerging architectural consensus for AI agent cognition.
         </p>
