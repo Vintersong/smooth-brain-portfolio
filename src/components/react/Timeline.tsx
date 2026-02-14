@@ -48,17 +48,22 @@ const FilterChip = ({
   label,
   active,
   onClick,
+  category,
 }: {
   label: string;
   active: boolean;
   onClick: () => void;
+  category: Milestone["category"];
 }) => (
   <button
     onClick={onClick}
-    className={`px-3 py-1 text-xs font-mono rounded-full ring-1 transition-all duration-200 cursor-pointer ${
-      active ? "opacity-100" : "opacity-60 ring-white/20 hover:opacity-80"
+    className={`px-3 py-1 text-xs font-mono rounded-lg transition-all duration-200 cursor-pointer ${
+      active ? "opacity-100" : "opacity-60 hover:opacity-80"
     }`}
-    style={!active ? { color: 'rgba(237, 230, 245, 0.6)' } : {}}
+    style={{
+      backgroundColor: active ? getCategoryColor(category) : getCategoryColorRgba(category, 0.3),
+      color: active ? 'rgba(13, 10, 20, 0.9)' : 'rgba(237, 230, 245, 0.7)',
+    }}
   >
     {label}
   </button>
@@ -201,9 +206,32 @@ const TimelineCard = ({
       )}
 
       {hasDetails && (
-        <div className="mt-2 text-[10px] font-mono select-none" style={{ color: 'rgba(237, 230, 245, 0.4)' }}>
+        <button
+          className="mt-2 px-3 py-1.5 text-[10px] font-mono select-none rounded transition-all duration-200"
+          style={{
+            backgroundColor: getCategoryColor(milestone.category),
+            color: 'transparent',
+            WebkitTextStroke: '0.5px rgba(13, 10, 20, 0.8)',
+            border: 'none'
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+            setExpanded(!expanded);
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = getCategoryColorRgba(milestone.category, 0.5);
+            e.currentTarget.style.color = getCategoryColor(milestone.category);
+            e.currentTarget.style.WebkitTextStroke = '0px';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = getCategoryColor(milestone.category);
+            e.currentTarget.style.color = 'transparent';
+            e.currentTarget.style.WebkitTextStroke = '0.5px rgba(13, 10, 20, 0.8)';
+          }}
+          aria-label={expanded ? "Collapse details" : "Expand details"}
+        >
           {expanded ? "▲ collapse" : "▼ expand details"}
-        </div>
+        </button>
       )}
     </div>
   );
@@ -364,6 +392,7 @@ const Timeline = () => {
             label={cfg.label}
             active={activeFilters.has(key)}
             onClick={() => toggleFilter(key)}
+            category={key}
           />
         ))}
       </div>
@@ -393,9 +422,7 @@ const Timeline = () => {
       {/* Convergence summary at bottom */}
       <div className="mt-16 mb-8 text-center space-y-4">
         <div className="h-px w-48 mx-auto" style={{ background: 'linear-gradient(to right, transparent, rgba(126, 232, 204, 0.5), transparent)' }} />
-        <p className="text-xs font-mono uppercase tracking-[0.2em]" style={{ color: 'rgba(126, 232, 204, 0.8)', textShadow: '0 0 15px rgba(126, 232, 204, 0.3)' }}>
-          Independent Convergence Validated
-        </p>
+
         <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(237, 230, 245, 0.7)' }}>
           External, structured, modular memory with orchestration layers is the
           emerging architectural consensus for AI agent cognition.
