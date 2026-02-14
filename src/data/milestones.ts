@@ -313,6 +313,45 @@ export const milestones: Milestone[] = [
   // ── Q2–Q3 2025 ──
   {
     date: "April 2025",
+    title: "NOVA v0.2 — Public Launch & Open Source",
+    description:
+      "First working implementation released as FastAPI server with REST API for shard interaction, creation, semantic search, and listing. Open-sourced with full documentation suite including whitepaper, executive summary, shard memory architecture, and unified consciousness model.",
+    category: "nova",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    contributions: [
+      "FastAPI server v0.2.0 with /interact, /create_shard, /search, /list_shards endpoints",
+      "Semantic search via OpenAI ada-002 embeddings with cosine similarity + token overlap fallback",
+      "Auto-shard selection: intelligently identifies relevant shards for queries",
+      "Citation tracking and placeholder shard generation for referenced but missing shards",
+      "Open-sourced with documentation suite (whitepaper, executive summary, architecture diagrams, pitch deck)",
+    ],
+    links: [
+      {
+        label: "Repository",
+        url: "https://github.com/Vintersong/NOVA-Cognition-Framework",
+      },
+    ],
+  },
+  {
+    date: "April 2025",
+    title: "Cognitive Architecture Specification (SKILL.md)",
+    description:
+      "Formal mapping of cognitive functions to shard operations. Defines working memory as active loaded shards, attention as user-selected shards, long-term memory as shard index + embeddings, executive function as user-led shard management, and metacognition as cross-shard synthesis.",
+    category: "nova",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    contributions: [
+      "Working Memory → active loaded shards in context",
+      "Attention → user-selected shard sets",
+      "Long-Term Memory → shard index + metadata + semantic embeddings",
+      "Executive Function → user-led creation, merging, archival",
+      "Metacognition → cross-shard synthesis and contradiction detection",
+      "Memory Decay → usage-based relevance scoring",
+    ],
+    relation:
+      "Bridges cognitive science theory (Extended Mind Thesis, Distributed Cognition) to concrete implementation. Each cognitive function maps to a specific shard operation.",
+  },
+  {
+    date: "April 2025",
     title: "Agent-First Developer Toolchain Manifesto",
     description:
       "Agent-first SDLC: autonomous agents continuously write, test, deploy code. Humans become intent designers and curators.",
@@ -335,16 +374,24 @@ export const milestones: Milestone[] = [
   },
   {
     date: "Spring–Summer 2025",
-    title: "NOVA → MCP Server",
+    title: "NOVA → MCP Server Migration",
     description:
-      "Rebuilt NOVA as MCP-compliant server. Developed shard utilities, context extractor with semantic embeddings, and embedding-based retrieval.",
+      "Rebuilt NOVA as MCP-compliant server with 7 tools and 2 resources, removing OpenAI dependency from the server layer. Cleaner separation: server manages shards, connected LLM handles reasoning.",
     category: "nova",
     section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
     contributions: [
-      "Rebuilt NOVA as MCP-compliant server",
-      "Shard utilities: rename_shards.py, context_extractor.py",
-      "Semantic embeddings using GPT summaries + OpenAI text-embedding-ada-002",
-      "NOVA as cognitive memory backplane for agents",
+      "7 MCP tools: interact, create, update, search, list, merge, archive",
+      "2 MCP resources: nova://skill (cognitive instructions) and nova://index (shard index)",
+      "Removed OpenAI dependency — server manages shards, LLM client handles reasoning",
+      "Shard utilities: rename_shards.py, context_extractor.py, dedup_json.py",
+      "Meta-shard merging and non-destructive archival for shard lifecycle management",
+      "NOVA as portable cognitive memory backplane for any MCP-compatible agent",
+    ],
+    links: [
+      {
+        label: "Repository",
+        url: "https://github.com/Vintersong/NOVA-Cognition-Framework",
+      },
     ],
   },
   {
