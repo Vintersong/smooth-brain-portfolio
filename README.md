@@ -63,7 +63,7 @@ This project has undergone a comprehensive security and usability audit with the
 **Strengths:**
 - ✅ **No XSS vulnerabilities** - Safe text rendering, no dangerouslySetInnerHTML or v-html usage
 - ✅ **No hardcoded secrets** - Clean codebase with no API keys or credentials
-- ✅ **Zero dependency vulnerabilities** - npm audit shows 0 vulnerabilities across 554 dependencies
+- ✅ **Zero dependency vulnerabilities** - npm audit shows 0 vulnerabilities across 484 packages
 - ✅ **Secure external links** - All external links include `rel="noopener noreferrer"` to prevent tabnabbing
 - ✅ **Subresource Integrity (SRI)** - CDN resources protected with integrity hashes
 - ✅ **Sandboxed iframes** - YouTube embeds use proper sandbox attributes

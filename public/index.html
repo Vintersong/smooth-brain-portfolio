@@ -216,7 +216,8 @@
             <div class="col-md-7">
               <div class="ratio ratio-16x9">
                 <!-- Use data-src to avoid autoplay; JS will inject into src on open -->
-                <iframe class="video-embed" width="560" height="315" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0" title="RGB Bullet Hell" allow="accelerometer; encrypted-media; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen></iframe>
+                <!-- Note: allow-same-origin is required for YouTube embed functionality -->
+                <iframe class="video-embed" width="560" height="315" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0" title="RGB Bullet Hell" allow="accelerometer; encrypted-media; picture-in-picture" sandbox="allow-scripts allow-same-origin" allowfullscreen></iframe>
               </div>
             </div>
               <div class="col-md-5">
