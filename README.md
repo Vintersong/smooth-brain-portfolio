@@ -15,8 +15,8 @@ This portfolio demonstrates technical range by using **different web technologie
 | Main Hub (`index.html`) | Bootstrap 5.3 + Vanilla JS | [https://smooth-brain-designs.com](https://smooth-brain-designs.com) | The original static HTML portfolio |
 | CV Page (`/cv`) | **Astro** | [https://smooth-brain-designs.com/cv](https://smooth-brain-designs.com/cv) | Component-based static site generator |
 | Timeline (`/timeline`) | **React + Astro** | [https://smooth-brain-designs.com/timeline](https://smooth-brain-designs.com/timeline) | Interactive timeline with React components |
+| Projects (`/projects`) | **Vue + Astro** | [https://smooth-brain-designs.com/projects](https://smooth-brain-designs.com/projects) | Interactive project showcase with Vue components |
 | *(Future)* Team | Astro Islands | - | Interactive Warcraft-themed character CVs |
-| *(Future)* Projects | Vue/Three.js | - | 3D project showcase |
 
 The goal is to showcase proficiency across multiple frameworks while maintaining consistent cyberpunk styling.
 
