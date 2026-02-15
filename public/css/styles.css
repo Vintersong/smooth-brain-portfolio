@@ -423,7 +423,7 @@ header h4.tagline {
   font-family: var(--font-mono);
   color: var(--lavender);
   font-weight: 400;
-  opacity: 0.6;
+  opacity: 0.85;
 }
 
 .source-link {

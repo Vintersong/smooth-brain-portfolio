@@ -70,7 +70,7 @@
   <!-- NAVIGATION -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">.smooth-brain-designs</a>
+      <a class="navbar-brand" href="/">.smooth-brain-designs</a>
       <button class="navbar-toggler brain-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
           <path class="wrinkle wrinkle-1" d="M10,12 Q20,8 30,12" />
@@ -230,7 +230,7 @@
                 <li>.coffee</li>
               </ul>
               <div class="d-flex gap-2 mt-3">
-                <a href="404.html" class="btn btn-outline-pink play-now bahnschrift">.play-now</a>
+                <button class="btn btn-outline-pink play-now bahnschrift" disabled title="Coming Soon">.play-now (Coming Soon)</button>
                 <a href="https://github.com/Vintersong/love2d-RGB" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary github-repo bahnschrift">.github-repo</a>
               </div>
             </div>
@@ -342,8 +342,8 @@
                 <li>.day-dreaming</li>
               </ul>
               <div class="d-flex gap-2 mt-3">
-                <a href="404.html" class="btn btn-outline-pink bahnschrift">.view-demo</a>
-                <a href="#" class="btn btn-outline-secondary bahnschrift">.github-repo</a>
+                <button class="btn btn-outline-pink bahnschrift" disabled title="Coming Soon">.view-demo (Coming Soon)</button>
+                <button class="btn btn-outline-secondary bahnschrift" disabled title="Coming Soon">.github-repo (Coming Soon)</button>
               </div>
             </div>
           </div>
@@ -498,6 +498,52 @@
                 </div>
               </div>
             </div>
+
+            <!-- Projects Page -->
+            <div class="accordion-item accordion-item-vapor">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed accordion-btn-vapor" type="button" data-bs-toggle="collapse" data-bs-target="#techProjects" aria-expanded="false" aria-controls="techProjects">
+                  .projects-page
+                </button>
+              </h2>
+              <div id="techProjects" class="accordion-collapse collapse" data-bs-parent="#techStackAccordion">
+                <div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">
+                  <p><strong style="color: #B794F4;">Vue Integration:</strong></p>
+                  <ul class="small mb-3">
+                    <li><strong>Vue 3</strong> — Progressive JavaScript framework with composition API</li>
+                    <li><strong>JavaScript (.vue)</strong> — Single-file components with template, script, and style</li>
+                    <li><strong>Client-side Hydration</strong> — Interactive project grid with `client:load` directive</li>
+                    <li><strong>Vue Reactivity</strong> — Reactive state management for modal interactions</li>
+                  </ul>
+                  <p><strong style="color: #B794F4;">Astro + Vue:</strong></p>
+                  <ul class="small mb-3">
+                    <li><strong>@astrojs/vue</strong> — Official Astro integration for Vue components</li>
+                    <li><strong>Island Architecture</strong> — Vue components hydrated only where needed</li>
+                    <li><strong>Component Composition</strong> — Projects, ProjectCard, and ProjectModal components</li>
+                  </ul>
+                  <p><strong style="color: #B794F4;">Styling:</strong></p>
+                  <ul class="small mb-3">
+                    <li><strong>Scoped CSS</strong> — Component-level styling with Vue's scoped attribute</li>
+                    <li><strong>Custom CSS Variables</strong> — Consistent cyberpunk theme with CSS custom properties</li>
+                    <li><strong>Responsive Grid</strong> — CSS Grid with auto-fill for flexible layouts</li>
+                  </ul>
+                  <p><strong style="color: #B794F4;">.features</strong></p>
+                  <ul class="small mb-3">
+                    <li>Interactive project cards with click and keyboard navigation</li>
+                    <li>Modal overlays for detailed project information</li>
+                    <li>Smooth transitions and animations with Vue's Transition component</li>
+                    <li>Responsive grid adapting from 1 to 3+ columns based on viewport</li>
+                  </ul>
+                  <p><strong style="color: #B794F4;">.benefits</strong></p>
+                  <ul class="small">
+                    <li>Intuitive API with Vue's template syntax</li>
+                    <li>Lightweight and fast with Vue 3's optimizations</li>
+                    <li>Easy state management with Vue's reactivity system</li>
+                    <li>Seamless integration with Astro's island architecture</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
           
           <hr style="border-color: rgba(183, 148, 244, 0.3); margin: 1.5rem 0;">
@@ -518,74 +564,74 @@
       <h2 class="retro-futurism mb-4 text-center">.gallery</h2>
       <div id="portfolioCarousel" class="carousel slide" data-bs-ride="false">
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active" role="img" aria-label="Retro-futurism design illustration">
             <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
               <div class="text-center">
-                <i class="bi bi-image" style="font-size: 6rem; color: #00FFFF;"></i>
+                <i class="bi bi-image" style="font-size: 6rem; color: #00FFFF;" aria-hidden="true"></i>
                 <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.retro-futurism</p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" role="img" aria-label="Sound design illustration">
             <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
               <div class="text-center">
-                <i class="bi bi-music-note-beamed" style="font-size: 6rem; color: #B794F4;"></i>
+                <i class="bi bi-music-note-beamed" style="font-size: 6rem; color: #B794F4;" aria-hidden="true"></i>
                 <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.sound-design</p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" role="img" aria-label="Systems design illustration">
             <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
               <div class="text-center">
-                <i class="bi bi-diagram-3" style="font-size: 6rem; color: #00FFFF;"></i>
+                <i class="bi bi-diagram-3" style="font-size: 6rem; color: #00FFFF;" aria-hidden="true"></i>
                 <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.systems-design</p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" role="img" aria-label="Design thinking illustration">
             <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
               <div class="text-center">
-                <i class="bi bi-lightbulb" style="font-size: 6rem; color: #B794F4;"></i>
+                <i class="bi bi-lightbulb" style="font-size: 6rem; color: #B794F4;" aria-hidden="true"></i>
                 <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.design-thinking</p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" role="img" aria-label="Agile synergy illustration">
             <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
               <div class="text-center">
-                <i class="bi bi-arrow-repeat" style="font-size: 6rem; color: #00FFFF;"></i>
+                <i class="bi bi-arrow-repeat" style="font-size: 6rem; color: #00FFFF;" aria-hidden="true"></i>
                 <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.agile-synergy</p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" role="img" aria-label="Web3 enabled experiences illustration">
             <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
               <div class="text-center">
-                <i class="bi bi-wallet2" style="font-size: 6rem; color: #B794F4;"></i>
+                <i class="bi bi-wallet2" style="font-size: 6rem; color: #B794F4;" aria-hidden="true"></i>
                 <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.web3-enabled-experiences</p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" role="img" aria-label="Mercury retrograde compliant illustration">
             <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
               <div class="text-center">
-                <i class="bi bi-moon-stars" style="font-size: 6rem; color: #00FFFF;"></i>
+                <i class="bi bi-moon-stars" style="font-size: 6rem; color: #00FFFF;" aria-hidden="true"></i>
                 <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.mercury-retrograde-compliant</p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" role="img" aria-label="Lobster approved illustration">
             <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
               <div class="text-center">
-                <i class="bi bi-bug" style="font-size: 6rem; color: rgba(255, 46, 46, 0.8);"></i>
+                <i class="bi bi-bug" style="font-size: 6rem; color: rgba(255, 46, 46, 0.8);" aria-hidden="true"></i>
                 <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.lobster-approved</p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" role="img" aria-label="The calling illustration">
             <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #000000;">
               <div class="text-center">
-                <i class="bi bi-infinity" style="font-size: 6rem; color: #B794F4; animation: glitch 2s infinite;"></i>
+                <i class="bi bi-infinity" style="font-size: 6rem; color: #B794F4; animation: glitch 2s infinite;" aria-hidden="true"></i>
                 <p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.ẗ̷̖h̸͇̋ë̷̠-̵̣͌c̷̰̈́ả̴͜l̵̰͝l̶̖̀i̵̧̛n̴̰̎g̷̣͝</p>
               </div>
             </div>
