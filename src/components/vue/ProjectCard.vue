@@ -5,6 +5,8 @@
     role="button"
     tabindex="0"
     @keydown.enter="$emit('open-modal', project)"
+    @keydown.space.prevent="$emit('open-modal', project)"
+    :aria-label="`View details for ${project.title}`"
   >
     <div class="project-card-image">
       <img :src="project.image" :alt="project.title" />

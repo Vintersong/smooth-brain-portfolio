@@ -2,7 +2,14 @@
   <Transition name="modal">
     <div v-if="isOpen" class="modal-overlay" @click="closeModal">
       <div class="modal-container" @click.stop>
-        <button class="modal-close" @click="closeModal" aria-label="Close modal">
+        <button 
+          class="modal-close" 
+          @click="closeModal"
+          @keydown.enter="closeModal"
+          @keydown.space.prevent="closeModal"
+          aria-label="Close modal"
+          ref="closeButton"
+        >
           <i class="bi bi-x-lg"></i>
         </button>
         
@@ -40,22 +47,44 @@ export default {
     }
   },
   emits: ['close'],
+  data() {
+    return {
+      previousActiveElement: null
+    };
+  },
   methods: {
     closeModal() {
       this.$emit('close');
+    },
+    handleKeydown(event) {
+      if (event.key === 'Escape') {
+        this.closeModal();
+      }
     }
   },
   watch: {
     isOpen(newVal) {
       if (newVal) {
+        this.previousActiveElement = document.activeElement;
         document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', this.handleKeydown);
+        this.$nextTick(() => {
+          if (this.$refs.closeButton) {
+            this.$refs.closeButton.focus();
+          }
+        });
       } else {
         document.body.style.overflow = '';
+        document.removeEventListener('keydown', this.handleKeydown);
+        if (this.previousActiveElement) {
+          this.previousActiveElement.focus();
+        }
       }
     }
   },
   beforeUnmount() {
     document.body.style.overflow = '';
+    document.removeEventListener('keydown', this.handleKeydown);
   }
 }
 </script>
