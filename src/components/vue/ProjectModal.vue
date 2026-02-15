@@ -15,7 +15,7 @@
         
         <div class="modal-content">
           <div class="modal-image">
-            <i v-if="project.icon" :class="`bi ${project.icon}`" class="modal-icon"></i>
+            <i v-if="project.icon" :class="`bi ${project.icon}`" class="modal-icon" :aria-label="project.title"></i>
             <img v-else :src="project.image" :alt="project.title" />
           </div>
           

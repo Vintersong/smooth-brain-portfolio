@@ -9,7 +9,7 @@
     :aria-label="`View details for ${project.title}`"
   >
     <div class="project-card-image">
-      <i v-if="project.icon" :class="`bi ${project.icon}`" class="project-icon"></i>
+      <i v-if="project.icon" :class="`bi ${project.icon}`" class="project-icon" :aria-label="project.title"></i>
       <img v-else :src="project.image" :alt="project.title" />
     </div>
     <div class="project-card-content">
