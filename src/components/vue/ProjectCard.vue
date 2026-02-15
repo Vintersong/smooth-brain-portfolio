@@ -9,7 +9,8 @@
     :aria-label="`View details for ${project.title}`"
   >
     <div class="project-card-image">
-      <img :src="project.image" :alt="project.title" />
+      <i v-if="project.icon" :class="`bi ${project.icon}`" class="project-icon" :aria-label="project.title"></i>
+      <img v-else :src="project.image" :alt="project.title" />
     </div>
     <div class="project-card-content">
       <h3 class="project-card-title">{{ project.title }}</h3>
@@ -61,6 +62,15 @@ export default {
   height: 100%;
   object-fit: cover;
   transition: transform var(--ease-smooth);
+}
+
+.project-icon {
+  font-size: 5rem;
+  color: rgba(212, 180, 240, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .project-card:hover .project-card-image img {

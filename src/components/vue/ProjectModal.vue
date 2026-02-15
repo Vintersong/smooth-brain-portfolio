@@ -15,12 +15,20 @@
         
         <div class="modal-content">
           <div class="modal-image">
-            <img :src="project.image" :alt="project.title" />
+            <i v-if="project.icon" :class="`bi ${project.icon}`" class="modal-icon" :aria-label="project.title"></i>
+            <img v-else :src="project.image" :alt="project.title" />
           </div>
           
           <div class="modal-body">
             <h2 class="modal-title">{{ project.title }}</h2>
             <p class="modal-description">{{ project.description }}</p>
+            
+            <div v-if="project.technologies" class="modal-technologies">
+              <h3 class="details-heading">.technologies</h3>
+              <ul class="technologies-list">
+                <li v-for="tech in project.technologies" :key="tech">{{ tech }}</li>
+              </ul>
+            </div>
             
             <div class="modal-details">
               <h3 class="details-heading">Project Details</h3>
@@ -161,6 +169,32 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.modal-icon {
+  font-size: 8rem;
+  color: rgba(212, 180, 240, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.modal-technologies {
+  margin-bottom: 2rem;
+}
+
+.technologies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: rgba(237, 230, 245, 0.8);
+}
+
+.technologies-list li {
+  padding: 0.25rem 0;
 }
 
 .modal-body {
