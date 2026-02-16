@@ -29,7 +29,6 @@ __pycache__/
 *.pyc
 NOVA_TIMELINE_ALIGNMENT_REVIEW.md
 CODE_REVIEW.md
-NOVA_TIMELINE_ALIGNMENT_REVIEW.md
 
 # Audit documentation files (changes implemented)
 docs/SECURITY-AUDIT.md
