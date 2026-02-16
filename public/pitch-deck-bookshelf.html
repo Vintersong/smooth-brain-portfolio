@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Pitch Deck Bookshelf</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      background: #000000;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    
+    .pitch-shelf-page {
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+    
+    /* Header Styles */
+    .shelf-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .shelf-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      background: linear-gradient(135deg, #ff00ff, #00ffff, #ff00ff);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 4s ease infinite;
+      margin-bottom: 0.5rem;
+    }
+    
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .shelf-subtitle {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
+      color: #888888;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    
+    /* Viewport Container */
+    .shelf-viewport {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      margin: 1rem auto 3rem;
+      aspect-ratio: 16 / 9;
+      border: 2px solid #ff00ff44;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow:
+        0 0 30px rgba(255, 0, 255, 0.15),
+        0 0 60px rgba(0, 255, 255, 0.08),
+        inset 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .shelf-viewport canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* Scanline Overlay */
+    .shelf-viewport::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.06) 2px,
+        rgba(0, 0, 0, 0.06) 4px
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+    
+    /* Hover Label */
+    .hover-label {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      background: rgba(10, 10, 20, 0.85);
+      border: 1px solid #00ffff66;
+      padding: 0.5rem 1.5rem;
+      border-radius: 4px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      color: #00ffff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 10px #00ffff;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    
+    .hover-label.visible {
+      opacity: 1;
+    }
+    
+    /* Instructions */
+    .shelf-instructions {
+      text-align: center;
+      color: #555555;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      margin-top: 1rem;
+    }
+    
+    /* Modal System */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 5, 15, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 1rem;
+    }
+    
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .modal-card {
+      width: 90%;
+      max-width: 720px;
+      max-height: 85vh;
+      overflow-y: auto;
+      background: linear-gradient(145deg, #111122, #0a0a18);
+      border: 1px solid #ff00ff44;
+      border-radius: 12px;
+      box-shadow: 
+        0 0 40px rgba(255, 0, 255, 0.2),
+        0 0 80px rgba(0, 255, 255, 0.1);
+      padding: 2rem;
+      position: relative;
+      transform: translateY(30px) scale(0.95);
+      transition: transform 0.3s ease;
+    }
+    
+    .modal-overlay.active .modal-card {
+      transform: translateY(0) scale(1);
+    }
+    
+    /* Custom Scrollbar */
+    .modal-card::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .modal-card::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    .modal-card::-webkit-scrollbar-thumb {
+      background: #ff00ff44;
+      border-radius: 3px;
+    }
+    
+    .modal-card::-webkit-scrollbar-thumb:hover {
+      background: #ff00ff66;
+    }
+    
+    /* Modal Close Button */
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #ff00ff44;
+      background: transparent;
+      color: #ff00ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+      transition: all 0.2s ease;
+    }
+    
+    .modal-close:hover {
+      background: #ff00ff22;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+    }
+    
+    /* Modal Content */
+    .modal-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    
+    .modal-tag.tag-game {
+      background: #ff00ff22;
+      color: #ff66ff;
+      border: 1px solid #ff00ff44;
+    }
+    
+    .modal-tag.tag-tool {
+      background: #00ffff22;
+      color: #66ffff;
+      border: 1px solid #00ffff44;
+    }
+    
+    .modal-tag.tag-research {
+      background: #ffff0022;
+      color: #ffff66;
+      border: 1px solid #ffff0044;
+    }
+    
+    .modal-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+      margin-bottom: 0.5rem;
+    }
+    
+    .modal-subtitle {
+      font-size: 0.8rem;
+      color: #888888;
+      margin-bottom: 1.5rem;
+    }
+    
+    .modal-screenshot {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #15152a;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .modal-screenshot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .modal-screenshot-placeholder {
+      color: #444444;
+      font-size: 0.75rem;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .modal-section-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #00ffff;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #00ffff33;
+    }
+    
+    .modal-description {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #cccccc;
+      margin-bottom: 1.5rem;
+    }
+    
+    .modal-tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .tech-chip {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.65rem;
+      background: #ffffff08;
+      border: 1px solid #ffffff15;
+      color: #aaaaaa;
+      border-radius: 4px;
+    }
+    
+    .modal-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    
+    .modal-link {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.75rem;
+      font-family: 'Orbitron', sans-serif;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .modal-link.primary {
+      background: #ff00ff;
+      border: 1px solid #ff00ff;
+      color: #ffffff;
+    }
+    
+    .modal-link.primary:hover {
+      background: #ff00ff;
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    }
+    
+    .modal-link.secondary {
+      background: transparent;
+      border: 1px solid #ffffff66;
+      color: #ffffff;
+    }
+    
+    .modal-link.secondary:hover {
+      border-color: #00ffff;
+      color: #00ffff;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="pitch-shelf-page">
+    <header class="shelf-header">
+      <h1 class="shelf-title">Pitch Deck Bookshelf</h1>
+      <p class="shelf-subtitle">Interactive 3D Project Portfolio</p>
+    </header>
+    
+    <div class="shelf-viewport" id="viewport">
+      <div class="hover-label" id="hoverLabel"></div>
+    </div>
+    
+    <p class="shelf-instructions">
+      HOVER TO INSPECT · CLICK TO OPEN · DRAG TO ROTATE
+    </p>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card" id="modalCard">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+  
+  <!-- Three.js r128 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <script>
+    // ============================================================================
+    // DATA STRUCTURE
+    // ============================================================================
+    
+    const PITCH_DECKS = [
+      {
+        id: 'rgb-bullet-hell',
+        title: 'RGB Bullet Hell',
+        subtitle: 'Vaporwave bullet hell with color theory mechanics',
+        tag: 'game',
+        tagLabel: 'Game',
+        description: 'A vaporwave-themed bullet hell game built in LÖVE2D featuring RGB color theory mechanics, music-reactive patterns, and authentic CRT shaders. Players navigate through waves of color-coded projectiles where understanding color mixing is key to survival.',
+        tech: ['LÖVE2D', 'Lua', 'GLSL Shaders', 'Color Theory'],
+        screenshotUrl: '',
+        links: [
+          { label: 'Play Demo', url: '#', primary: true },
+          { label: 'View Source', url: '#', primary: false }
+        ],
+        color: '#ff00ff',
+        spineLabel: 'RGB BULLET HELL'
+      },
+      {
+        id: 'genesis-souls-like',
+        title: 'Genesis Souls-Like',
+        subtitle: 'Retro platformer on real Sega Genesis hardware',
+        tag: 'game',
+        tagLabel: 'Game',
+        description: 'A challenging platformer developed for Sega Genesis using SGDK, featuring Tron-inspired aesthetics and treating hardware constraints as intentional design features. Built with a strict 64-color palette and optimized for Motorola 68000 assembly.',
+        tech: ['SGDK', 'C', 'Motorola 68000', 'Pixel Art'],
+        screenshotUrl: '',
+        links: [
+          { label: 'Download ROM', url: '#', primary: true },
+          { label: 'Documentation', url: '#', primary: false }
+        ],
+        color: '#00ffff',
+        spineLabel: 'GENESIS SOULS-LIKE'
+      },
+      {
+        id: 'nova-framework',
+        title: 'NOVA Framework',
+        subtitle: 'AI-powered cognitive scaffolding for neurodivergent minds',
+        tag: 'research',
+        tagLabel: 'Research',
+        description: 'A cognitive scaffolding framework using AI conversations as external memory shards, specifically designed for individuals with aphantasia and ADHD. Built on extended mind theory, NOVA transforms AI interactions into persistent knowledge graphs that augment working memory.',
+        tech: ['Python', 'Claude API', 'Knowledge Graphs', 'Extended Mind Theory'],
+        screenshotUrl: '',
+        links: [
+          { label: 'Read Paper', url: '#', primary: true },
+          { label: 'GitHub Repo', url: '#', primary: false }
+        ],
+        color: '#ffff00',
+        spineLabel: 'NOVA FRAMEWORK'
+      },
+      {
+        id: 'game-balance-analyzer',
+        title: 'Game Balance Analyzer',
+        subtitle: 'AI-powered analytics for indie game developers',
+        tag: 'tool',
+        tagLabel: 'Tool',
+        description: 'A SaaS platform concept where indie developers upload game telemetry data and receive AI-powered analysis of difficulty curves, economy balance, and pacing issues. Provides actionable insights for balancing game systems without requiring deep data science expertise.',
+        tech: ['Python', 'FastAPI', 'Claude API', 'Data Visualization'],
+        screenshotUrl: '',
+        links: [
+          { label: 'Request Beta', url: '#', primary: true },
+          { label: 'Learn More', url: '#', primary: false }
+        ],
+        color: '#00ff88',
+        spineLabel: 'GAME BALANCE ANALYZER'
+      },
+      {
+        id: 'warcraft-archetypes',
+        title: 'Warcraft Archetypes',
+        subtitle: 'Academic analysis of philosophical archetypes in gaming',
+        tag: 'research',
+        tagLabel: 'Research',
+        description: 'Academic research analyzing Warcraft characters as philosophical archetypes through narrative structure and moral choice systems. Uses mixed methods and nVivo to map how game narratives encode classical philosophical frameworks into interactive decision spaces.',
+        tech: ['nVivo', 'Mixed Methods', 'Philosophy', 'Narrative Analysis'],
+        screenshotUrl: '',
+        links: [
+          { label: 'Read Study', url: '#', primary: true },
+          { label: 'Methodology', url: '#', primary: false }
+        ],
+        color: '#ff8800',
+        spineLabel: 'WARCRAFT ARCHETYPES'
+      }
+    ];
+    
+    // ============================================================================
+    // SCENE SETUP
+    // ============================================================================
+    
+    const container = document.getElementById('viewport');
+    const scene = new THREE.Scene();
+    
+    // Camera
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      container.clientWidth / container.clientHeight,
+      0.1,
+      100
+    );
+    camera.position.set(0, 1.2, 5.5);
+    camera.lookAt(0, 0.8, 0);
+    
+    // Renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x08080f);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
+    container.appendChild(renderer.domElement);
+    
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0x1a1a2e, 0.8);
+    scene.add(ambientLight);
+    
+    const topLight = new THREE.DirectionalLight(0xff00ff, 0.3);
+    topLight.position.set(0, 5, 2);
+    scene.add(topLight);
+    
+    const frontLight = new THREE.DirectionalLight(0x00ffff, 0.4);
+    frontLight.position.set(0, 2, 5);
+    scene.add(frontLight);
+    
+    const leftGlow = new THREE.PointLight(0xff00ff, 0.6, 10);
+    leftGlow.position.set(-3, 1, 2);
+    scene.add(leftGlow);
+    
+    const rightGlow = new THREE.PointLight(0x00ffff, 0.6, 10);
+    rightGlow.position.set(3, 1, 2);
+    scene.add(rightGlow);
+    
+    // Atmosphere
+    scene.fog = new THREE.FogExp2(0x08080f, 0.08);
+    
+    const gridHelper = new THREE.GridHelper(20, 40, 0xff00ff, 0x1a1a2e);
+    gridHelper.position.y = -0.5;
+    gridHelper.material.opacity = 0.15;
+    gridHelper.material.transparent = true;
+    scene.add(gridHelper);
+    
+    // Particles
+    const particleCount = 180;
+    const particleGeometry = new THREE.BufferGeometry();
+    const particlePositions = new Float32Array(particleCount * 3);
+    
+    for (let i = 0; i < particleCount; i++) {
+      particlePositions[i * 3] = (Math.random() - 0.5) * 14;
+      particlePositions[i * 3 + 1] = Math.random() * 5;
+      particlePositions[i * 3 + 2] = -Math.random() * 10 - 2;
+    }
+    
+    particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+    
+    const particleMaterial = new THREE.PointsMaterial({
+      color: 0xff00ff,
+      size: 0.02,
+      transparent: true,
+      opacity: 0.35
+    });
+    
+    const particles = new THREE.Points(particleGeometry, particleMaterial);
+    scene.add(particles);
+    
+    // ============================================================================
+    // BOOKSHELF CONSTRUCTION
+    // ============================================================================
+    
+    const shelfWidth = 6;
+    const shelfDepth = 0.8;
+    const plankThickness = 0.06;
+    
+    const plankMaterial = new THREE.MeshStandardMaterial({
+      color: 0x0d0d1a,
+      metalness: 0.8,
+      roughness: 0.3,
+      emissive: 0x110022,
+      emissiveIntensity: 0.1
+    });
+    
+    // Horizontal planks
+    const plankGeometry = new THREE.BoxGeometry(shelfWidth, plankThickness, shelfDepth);
+    
+    const bottomPlank = new THREE.Mesh(plankGeometry, plankMaterial);
+    bottomPlank.position.set(0, 0, 0);
+    scene.add(bottomPlank);
+    
+    const topPlank = new THREE.Mesh(plankGeometry, plankMaterial);
+    topPlank.position.set(0, 1.6, 0);
+    scene.add(topPlank);
+    
+    // Neon edge strips
+    const edgeStripGeometry = new THREE.BoxGeometry(shelfWidth, 0.012, 0.012);
+    const edgeStripMaterial = new THREE.MeshBasicMaterial({
+      color: 0xff00ff,
+      transparent: true,
+      opacity: 0.6
+    });
+    
+    const bottomEdge = new THREE.Mesh(edgeStripGeometry, edgeStripMaterial);
+    bottomEdge.position.set(0, 0 + plankThickness / 2, shelfDepth / 2);
+    scene.add(bottomEdge);
+    
+    const topEdge = new THREE.Mesh(edgeStripGeometry, edgeStripMaterial);
+    topEdge.position.set(0, 1.6 + plankThickness / 2, shelfDepth / 2);
+    scene.add(topEdge);
+    
+    // Vertical side panels
+    const sidePanelGeometry = new THREE.BoxGeometry(plankThickness, 2.2, shelfDepth);
+    
+    const leftPanel = new THREE.Mesh(sidePanelGeometry, plankMaterial);
+    leftPanel.position.set(-shelfWidth / 2, 1.1, 0);
+    scene.add(leftPanel);
+    
+    const rightPanel = new THREE.Mesh(sidePanelGeometry, plankMaterial);
+    rightPanel.position.set(shelfWidth / 2, 1.1, 0);
+    scene.add(rightPanel);
+    
+    // Back panel
+    const backPanelMaterial = new THREE.MeshStandardMaterial({
+      color: 0x06060f,
+      metalness: 0.9,
+      roughness: 0.2,
+      emissive: 0x0a0020,
+      emissiveIntensity: 0.15
+    });
+    
+    const backPanelGeometry = new THREE.BoxGeometry(shelfWidth, 2.2, 0.03);
+    const backPanel = new THREE.Mesh(backPanelGeometry, backPanelMaterial);
+    backPanel.position.set(0, 1.1, -shelfDepth / 2);
+    scene.add(backPanel);
+    
+    // ============================================================================
+    // BOOK MESHES
+    // ============================================================================
+    
+    const bookMeshes = [];
+    
+    function createBook(deck, deckIndex, shelfY, positionX) {
+      const height = 0.95 + Math.random() * 0.25;
+      const width = 0.28 + Math.random() * 0.08;
+      const depth = 0.5 + Math.random() * 0.12;
+      
+      const bookGeometry = new THREE.BoxGeometry(width, height, depth);
+      
+      const bookColor = new THREE.Color(deck.color);
+      const darkColor = bookColor.clone().multiplyScalar(0.25);
+      
+      const bookMaterial = new THREE.MeshStandardMaterial({
+        color: darkColor,
+        metalness: 0.4,
+        roughness: 0.6,
+        emissive: new THREE.Color(deck.color),
+        emissiveIntensity: 0.15
+      });
+      
+      const book = new THREE.Mesh(bookGeometry, bookMaterial);
+      
+      const baseY = shelfY + height / 2 + plankThickness / 2;
+      book.position.set(positionX, baseY, 0);
+      book.rotation.y = (Math.random() - 0.5) * 0.06;
+      
+      book.userData = {
+        deckIndex: deckIndex,
+        baseY: baseY,
+        baseEmissive: 0.15
+      };
+      
+      scene.add(book);
+      bookMeshes.push(book);
+      
+      // Spine accent
+      const spineHeight = height * 0.7;
+      const spineGeometry = new THREE.BoxGeometry(0.015, spineHeight, 0.01);
+      const spineMaterial = new THREE.MeshBasicMaterial({
+        color: new THREE.Color(deck.color),
+        transparent: true,
+        opacity: 0.7
+      });
+      
+      const spine = new THREE.Mesh(spineGeometry, spineMaterial);
+      spine.position.set(-width / 2, 0, depth / 2 - 0.02);
+      book.add(spine);
+      
+      return book;
+    }
+    
+    // Layout books on shelves
+    const bottomShelfBooks = PITCH_DECKS.slice(0, 3);
+    const topShelfBooks = PITCH_DECKS.slice(3);
+    
+    const layoutWidth = shelfWidth * 0.65;
+    
+    // Bottom shelf
+    const bottomSpacing = layoutWidth / (bottomShelfBooks.length + 1);
+    bottomShelfBooks.forEach((deck, idx) => {
+      const x = -layoutWidth / 2 + bottomSpacing * (idx + 1);
+      createBook(deck, idx, 0.0, x);
+    });
+    
+    // Top shelf
+    const topSpacing = layoutWidth / (topShelfBooks.length + 1);
+    topShelfBooks.forEach((deck, idx) => {
+      const x = -layoutWidth / 2 + topSpacing * (idx + 1);
+      createBook(deck, idx + 3, 1.6, x);
+    });
+    
+    // ============================================================================
+    // INTERACTION SYSTEM
+    // ============================================================================
+    
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+    let hoveredBook = null;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragMoved = false;
+    
+    // Camera orbit
+    let cameraAngle = 0;
+    let targetAngle = 0;
+    const maxAngle = 0.6;
+    
+    function updateMouse(event) {
+      const rect = container.getBoundingClientRect();
+      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    }
+    
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      dragStartX = e.clientX;
+      dragMoved = false;
+      container.style.cursor = 'grabbing';
+    });
+    
+    container.addEventListener('mousemove', (e) => {
+      updateMouse(e);
+      
+      if (isDragging) {
+        const delta = (e.clientX - dragStartX) * 0.005;
+        targetAngle += delta;
+        targetAngle = Math.max(-maxAngle, Math.min(maxAngle, targetAngle));
+        dragStartX = e.clientX;
+        
+        if (Math.abs(delta) > 0.001) {
+          dragMoved = true;
+        }
+      }
+    });
+    
+    container.addEventListener('mouseup', () => {
+      isDragging = false;
+      container.style.cursor = hoveredBook !== null ? 'pointer' : 'grab';
+    });
+    
+    container.addEventListener('click', () => {
+      if (hoveredBook !== null && !dragMoved) {
+        openModal(hoveredBook);
+      }
+    });
+    
+    // Touch support
+    container.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      const rect = container.getBoundingClientRect();
+      mouse.x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
+      
+      isDragging = true;
+      dragStartX = touch.clientX;
+      dragMoved = false;
+    }, { passive: true });
+    
+    container.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const rect = container.getBoundingClientRect();
+      mouse.x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
+      
+      if (isDragging) {
+        const delta = (touch.clientX - dragStartX) * 0.005;
+        targetAngle += delta;
+        targetAngle = Math.max(-maxAngle, Math.min(maxAngle, targetAngle));
+        dragStartX = touch.clientX;
+        
+        if (Math.abs(delta) > 0.001) {
+          dragMoved = true;
+        }
+      }
+    }, { passive: true });
+    
+    container.addEventListener('touchend', () => {
+      if (hoveredBook !== null && !dragMoved) {
+        openModal(hoveredBook);
+      }
+      isDragging = false;
+    }, { passive: true });
+    
+    // Hover label
+    const hoverLabel = document.getElementById('hoverLabel');
+    
+    // ============================================================================
+    // MODAL SYSTEM
+    // ============================================================================
+    
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalCard = document.getElementById('modalCard');
+    const modalClose = document.getElementById('modalClose');
+    const modalContent = document.getElementById('modalContent');
+    
+    function openModal(deckIndex) {
+      const deck = PITCH_DECKS[deckIndex];
+      
+      const html = `
+        <span class="modal-tag tag-${deck.tag}">${deck.tagLabel}</span>
+        <h2 class="modal-title">${deck.title}</h2>
+        <p class="modal-subtitle">${deck.subtitle}</p>
+        
+        <div class="modal-screenshot">
+          ${deck.screenshotUrl ? 
+            `<img src="${deck.screenshotUrl}" alt="${deck.title} screenshot">` :
+            `<div class="modal-screenshot-placeholder">Screenshot coming soon</div>`
+          }
+        </div>
+        
+        <h3 class="modal-section-label">Overview</h3>
+        <p class="modal-description">${deck.description}</p>
+        
+        <h3 class="modal-section-label">Tech Stack</h3>
+        <div class="modal-tech-chips">
+          ${deck.tech.map(tech => `<span class="tech-chip">${tech}</span>`).join('')}
+        </div>
+        
+        <div class="modal-links">
+          ${deck.links.map(link => 
+            `<a href="${link.url}" class="modal-link ${link.primary ? 'primary' : 'secondary'}" target="_blank" rel="noopener noreferrer">${link.label}</a>`
+          ).join('')}
+        </div>
+      `;
+      
+      modalContent.innerHTML = html;
+      modalOverlay.classList.add('active');
+    }
+    
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+    }
+    
+    modalClose.addEventListener('click', closeModal);
+    
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        closeModal();
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+    
+    // ============================================================================
+    // ANIMATION LOOP
+    // ============================================================================
+    
+    let time = 0;
+    
+    function animate() {
+      requestAnimationFrame(animate);
+      
+      time += 0.01;
+      
+      // Interpolate camera angle
+      cameraAngle += (targetAngle - cameraAngle) * 0.05;
+      camera.position.x = Math.sin(cameraAngle) * 5.5;
+      camera.position.z = Math.cos(cameraAngle) * 5.5;
+      camera.lookAt(0, 0.8, 0);
+      
+      // Raycast for hover detection
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(bookMeshes);
+      
+      let newHoveredBook = null;
+      
+      if (intersects.length > 0 && !isDragging) {
+        newHoveredBook = intersects[0].object.userData.deckIndex;
+      }
+      
+      // Update all books
+      bookMeshes.forEach((book, idx) => {
+        const userData = book.userData;
+        
+        if (newHoveredBook === userData.deckIndex) {
+          // Hover state
+          book.material.emissiveIntensity += (0.55 - book.material.emissiveIntensity) * 0.15;
+          book.position.y += ((userData.baseY + 0.06) - book.position.y) * 0.12;
+        } else {
+          // Rest state
+          book.material.emissiveIntensity += (userData.baseEmissive - book.material.emissiveIntensity) * 0.1;
+          book.position.y += (userData.baseY - book.position.y) * 0.1;
+        }
+      });
+      
+      // Update hover label
+      if (newHoveredBook !== null) {
+        hoverLabel.textContent = PITCH_DECKS[newHoveredBook].spineLabel;
+        hoverLabel.classList.add('visible');
+        container.style.cursor = 'pointer';
+      } else {
+        hoverLabel.classList.remove('visible');
+        container.style.cursor = isDragging ? 'grabbing' : 'grab';
+      }
+      
+      hoveredBook = newHoveredBook;
+      
+      // Animate particles
+      const positions = particles.geometry.attributes.position.array;
+      for (let i = 0; i < particleCount; i++) {
+        positions[i * 3 + 1] += Math.sin(time + i * 0.5) * 0.0004;
+      }
+      particles.geometry.attributes.position.needsUpdate = true;
+      
+      // Pulse point lights
+      leftGlow.intensity = 0.5 + Math.sin(time * 1.5) * 0.15;
+      rightGlow.intensity = 0.5 + Math.cos(time * 1.2) * 0.15;
+      
+      renderer.render(scene, camera);
+    }
+    
+    animate();
+    
+    // ============================================================================
+    // RESIZE HANDLER
+    // ============================================================================
+    
+    window.addEventListener('resize', () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+    
+    // Set initial cursor
+    container.style.cursor = 'grab';
+  </script>
+</body>
+</html>
