@@ -1,10 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import {
-  milestones,
-  sections,
-  type Milestone,
-  type MilestoneLink,
-} from "../../data/milestones";
+import type { Milestone, MilestoneLink } from "../../data/milestones";
 
 /* ── Category configuration ── */
 const categoryConfig: Record<Milestone["category"], { label: string }> = {
@@ -352,7 +347,12 @@ const Legend = () => (
 );
 
 /* ── Main Timeline component ── */
-const Timeline = () => {
+interface TimelineProps {
+  milestones: Milestone[];
+  sections: string[];
+}
+
+const Timeline = ({ milestones, sections }: TimelineProps) => {
   const [activeFilters, setActiveFilters] = useState<Set<Milestone["category"]>>(
     new Set(["nova", "research", "industry", "convergence"])
   );
