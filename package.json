@@ -2,6 +2,7 @@
   "name": "smooth-brain-portfolio",
   "type": "module",
   "version": "0.0.1",
+  "description": "Mission: Fuck big tech, fuck black‑box software, and fuck predatory subscriptions. Build open, self‑hosted tools that let people own their infrastructure, inspect their code, and walk away from opaque SaaS gatekeepers whenever they choose.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

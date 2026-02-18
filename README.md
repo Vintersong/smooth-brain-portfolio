@@ -1,5 +1,12 @@
 # Andrei Moldovean - Portfolio Website
 
+## Mission Statement
+
+> **Mission: Fuck big tech, fuck black‑box software, and fuck predatory subscriptions.**
+> 
+> Build open, self‑hosted tools that let people own their infrastructure, inspect their code,
+> and walk away from opaque SaaS gatekeepers whenever they choose.
+
 ## About This Project
 
 This is a **student assignment** for a Web Design course - a freelancing professional portfolio website built with Bootstrap 5.3.
