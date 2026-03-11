@@ -2,6 +2,7 @@
 interface Props {
   title: string;
   description?: string;
+  keywords?: string;
   ogImage?: string;
   canonicalUrl?: string;
 }
@@ -9,6 +10,7 @@ interface Props {
 const { 
   title, 
   description = "Smooth Brain Designs - Portfolio",
+  keywords = "smooth-brain-designs, smooth brain designs, Andrei Moldovean, game designer, UI/UX developer, technical artist, portfolio",
   ogImage = "https://smooth-brain-designs.com/images/profile.jpg",
   canonicalUrl = `https://smooth-brain-designs.com${Astro.url.pathname}`
 } = Astro.props;
@@ -20,6 +22,7 @@ const {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content={description}>
+  <meta name="keywords" content={keywords}>
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content={title}>
