@@ -373,6 +373,36 @@ export const milestones: Milestone[] = [
     ],
   },
   {
+    date: "April 3, 2025",
+    title: "Semantic Kernel Agent Framework GA",
+    description:
+      "Microsoft made the Semantic Kernel Agent framework generally available in SK 1.45 (.NET) and 1.27 (Python), providing a production-ready SDK for building AI agents and multi-agent systems with improved memory and orchestration primitives.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "Microsoft",
+    links: [
+      {
+        label: "Blog",
+        url: "https://devblogs.microsoft.com/semantic-kernel/semantic-kernel-agents-are-now-generally-available/",
+      },
+    ],
+  },
+  {
+    date: "April 10, 2025",
+    title: "ChatGPT Two-Track Memory Upgrade",
+    description:
+      "OpenAI updated ChatGPT memory so that, beyond explicit saved memories, it now references all past conversations via chat history to deliver more personalized, cross-session responses, with granular user controls for both channels.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "OpenAI",
+    links: [
+      {
+        label: "Announcement",
+        url: "https://openai.com/index/memory-and-new-controls-for-chatgpt/",
+      },
+    ],
+  },
+  {
     date: "Spring–Summer 2025",
     title: "NOVA → MCP Server Migration",
     description:
@@ -416,6 +446,96 @@ export const milestones: Milestone[] = [
     ],
   },
   {
+    date: "May 16, 2025",
+    title: "Codex Software Engineering Agent (Research Preview)",
+    description:
+      "OpenAI launched Codex as a cloud-based software engineering agent in ChatGPT, powered by the codex-1 model, able to read repositories, run tests, and autonomously implement features and bug fixes in sandboxed environments.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "OpenAI",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.maginative.com/article/meet-codex-openais-new-software-engineering-ai-agent/",
+      },
+    ],
+  },
+  {
+    date: "May 18, 2025",
+    title: "Azure AI Foundry Agent Service GA",
+    description:
+      "Microsoft announced the general availability of Azure AI Foundry Agent Service, enabling orchestration of multiple specialized agents with Agent-to-Agent (A2A) and Model Context Protocol support, unifying Semantic Kernel and AutoGen into a single agent-focused SDK.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "Microsoft",
+    links: [
+      {
+        label: "Blog",
+        url: "https://devblogs.microsoft.com/agent-framework/semantic-kernel-roadmap-h1-2025-accelerating-agents-processes-and-integration/",
+      },
+    ],
+  },
+  {
+    date: "May 19, 2025",
+    title: "Jules Asynchronous Coding Agent (Public Beta)",
+    description:
+      "Google introduced Jules as an asynchronous agentic coding assistant that clones repositories into secure cloud VMs, autonomously performs tasks like writing tests, fixing bugs, and adding features, then returns plans, reasoning, and diffs integrated into GitHub workflows.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "Google",
+    links: [
+      {
+        label: "Article",
+        url: "https://entelligence.ai/blogs/google-jules-free-async-ai-for-debugging-code",
+      },
+    ],
+  },
+  {
+    date: "May 27, 2025",
+    title: "Mistral Agents API",
+    description:
+      "Mistral announced its Agents API, a framework for building autonomous agents with built-in connectors for Python execution, web search, image generation, document retrieval, MCP tools, persistent conversational memory, and orchestration of collaborating agents.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "Mistral AI",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.testingcatalog.com/mistral-ai-released-agents-api-for-agent-development/",
+      },
+    ],
+  },
+  {
+    date: "June 2, 2025",
+    title: "Codex and Agents SDK Enhancements",
+    description:
+      "OpenAI expanded its Codex software engineering agent and Agents SDK, adding broader access, TypeScript support, human-in-the-loop approvals, serialized agent state, and improved tracing.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "OpenAI",
+    links: [
+      {
+        label: "Developer Docs",
+        url: "https://developers.openai.com/cookbook/examples/agents_sdk/app_assistant_voice_agents/",
+      },
+    ],
+  },
+  {
+    date: "June 12, 2025",
+    title: "Claude Multi-Agent Research System",
+    description:
+      "Anthropic detailed Claude's Research feature as a multi-agent system using an orchestrator-worker pattern where a lead agent plans research, spawns specialized subagents that search in parallel, and aggregates their findings.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "Anthropic",
+    links: [
+      {
+        label: "Engineering Blog",
+        url: "https://www.anthropic.com/engineering/multi-agent-research-system",
+      },
+    ],
+  },
+  {
     date: "June 2025",
     title: "Monolithic vs Modular AI Architecture",
     description:
@@ -433,6 +553,36 @@ export const milestones: Milestone[] = [
       {
         label: "Article",
         url: "https://www.shaped.ai/blog/monolithic-vs-modular-ai-architecture",
+      },
+    ],
+  },
+  {
+    date: "June 22, 2025",
+    title: "Gemini Agent Mode in Android Studio",
+    description:
+      "Google announced Agent Mode for Gemini in Android Studio, an experimental agentic capability that uses built-in IDE tools so Gemini can autonomously assist with Android app development tasks.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "Google",
+    links: [
+      {
+        label: "Blog",
+        url: "https://android-developers.googleblog.com/2025/06/agentic-ai-takes-gemini-in-android-studio-to-next-level.html",
+      },
+    ],
+  },
+  {
+    date: "July 9, 2025",
+    title: "Devstral Medium and Upgraded Devstral Small",
+    description:
+      "Mistral introduced Devstral Medium and an upgraded Devstral Small, coding models optimized for agentic workloads and generalized to different prompts and scaffolds.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "Mistral AI",
+    links: [
+      {
+        label: "News",
+        url: "https://mistral.ai/news/devstral-2507",
       },
     ],
   },
@@ -480,6 +630,21 @@ export const milestones: Milestone[] = [
       },
     ],
   },
+  {
+    date: "July 30, 2025",
+    title: "Deep Agents Concept and deepagents Library",
+    description:
+      "LangChain published its Deep Agents architecture and released the deepagents Python package, defining agents that combine planning tools, subagents, filesystem-based persistent memory, and detailed prompts to handle long-horizon multi-step tasks.",
+    category: "industry",
+    section: "Q2–Q3 2025: MCP Implementation & Industry Convergence",
+    publication: "LangChain",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.marktechpost.com/2025/10/20/meet-langchains-deepagents-library-and-a-practical-example-to-see-how-deepagents-actually-work-in-action/",
+      },
+    ],
+  },
 
   // ── Q4 2025 ──
   {
@@ -506,6 +671,51 @@ export const milestones: Milestone[] = [
     ],
   },
   {
+    date: "August 5, 2025",
+    title: "Jules GA and Tiered Availability",
+    description:
+      "Google moved Jules out of beta into general availability, powered by Gemini 2.5 Pro, adding higher-limit Pro and Ultra tiers for intensive multi-agent coding workflows.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Google",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.infoq.com/news/2025/08/google-jules/",
+      },
+    ],
+  },
+  {
+    date: "August 28, 2025",
+    title: "grok-code-fast-1 Agentic Coding Model",
+    description:
+      "xAI released grok-code-fast-1, a dedicated agentic coding model built with programming-focused pretraining and post-training on real pull requests, optimized for terminal and file-editing tools.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "xAI",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.reuters.com/business/musks-xai-forays-into-agentic-coding-with-new-model-2025-08-28/",
+      },
+    ],
+  },
+  {
+    date: "September 1, 2025",
+    title: "LangChain and LangGraph 1.0 Alpha",
+    description:
+      "LangChain announced 1.0 alpha versions of LangChain and LangGraph, repositioning LangGraph as a low-level durable agent orchestration runtime and LangChain as an agent-centric framework built on top.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "LangChain",
+    links: [
+      {
+        label: "Post",
+        url: "https://x.com/LangChainAI/status/1962934869065191457",
+      },
+    ],
+  },
+  {
     date: "September 2025",
     title: "The Evolution of Agentic AI",
     description:
@@ -524,6 +734,172 @@ export const milestones: Milestone[] = [
       {
         label: "Article",
         url: "https://lfnetworking.org/the-evolution-of-agentic-ai/",
+      },
+    ],
+  },
+  {
+    date: "September 28, 2025",
+    title: "Claude Agent SDK Launch",
+    description:
+      "Anthropic published the Claude Agent SDK, a general-purpose agent harness that exposes Claude's agent loop, tools, and context management in Python and TypeScript for building autonomous agents.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Anthropic",
+    links: [
+      {
+        label: "Engineering Blog",
+        url: "https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk",
+      },
+    ],
+  },
+  {
+    date: "October 2, 2025",
+    title: "Jules Tools CLI Companion",
+    description:
+      "Google introduced Jules Tools, a command-line companion that makes the Jules asynchronous coding agent programmable and scriptable from the terminal.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Google",
+    links: [
+      {
+        label: "Blog",
+        url: "https://developers.googleblog.com/en/meet-jules-tools-a-command-line-companion-for-googles-async-coding-agent/",
+      },
+    ],
+  },
+  {
+    date: "October 9, 2025",
+    title: "Gemini Enterprise Agentic AI Platform",
+    description:
+      "Google Cloud launched Gemini Enterprise, a unified agentic AI platform combining Gemini models, first- and third-party agents, and orchestration technology to build multi-step data-connected enterprise agents.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Google Cloud",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.constellationr.com/insights/news/google-cloud-launches-gemini-enterprise-eyes-agentic-ai-orchestration",
+      },
+    ],
+  },
+  {
+    date: "October 15, 2025",
+    title: "Microsoft Agent Framework Public Preview",
+    description:
+      "Microsoft announced the public preview of Microsoft Agent Framework, an open-source unified SDK and runtime merging AutoGen's multi-agent orchestration with Semantic Kernel foundations.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Microsoft",
+    links: [
+      {
+        label: "Blog",
+        url: "https://cloudsummit.eu/blog/microsoft-agent-framework-production-ready-convergence-autogen-semantic-kernel",
+      },
+    ],
+  },
+  {
+    date: "October 15, 2025",
+    title: "Agent Skills for Claude",
+    description:
+      "Anthropic introduced Agent Skills, filesystem-based folders of instructions, scripts, and resources that Claude can dynamically load to specialize on tasks across Claude apps, Claude Code, and the API.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Anthropic",
+    links: [
+      {
+        label: "Engineering Blog",
+        url: "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      },
+    ],
+  },
+  {
+    date: "October 21, 2025",
+    title: "LangChain 1.0 and LangGraph 1.0 GA",
+    description:
+      "LangChain released stable versions of LangChain 1.0 and LangGraph 1.0, the latter providing durable agent runtime with graph-based execution, checkpointing, short-term memory, and human-in-the-loop.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "LangChain",
+    links: [
+      {
+        label: "Changelog",
+        url: "https://changelog.langchain.com/announcements/langgraph-1-0-is-now-generally-available",
+      },
+    ],
+  },
+  {
+    date: "October 28, 2025",
+    title: "deepagents 0.2",
+    description:
+      "LangChain shipped deepagents v0.2, adding pluggable storage backends, large tool-result eviction, conversation-history summarization, and repair of interrupted tool calls.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "LangChain",
+    links: [
+      {
+        label: "Changelog",
+        url: "https://changelog.langchain.com/announcements/deepagents-0-2-release-for-more-autonomous-agents",
+      },
+    ],
+  },
+  {
+    date: "November 4, 2025",
+    title: "OpenHands Software Agent SDK",
+    description:
+      "Released a modular, model-agnostic toolkit refactoring the OpenHands agent stack into a composable SDK with event-sourced state, pluggable tools, multi-LLM routing, and sandboxed execution.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "OpenHands",
+    links: [
+      {
+        label: "Paper",
+        url: "https://deeplearn.org/arxiv/648116/the-openhands-software-agent-sdk:-a-composable-and-extensible-foundation-for-production-agents",
+      },
+    ],
+  },
+  {
+    date: "November 16, 2025",
+    title: "Live-SWE-agent — Self-Evolving Coding Agent",
+    description:
+      "Research paper introducing a software engineering agent that starts from a minimal scaffold and autonomously evolves its own tools and prompts at runtime.",
+    category: "research",
+    section: "Q4 2025: Ecosystem Maturity",
+    authors: "University of Illinois Urbana-Champaign",
+    publication: "arXiv preprint",
+    links: [
+      {
+        label: "Topic",
+        url: "https://www.emergentmind.com/topics/live-swe-agent",
+      },
+    ],
+  },
+  {
+    date: "November 19, 2025",
+    title: "Google Antigravity Agentic Development Platform",
+    description:
+      "Google launched Antigravity, an agentic development platform pairing an AI-powered editor with a Manager Surface for spawning and orchestrating multiple coding agents that learn from a shared knowledge base.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Google",
+    links: [
+      {
+        label: "Blog",
+        url: "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+      },
+    ],
+  },
+  {
+    date: "November 25, 2025",
+    title: "Effective Harnesses for Long-Running Agents",
+    description:
+      "Anthropic described engineering patterns in the Claude Agent SDK for long-running agents, including initializer and coding agents plus compaction strategies for multi-context-window work.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Anthropic",
+    links: [
+      {
+        label: "Engineering Blog",
+        url: "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
       },
     ],
   },
@@ -571,6 +947,83 @@ export const milestones: Milestone[] = [
     ],
   },
   {
+    date: "December 8, 2025",
+    title: "DeepCode Open Agentic Coding Framework",
+    description:
+      "Research paper presenting a fully autonomous multi-agent coding framework combining blueprint distillation, stateful code memory, retrieval-augmented knowledge injection, and closed-loop error correction.",
+    category: "research",
+    section: "Q4 2025: Ecosystem Maturity",
+    authors: "HKU Data Intelligence Lab",
+    publication: "arXiv / HuggingFace",
+    links: [
+      {
+        label: "Paper",
+        url: "https://huggingface.co/papers/2512.07921",
+      },
+    ],
+  },
+  {
+    date: "December 8, 2025",
+    title: "Devstral 2 and Mistral Vibe CLI",
+    description:
+      "Mistral released Devstral 2 and the open-source Mistral Vibe CLI, a terminal-native coding agent for repository-scale agentic coding tasks.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Mistral AI",
+    links: [
+      {
+        label: "Article",
+        url: "https://introl.com/blog/mistral-vibe-cli-devstral-2-claude-code-competitor-2025",
+      },
+    ],
+  },
+  {
+    date: "December 10, 2025",
+    title: "Confucius Code Agent and Confucius SDK",
+    description:
+      "Research introducing CCA and the Confucius SDK, an open agent development platform with hierarchical working memory, persistent note-taking, modular tools, and a meta-agent that designs and refines coding agents.",
+    category: "research",
+    section: "Q4 2025: Ecosystem Maturity",
+    authors: "Meta and Harvard",
+    publication: "arXiv",
+    links: [
+      {
+        label: "Paper",
+        url: "https://arxiv.org/html/2512.10398v1",
+      },
+    ],
+  },
+  {
+    date: "December 11, 2025",
+    title: "Gemini Interactions API and Deep Research Agent",
+    description:
+      "Google added the Interactions API in beta as a unified interface for interacting with Gemini models and agents, and launched the Gemini Deep Research Agent for autonomous multi-step research tasks.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Google",
+    links: [
+      {
+        label: "Blog",
+        url: "https://blog.google/innovation-and-ai/products/2025-research-breakthroughs/",
+      },
+    ],
+  },
+  {
+    date: "December 17, 2025",
+    title: "Grok Voice Agent API",
+    description:
+      "xAI launched the Grok Voice Agent API, compatible with the OpenAI Realtime API, for building multilingual voice agents with tool calling and real-time data search.",
+    category: "industry",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "xAI",
+    links: [
+      {
+        label: "Article",
+        url: "https://jls42.org/en/news/xai-decembre-2025",
+      },
+    ],
+  },
+  {
     date: "December 2025",
     title: "Google Interactions API",
     description:
@@ -593,6 +1046,21 @@ export const milestones: Milestone[] = [
       },
     ],
   },
+  {
+    date: "December 18, 2025",
+    title: "Agent Skills Open Standard",
+    description:
+      "Anthropic updated Agent Skills to be an open standard, specifying portable filesystem-based skill packages that work across Claude apps, Claude Code, the Agent SDK, and third-party runtimes.",
+    category: "convergence",
+    section: "Q4 2025: Ecosystem Maturity",
+    publication: "Anthropic",
+    links: [
+      {
+        label: "Guide",
+        url: "https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf",
+      },
+    ],
+  },
 
   // ── Q1 2026 ──
   {
@@ -611,6 +1079,51 @@ export const milestones: Milestone[] = [
     ],
     relation:
       "Theoretical restatement of what NOVA already embodies. NOVA's Step 7 translation layer is a CMA implementation sketch.",
+  },
+  {
+    date: "February 3, 2026",
+    title: "Claude Agent SDK Integration in Xcode",
+    description:
+      "Anthropic announced that Apple's Xcode now supports the Claude Agent SDK, enabling Claude-powered agents to handle long-running coding tasks within the Xcode IDE.",
+    category: "industry",
+    section: "Q1 2026: Harness Engineering & Validation",
+    publication: "Anthropic",
+    links: [
+      {
+        label: "Announcement",
+        url: "https://www.anthropic.com/news/apple-xcode-claude-agent-sdk",
+      },
+    ],
+  },
+  {
+    date: "February 14, 2026",
+    title: "Intelligent AI Delegation Framework",
+    description:
+      "Google DeepMind proposed a framework for intelligent AI delegation on the agentic web, defining pillars like dynamic assessment, adaptive coordination, verifiable completion, trust and reputation, and security.",
+    category: "research",
+    section: "Q1 2026: Harness Engineering & Validation",
+    publication: "Google DeepMind",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.marktechpost.com/2026/02/15/google-deepmind-proposes-new-framework-for-intelligent-ai-delegation-to-secure-the-emerging-agentic-web-for-future-economies/",
+      },
+    ],
+  },
+  {
+    date: "February 19, 2026",
+    title: "Microsoft Agent Framework Release Candidate",
+    description:
+      "Microsoft Agent Framework reached Release Candidate status for .NET and Python, finalizing a stable API for single and multi-agent systems with checkpointing, human-in-the-loop, and multi-provider model support.",
+    category: "industry",
+    section: "Q1 2026: Harness Engineering & Validation",
+    publication: "Microsoft",
+    links: [
+      {
+        label: "Blog",
+        url: "https://devblogs.microsoft.com/foundry/microsoft-agent-framework-reaches-release-candidate/",
+      },
+    ],
   },
   {
     date: "February 2026",
@@ -671,6 +1184,81 @@ export const milestones: Milestone[] = [
       {
         label: "Announcement",
         url: "https://www.anthropic.com/news/anthropic-codepath-partnership",
+      },
+    ],
+  },
+  {
+    date: "March 18, 2026",
+    title: "MuleRun Self-Evolving AI Workforce Platform",
+    description:
+      "MuleRun launched a self-evolving personal AI platform giving each user a dedicated 24/7 cloud VM with a three-tier evolution engine covering task memory, domain skill acquisition, and community knowledge sharing.",
+    category: "industry",
+    section: "Q1 2026: Harness Engineering & Validation",
+    publication: "MuleRun",
+    links: [
+      {
+        label: "Press Release",
+        url: "https://www.prnewswire.com/news-releases/mulerun-launches-self-evolving-personal-ai-to-democratize-the-digital-workforce-302717108.html",
+      },
+    ],
+  },
+  {
+    date: "March 25, 2026",
+    title: "Deep Agents Context Engineering",
+    description:
+      "LangChain published a detailed post on context engineering for deep agents, covering persistent memory, skill loading, and long-horizon task management.",
+    category: "industry",
+    section: "Q1 2026: Harness Engineering & Validation",
+    publication: "LangChain",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.marktechpost.com/2026/03/15/langchain-releases-deep-agents-a-structured-runtime-for-planning-memory-and-context-isolation-in-multi-step-ai-agents/",
+      },
+    ],
+  },
+  {
+    date: "March 25, 2026",
+    title: "Closing the Knowledge Gap with Agent Skills",
+    description:
+      "Google published a blog post describing the problem of agents lacking specialized knowledge and how skill files loaded at invocation time address it.",
+    category: "convergence",
+    section: "Q1 2026: Harness Engineering & Validation",
+    publication: "Google",
+    links: [
+      {
+        label: "Blog",
+        url: "https://developers.googleblog.com/",
+      },
+    ],
+  },
+  {
+    date: "March 29, 2026",
+    title: "Gemini for Business Skills Tab and Skill Architect",
+    description:
+      "Hidden features surfaced in Gemini for Business builds showing a Skills tab with pre-made skills for code review and PRD writing, plus a Skill Architect meta-skill for creating custom skills with name, description, and instructions fields.",
+    category: "industry",
+    section: "Q1 2026: Harness Engineering & Validation",
+    publication: "Google",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.testingcatalog.com/gemini-for-business-prepares-notebooklm-integration-and-skills/",
+      },
+    ],
+  },
+  {
+    date: "March 29, 2026",
+    title: "Custom Skills for Grok (In Development)",
+    description:
+      "xAI is developing a Custom Skills feature for Grok, letting users create and import modular instruction sets, currently visible in code hints but not yet launched.",
+    category: "industry",
+    section: "Q1 2026: Harness Engineering & Validation",
+    publication: "xAI",
+    links: [
+      {
+        label: "Article",
+        url: "https://www.testingcatalog.com/xai-prepares-skills-support-for-grok-to-rival-claude-and-chatgpt/",
       },
     ],
   },
