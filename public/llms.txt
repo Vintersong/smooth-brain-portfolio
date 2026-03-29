@@ -1,0 +1,25 @@
+# Site Name: Smooth Brain Designs
+> Portfolio and project hub for Andrei Moldovean — AI developer, systems architect, and game designer based in Cluj-Napoca, Romania.
+
+## Core Pages
+- [Home](/): Overview of Smooth Brain Designs, skills, and contact.
+- [NOVA Cognition Framework](/nova/): Architecture documentation, industry convergence timeline, and technical overview of the NOVA shard-based persistent memory MCP server.
+- [Timeline](/timeline/): Chronological record of NOVA development milestones alongside independently verified industry convergence events (April 2025 — March 2026).
+- [Projects](/projects/): Portfolio of active and completed projects including CHROMATIC (RGB bullet hell, Lua/LOVE2D), Forgemaster (multi-agent software factory), and Genesis (Sega Genesis soulslike platformer).
+- [GitHub](https://github.com/Vintersong/NOVA-Cognition-Framework): NOVA Cognition Framework repository. Creation date April 2, 2025.
+
+## Key Data Points
+- NOVA first commit: April 2, 2025
+- Google Interactions API release: December 11, 2025
+- Precedence delta: 8 months
+- NOVA shards in production: 425+
+- NOVA MCP tools: 12
+- Portfolio site Lighthouse score: 91+
+- Contact: moldovean.i.andrei@gmail.com
+- LinkedIn: linkedin.com/in/andrei-moldovean-b7462534a
+
+## Projects Summary
+- NOVA Cognition Framework: Shard-based persistent memory MCP server for AI agents. Implements semantic embeddings, confidence decay, knowledge graph, and pull-based retrieval.
+- Forgemaster: Multi-agent software factory routing tasks across Claude, Gemini, and local models via skill files. Produces working software from design docs in a single pipeline run.
+- CHROMATIC: 18,000+ line RGB bullet hell game in Lua/LOVE2D with custom dual FFT audio analysis pipeline and color-theory-based progression system.
+- Portfolio site: Multi-framework Astro/React/Vue application with WCAG compliance, OWASP hardening, and Lighthouse 91+.
