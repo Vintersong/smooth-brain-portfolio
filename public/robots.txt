@@ -34,4 +34,4 @@ Allow: /
 User-agent: GoogleOther
 Allow: /
 
-Sitemap: https://smooth-brain-designs.com/sitemap.xml
+Sitemap: https://smooth-brain-designs.com/sitemap-index.xml
