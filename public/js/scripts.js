@@ -71,4 +71,50 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
+  // Contact form wiring (Formspree-compatible endpoint)
+  const contactForm = document.getElementById('contactForm');
+  const contactFormStatus = document.getElementById('contactFormStatus');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      if (!(contactForm instanceof HTMLFormElement)) return;
+
+      const endpoint = contactForm.getAttribute('action') || '';
+      if (!endpoint || !endpoint.startsWith('https://formspree.io/f/')) {
+        if (contactFormStatus) {
+          contactFormStatus.textContent = 'Contact form is not configured yet.';
+        }
+        return;
+      }
+
+      if (contactFormStatus) contactFormStatus.textContent = 'Sending message...';
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          if (contactFormStatus) {
+            contactFormStatus.textContent = 'Message sent. I will get back to you soon.';
+          }
+        } else {
+          if (contactFormStatus) {
+            contactFormStatus.textContent = 'Could not send message right now. Please try again.';
+          }
+        }
+      } catch (error) {
+        if (contactFormStatus) {
+          contactFormStatus.textContent = 'Network error. Please try again in a moment.';
+        }
+      }
+    });
+  }
+
 });

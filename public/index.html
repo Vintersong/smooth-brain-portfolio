@@ -857,24 +857,27 @@
         <!-- Contact Form Column -->
         <div class="col-lg-6">
           <h3 class="contact-form text-center">.contact-form</h3>
-          <form class="bahnschrift">
+          <form id="contactForm" class="bahnschrift" action="https://formspree.io/f/xlgvpvvj" method="POST" data-form-service="formspree">
+            <input type="hidden" name="_subject" value="New portfolio contact form submission">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
             <div class="mb-3">
               <label for="contactName" class="form-label mono">.name</label>
-              <input type="text" class="form-control form-input-vapor" id="contactName" placeholder="Your name" required>
+              <input type="text" class="form-control form-input-vapor" id="contactName" name="name" placeholder="Your name" required>
             </div>
             <div class="mb-3">
               <label for="contactEmail" class="form-label mono">.email</label>
-              <input type="email" class="form-control form-input-vapor" id="contactEmail" placeholder="email.address@gmail.com" required>
+              <input type="email" class="form-control form-input-vapor" id="contactEmail" name="email" placeholder="email.address@domain.com" required>
             </div>
             <div class="mb-3">
               <label for="contactSubject" class="form-label mono">.subject</label>
-              <input type="text" class="form-control form-input-vapor" id="contactSubject" placeholder="Project inquiry / Collaboration / Help the lobsters won't leave" required>
+              <input type="text" class="form-control form-input-vapor" id="contactSubject" name="subject" placeholder="Project inquiry / Collaboration / Help the lobsters won't leave" required>
             </div>
             <div class="mb-3">
               <label for="contactMessage" class="form-label mono">.message</label>
-              <textarea class="form-control form-input-vapor" id="contactMessage" rows="5" placeholder="Tell me about your project..." required></textarea>
+              <textarea class="form-control form-input-vapor" id="contactMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
             </div>
             <button type="submit" class="btn btn-outline-pink bahnschrift">.send-message</button>
+            <p id="contactFormStatus" class="small mt-2 mono" style="opacity: 0.85;" aria-live="polite"></p>
             <p class="small mt-2 mono" style="opacity: 0.7;">Response time: 24-48 hours (or until the void responds)</p>
           </form>
         </div>
