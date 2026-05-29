@@ -45,30 +45,31 @@ export default {
         },
         {
           id: 1,
-          title: '.data-visualizer',
-          description: 'Player metrics dashboard. Numbers become lines. Lines become insights. Insights justify decisions.',
-          image: '/images/project-data.svg',
-          icon: 'bi-graph-up-arrow',
-          details: 'Player metrics dashboard and streamlined cohort visualizer for teams and publishers.',
-          technologies: ['.excel', '.power-bi', '.indentation-hell (python)']
+          title: '.n.o.v.a',
+          description: 'Non Organic Virtual Assistant. Persistent AI memory system with shard architecture, confidence decay, and multi-agent orchestration.',
+          image: '/images/project-nova.svg',
+          icon: 'bi-cpu',
+          details: 'NOVA is a persistent memory system for AI agents built as an MCP server. Stores conversations and decisions as modular JSON shards with metadata, confidence scores, and time-based decay rates. Retrieval runs a dual-pass pipeline named after Odin\u2019s ravens: HUGINN (Haiku fast pass) feeds into MUNINN (Sonnet deep rerank), with a spreading activation BFS over the knowledge graph as a third pass. HMAC-SHA256 signs embeddings at ingestion and verifies before reranking. N\u00d3TT daemon handles background decay, compaction, and merge suggestions. Forgemaster orchestration layer decomposes tasks into typed tickets and routes them across a three-tier model hierarchy. 37 MCP tools. 221 agent personas. 324 skill library files. Conceived April 2025.',
+          technologies: ['.Python', '.MCP', '.Claude', '.Gemini', '.Docker', '.SQLite']
         },
         {
           id: 2,
+          title: '.chromatic',
+          description: 'Bullet heaven with a 2-primary color commitment tree, music-reactive enemy spawning, and 18 named synergies. Built in L\u00d6VE2D.',
+          image: '/images/project-chromatic.svg',
+          icon: 'bi-controller',
+          details: 'CHROMATIC is a Vampire Survivors-style bullet heaven built in L\u00d6VE2D (Lua). Auto-aim shooting with a 2-primary color commitment tree — pick RED, GREEN, or BLUE first; the third locks out for the run. Secondary palette (YELLOW, MAGENTA, CYAN) unlocks when both primaries are leveled. MusicReactor does BPM detection and feeds BASS/MIDS/TREBLE weights into formation-based enemy spawning. Eight artifacts (Prism, Halo, Mirror, Lens, Diffraction, Refraction, Diffusion, Supernova) scale up to Lv5. SynergySystem houses 18 named combo unlocks. Custom GLSL shaders with moonshine bloom pass, beat-reactive grid ripples, and a separate splash screen shader. Full state machine across 9 states. Playable in browser via love.js.',
+          technologies: ['.Lua', '.L\u00d6VE2D', '.GLSL', '.LangChain', '.GitHub Actions'],
+          link: 'https://vintersong.github.io/love2d-RGB/'
+        },
+        {
+          id: 3,
           title: '.infinite-backlog',
           description: 'A project management tool that visualizes your steam library and weeps. Integrates with existential dread.',
           image: '/images/project-backlog.svg',
           icon: 'bi-hourglass-split',
           details: 'A project management tool that visualizes your steam library and weeps. Integrates with existential dread.',
           technologies: ['.Steam API', '.React', '.Chart.js (for crying)']
-        },
-        {
-          id: 3,
-          title: '.abyss-clicker',
-          description: 'Idle game where you click the void. The void clicks back. Prestige system based on ego death.',
-          image: '/images/project-abyss.svg',
-          icon: 'bi-mouse',
-          details: 'Idle game where you click the void. The void clicks back. Prestige system based on ego death.',
-          technologies: ['.JavaScript', '.LocalStorage (persistence)', '.Nietzsche.js']
         },
         {
           id: 4,
