@@ -34,6 +34,16 @@ export default {
       selectedProject: null,
       projects: [
         {
+          id: 0,
+          title: '.ai-readability-guard',
+          description: 'Web app that audits how readable your content is to AI systems. Because if a bot can\'t parse it, did it even exist?',
+          image: '/images/project-ai-readability.svg',
+          icon: 'bi-shield-check',
+          details: 'A full-stack web application that analyzes digital content and scores its legibility for AI systems. Built with React, TypeScript, Supabase, and deployed on Cloudflare Workers. Paste your URL or content and get a readability score with actionable recommendations.',
+          technologies: ['.React', '.TypeScript', '.Supabase', '.Cloudflare Workers', '.Vite'],
+          link: 'https://github.com/Vintersong/ai-readability-guard'
+        },
+        {
           id: 1,
           title: '.data-visualizer',
           description: 'Player metrics dashboard. Numbers become lines. Lines become insights. Insights justify decisions.',
