@@ -132,15 +132,15 @@
       <h2 class="project-name mb-4 text-center">.projects</h2>
       <div class="row g-4">
 
-        <!-- Card 1 - AuditAI -->
+        <!-- Card 1 - AI Readability Guard -->
         <div class="col-md-6 col-lg-4">
           <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
               <i class="bi bi-shield-check icon-muted" style="font-size: 5rem;"></i>
-              <h5 class="card-title project-name">.audit-ai</h5>
+              <h5 class="card-title project-name">.ai-readability-guard</h5>
               <p class="card-text bahnschrift">
-                Free machine-legibility scanner. Nine server-side checks against raw HTML. Is your site legible to AI?</p>
-              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modalAuditAi">.view</button>
+                Web app that audits how readable your content is to AI systems. Because if a bot can't parse it, did it even exist?</p>
+              <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modalAiReadabilityGuard">.view</button>
             </div>
           </div>
         </div>
@@ -179,12 +179,12 @@
   </section>
 
   <!-- MODALS -->
-  <!-- AuditAI Modal -->
-  <div class="modal fade" id="modalAuditAi" tabindex="-1" aria-hidden="true">
+  <!-- AI Readability Guard Modal -->
+  <div class="modal fade" id="modalAiReadabilityGuard" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header border-0">
-          <h5 class="modal-title project-name">.audit-ai <span class="mono" style="color:#B794F4; font-size:0.7em;">BETA</span></h5>
+          <h5 class="modal-title project-name">.ai-readability-guard <span class="mono" style="color:#B794F4; font-size:0.7em;">BETA</span></h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -195,7 +195,7 @@
               </div>
             </div>
             <div class="col-md-5">
-              <p class="bahnschrift mb-2">Free machine-legibility scanner. Audits how well a website can be parsed by AI systems like ChatGPT, Perplexity, and Claude. Runs nine server-side checks against raw HTML — no JS executed — and returns a Machine Legibility Score (MLS) out of 100 with exact fixes. Also generates a custom llms.txt for your site.</p>
+              <p class="bahnschrift mb-2">Web app that audits how readable your content is to AI systems like ChatGPT, Perplexity, and Claude. Runs nine server-side checks against raw HTML — no JS executed — and returns a Machine Legibility Score (MLS) out of 100 with exact fixes. Also generates a custom llms.txt for your site.</p>
               <h6 class="mt-3">.checks</h6>
               <ul class="list-unstyled mono" style="font-size:0.8rem;">
                 <li>.server-side-rendering</li>
@@ -212,8 +212,9 @@
               <ul class="list-unstyled mono">
                 <li>.react</li>
                 <li>.typescript</li>
-                <li>.lovable</li>
+                <li>.supabase</li>
                 <li>.cloudflare-workers</li>
+                <li>.vite</li>
               </ul>
               <div class="d-flex gap-2 mt-3">
                 <a href="https://ai-readability-guard.lovable.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-pink bahnschrift">.live-demo</a>
@@ -222,17 +223,17 @@
             </div>
           </div>
           <!-- Design Notes Accordion -->
-          <div class="accordion mt-3" id="auditAiDesignNotes">
+          <div class="accordion mt-3" id="aiReadabilityDesignNotes">
             <div class="accordion-item" style="background-color: transparent; border: 1px solid rgba(183, 148, 244, 0.3);">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#auditAiNotesCollapse" style="background-color: rgba(0, 0, 0, 0.5); color: #B794F4; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 0.5rem 1rem;">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aiReadabilityNotesCollapse" style="background-color: rgba(0, 0, 0, 0.5); color: #B794F4; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 0.5rem 1rem;">
                   .design-notes
                 </button>
               </h2>
-              <div id="auditAiNotesCollapse" class="accordion-collapse collapse" data-bs-parent="#auditAiDesignNotes">
+              <div id="aiReadabilityNotesCollapse" class="accordion-collapse collapse" data-bs-parent="#aiReadabilityDesignNotes">
                 <div class="accordion-body" style="background-color: rgba(0, 0, 0, 0.5); font-size: 0.85rem;">
                   <p class="mono mb-2" style="color: #00FFFF;">.idea</p>
-                  <p class="bahnschrift small">SEO tools model Google. AuditAI reads your HTML. As AI-driven answer engines become the default discovery layer, whether your page is machine-legible determines whether it exists to those systems at all. The MLS score is a proposed heuristic standard — not vendor-official, but deterministic and reproducible.</p>
+                  <p class="bahnschrift small">SEO tools model Google. AI Readability Guard reads your HTML. As AI-driven answer engines become the default discovery layer, whether your page is machine-legible determines whether it exists to those systems at all. The MLS score is a proposed heuristic standard — not vendor-official, but deterministic and reproducible.</p>
                   <p class="mono mb-2 mt-3" style="color: #00FFFF;">.how-it-scores</p>
                   <p class="bahnschrift small">Nine checks, 20 pts each. Pass = full credit, warn = half, fail = zero. Score = earned ÷ 180 × 100. No LLM is called against your page — purely observable signals from the raw HTML response.</p>
                   <p class="mono mb-2 mt-3" style="color: #00FFFF;">.constraints</p>
