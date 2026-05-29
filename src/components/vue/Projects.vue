@@ -35,13 +35,13 @@ export default {
       projects: [
         {
           id: 0,
-          title: '.ai-readability-guard',
-          description: 'Web app that audits how readable your content is to AI systems. Because if a bot can\'t parse it, did it even exist?',
+          title: '.audit-ai',
+          description: 'Free machine-legibility scanner. Nine server-side checks against raw HTML. Is your site legible to AI?',
           image: '/images/project-ai-readability.svg',
           icon: 'bi-shield-check',
-          details: 'A full-stack web application that analyzes digital content and scores its legibility for AI systems. Built with React, TypeScript, Supabase, and deployed on Cloudflare Workers. Paste your URL or content and get a readability score with actionable recommendations.',
-          technologies: ['.React', '.TypeScript', '.Supabase', '.Cloudflare Workers', '.Vite'],
-          link: 'https://github.com/Vintersong/ai-readability-guard'
+          details: 'AuditAI audits how well a website can be parsed by AI systems like ChatGPT, Perplexity, and Claude. It runs nine server-side checks against raw HTML — no JavaScript executed — and returns a Machine Legibility Score (MLS) out of 100 with exact fixes. Checks cover SSR detection, content clarity, llms.txt presence, schema.org markup, robots.txt AI crawler rules, heading hierarchy, URL structure, structured data completeness, and token efficiency. Also generates a custom llms.txt for your site.',
+          technologies: ['.React', '.TypeScript', '.Lovable', '.Cloudflare Workers', '.Vite'],
+          link: 'https://ai-readability-guard.lovable.app/'
         },
         {
           id: 1,
