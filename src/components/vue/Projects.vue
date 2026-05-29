@@ -35,11 +35,11 @@ export default {
       projects: [
         {
           id: 0,
-          title: '.audit-ai',
+          title: '.audit-aiBETA',
           description: 'Free machine-legibility scanner. Nine server-side checks against raw HTML. Is your site legible to AI?',
           image: '/images/project-ai-readability.svg',
           icon: 'bi-shield-check',
-          details: 'AuditAI audits how well a website can be parsed by AI systems like ChatGPT, Perplexity, and Claude. It runs nine server-side checks against raw HTML — no JavaScript executed — and returns a Machine Legibility Score (MLS) out of 100 with exact fixes. Checks cover SSR detection, content clarity, llms.txt presence, schema.org markup, robots.txt AI crawler rules, heading hierarchy, URL structure, structured data completeness, and token efficiency. Also generates a custom llms.txt for your site.',
+          details: 'AuditAI audits how well a website can be parsed by AI systems like ChatGPT, Perplexity, and Claude. Nine server-side checks run against the raw HTML response — no JavaScript executed — exactly what GPTBot, ClaudeBot, and PerplexityBot see. Returns a Machine Legibility Score (MLS) out of 100 with exact fixes. Checks: SSR detection, content clarity, llms.txt presence, schema.org markup, robots.txt AI crawler rules, heading hierarchy, URL structure, structured data completeness, and token efficiency. Also generates a custom llms.txt for your site. Score formula: earned ÷ 180 × 100. Pass = full credit, warn = half, fail = zero.',
           technologies: ['.React', '.TypeScript', '.Lovable', '.Cloudflare Workers', '.Vite'],
           link: 'https://ai-readability-guard.lovable.app/'
         },
