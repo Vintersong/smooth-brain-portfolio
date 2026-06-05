@@ -9,33 +9,33 @@ const categoryConfig: Record<Milestone["category"], { label: string }> = {
   convergence: { label: "Convergence" },
 };
 
-/* ── Color mapping helper ── */
+/* ── Color mapping helper — AIwave tokens ── */
 const getCategoryColor = (category: Milestone["category"]): string => {
   const colors = {
-    nova: '#7ee8cc',
-    research: '#d4b4f0',
-    industry: '#f0909f',
-    convergence: '#f0a8c4'
+    nova:        '#64ffd4',  /* accent-primary — mint */
+    research:    '#60a5fa',  /* state-info — blue */
+    industry:    '#ff6eb4',  /* accent-secondary — magenta */
+    convergence: '#4ade80',  /* state-pass — green */
   };
   return colors[category];
 };
 
 const getCategoryColorRgba = (category: Milestone["category"], opacity: number): string => {
   const rgbaMap = {
-    nova: `rgba(126, 232, 204, ${opacity})`,
-    research: `rgba(212, 180, 240, ${opacity})`,
-    industry: `rgba(240, 144, 159, ${opacity})`,
-    convergence: `rgba(240, 168, 196, ${opacity})`
+    nova:        `rgba(100, 255, 212, ${opacity})`,
+    research:    `rgba(96, 165, 250, ${opacity})`,
+    industry:    `rgba(255, 110, 180, ${opacity})`,
+    convergence: `rgba(74, 222, 128, ${opacity})`,
   };
   return rgbaMap[category];
 };
 
 /* ── Dot colour per category ── */
 const dotColor: Record<Milestone["category"], string> = {
-  nova: "border-[#7ee8cc] shadow-[0_0_16px_rgba(126,232,204,0.6)]",
-  research: "border-[#d4b4f0] shadow-[0_0_16px_rgba(212,180,240,0.6)]",
-  industry: "border-[#f0909f] shadow-[0_0_16px_rgba(240,144,159,0.6)]",
-  convergence: "border-[#f0a8c4] shadow-[0_0_16px_rgba(240,168,196,0.6)]",
+  nova:        "border-[#64ffd4] shadow-[0_0_12px_rgba(100,255,212,0.4)]",
+  research:    "border-[#60a5fa] shadow-[0_0_12px_rgba(96,165,250,0.4)]",
+  industry:    "border-[#ff6eb4] shadow-[0_0_12px_rgba(255,110,180,0.4)]",
+  convergence: "border-[#4ade80] shadow-[0_0_12px_rgba(74,222,128,0.4)]",
 };
 
 /* ── Filter chip ── */
@@ -57,7 +57,7 @@ const FilterChip = ({
     }`}
     style={{
       backgroundColor: active ? getCategoryColor(category) : getCategoryColorRgba(category, 0.3),
-      color: active ? 'rgba(13, 10, 20, 0.9)' : 'rgba(237, 230, 245, 0.7)',
+      color: active ? '#12122a' : 'var(--text-secondary)',
     }}
   >
     {label}
@@ -117,21 +117,21 @@ const TimelineCard = ({
           {cfg.label}
         </span>
         {milestone.publication && (
-          <span className="text-[10px] font-mono tracking-wide" style={{ color: 'rgba(237, 230, 245, 0.6)' }}>
+          <span className="text-[10px] font-mono tracking-wide" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
             {milestone.publication}
           </span>
         )}
         {milestone.authors && (
-          <span className="text-[10px] italic hidden sm:inline" style={{ color: 'rgba(237, 230, 245, 0.5)' }}>
+          <span className="text-[10px] italic hidden sm:inline" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
             {milestone.authors}
           </span>
         )}
       </div>
 
-      <h3 className="text-base font-semibold leading-snug mb-1" style={{ color: 'var(--lavender, #d4b4f0)' }}>
+      <h3 className="text-base font-semibold leading-snug mb-1" style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>
         {milestone.title}
       </h3>
-      <p className="text-sm leading-relaxed" style={{ color: 'rgba(237, 230, 245, 0.8)' }}>
+      <p className="text-sm leading-relaxed" style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>
         {milestone.description}
       </p>
 
@@ -140,7 +140,7 @@ const TimelineCard = ({
         <div className="mt-4 space-y-3 border-t border-white/10 pt-3 animate-fade-in">
           {milestone.contributions && milestone.contributions.length > 0 && (
             <div>
-              <h4 className="text-xs font-mono uppercase tracking-widest mb-1.5" style={{ color: 'rgba(212, 180, 240, 0.7)' }}>
+              <h4 className="text-xs font-mono uppercase tracking-widest mb-1.5" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
                 Key Contributions
               </h4>
               <ul className="space-y-1">
@@ -148,9 +148,9 @@ const TimelineCard = ({
                   <li
                     key={i}
                     className="text-xs leading-relaxed pl-3 relative"
-                    style={{ color: 'rgba(237, 230, 245, 0.75)' }}
+                    style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}
                   >
-                    <span className="absolute left-0" style={{ color: 'rgba(126, 232, 204, 0.6)' }}>›</span>
+                    <span className="absolute left-0" style={{ color: 'var(--accent-primary)' }}>›</span>
                     {c}
                   </li>
                 ))}
@@ -160,10 +160,10 @@ const TimelineCard = ({
 
           {milestone.relation && (
             <div>
-              <h4 className="text-xs font-mono uppercase tracking-widest mb-1.5" style={{ color: 'rgba(126, 232, 204, 0.8)' }}>
+              <h4 className="text-xs font-mono uppercase tracking-widest mb-1.5" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                 Relation to NOVA
               </h4>
-              <p className="text-xs leading-relaxed italic" style={{ color: 'rgba(126, 232, 204, 0.7)' }}>
+              <p className="text-xs leading-relaxed italic" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
                 {milestone.relation}
               </p>
             </div>
@@ -180,16 +180,17 @@ const TimelineCard = ({
                   onClick={(e) => e.stopPropagation()}
                   className="text-[10px] font-mono px-2 py-0.5 rounded ring-1 transition-colors"
                   style={{
-                    borderColor: 'rgba(212, 180, 240, 0.3)',
-                    color: 'rgba(212, 180, 240, 0.8)'
+                    borderColor: 'var(--border-default)',
+                    color: 'var(--text-secondary)',
+                    fontFamily: 'var(--font-mono)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#d4b4f0';
-                    e.currentTarget.style.borderColor = 'rgba(212, 180, 240, 0.6)';
+                    e.currentTarget.style.color = 'var(--accent-primary)';
+                    e.currentTarget.style.borderColor = 'var(--accent-primary)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'rgba(212, 180, 240, 0.8)';
-                    e.currentTarget.style.borderColor = 'rgba(212, 180, 240, 0.3)';
+                    e.currentTarget.style.color = 'var(--text-secondary)';
+                    e.currentTarget.style.borderColor = 'var(--border-default)';
                   }}
                 >
                   {link.label} ↗
@@ -205,25 +206,25 @@ const TimelineCard = ({
           className="mt-2 px-3 py-1.5 text-[10px] font-mono select-none transition-all duration-200"
           style={{
             backgroundColor: 'transparent',
-            color: '#f0909f',
-            border: 'none',
-            fontWeight: 700,
-            textDecoration: 'underline',
-            textUnderlineOffset: '4px'
+            color: 'var(--accent-secondary)',
+            border: '1px solid var(--accent-secondary)',
+            borderRadius: 'var(--radius-sm)',
+            fontFamily: 'var(--font-mono)',
+            fontWeight: 600,
+            padding: '2px 8px',
+            letterSpacing: '0.04em',
           }}
           onClick={(e) => {
             e.stopPropagation();
             setExpanded(!expanded);
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.color = '#f090b8';
-            e.currentTarget.style.textShadow = '0 0 12px rgba(212, 120, 156, 0.4)';
-            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.background = 'var(--accent-secondary)';
+            e.currentTarget.style.color = '#12122a';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = '#f0909f';
-            e.currentTarget.style.textShadow = '';
-            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.background = 'transparent';
+            e.currentTarget.style.color = 'var(--accent-secondary)';
           }}
           aria-label={expanded ? "Collapse details" : "Expand details"}
         >
@@ -246,7 +247,7 @@ const TimelineCard = ({
       >
         {isEven ? (
           <div className="space-y-1">
-            <span className="text-xs font-mono tracking-widest uppercase hidden md:block" style={{ color: 'rgba(126, 232, 204, 0.7)' }}>
+            <span className="text-xs font-mono tracking-widest uppercase hidden md:block" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
               {milestone.date}
             </span>
           </div>
@@ -261,9 +262,9 @@ const TimelineCard = ({
           className={`relative z-10 h-4 w-4 rounded-full border-2 ${
             dotColor[milestone.category]
           }`}
-          style={{ backgroundColor: 'var(--bg-dark, #0d0a14)' }}
+          style={{ backgroundColor: 'var(--bg-base)' }}
         />
-        <div className="w-px flex-1" style={{ background: 'linear-gradient(to bottom, rgba(212, 180, 240, 0.3), rgba(212, 180, 240, 0.1))' }} />
+        <div className="w-px flex-1" style={{ background: 'linear-gradient(to bottom, rgba(100, 100, 180, 0.3), rgba(100, 100, 180, 0.1))' }} />
       </div>
 
       {/* Right column */}
@@ -274,16 +275,16 @@ const TimelineCard = ({
             className={`h-3 w-3 rounded-full border-2 ${
               dotColor[milestone.category]
             }`}
-            style={{ backgroundColor: 'var(--bg-dark, #0d0a14)' }}
+            style={{ backgroundColor: 'var(--bg-base)' }}
           />
-          <span className="text-xs font-mono tracking-widest uppercase" style={{ color: 'rgba(126, 232, 204, 0.7)' }}>
+          <span className="text-xs font-mono tracking-widest uppercase" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
             {milestone.date}
           </span>
         </div>
 
         {isEven ? card : (
           <div className="space-y-1">
-            <span className="text-xs font-mono tracking-widest uppercase hidden md:block" style={{ color: 'rgba(126, 232, 204, 0.7)' }}>
+            <span className="text-xs font-mono tracking-widest uppercase hidden md:block" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
               {milestone.date}
             </span>
           </div>
@@ -319,11 +320,11 @@ const SectionHeader = ({ title }: { title: string }) => {
       ref={ref}
       className="opacity-0 transition-opacity duration-700 col-span-full flex items-center gap-4 py-8 md:py-12 overflow-hidden max-w-full"
     >
-      <div className="hidden sm:block h-px flex-1 min-w-8" style={{ background: 'linear-gradient(to right, transparent, rgba(212, 180, 240, 0.3), transparent)' }} />
-      <h2 className="text-xs sm:text-sm md:text-base font-mono tracking-normal sm:tracking-wide md:tracking-widest uppercase text-center whitespace-normal min-w-0 shrink" style={{ color: 'rgba(212, 180, 240, 0.7)' }}>
+      <div className="hidden sm:block h-px flex-1 min-w-8" style={{ background: 'linear-gradient(to right, transparent, rgba(100, 100, 180, 0.3), transparent)' }} />
+      <h2 className="text-xs sm:text-sm md:text-base font-mono tracking-normal sm:tracking-wide md:tracking-widest uppercase text-center whitespace-normal min-w-0 shrink" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
         {title}
       </h2>
-      <div className="hidden sm:block h-px flex-1 min-w-8" style={{ background: 'linear-gradient(to right, transparent, rgba(212, 180, 240, 0.3), transparent)' }} />
+      <div className="hidden sm:block h-px flex-1 min-w-8" style={{ background: 'linear-gradient(to right, transparent, rgba(100, 100, 180, 0.3), transparent)' }} />
     </div>
   );
 };
@@ -337,7 +338,7 @@ const Legend = () => (
           <div
             className={`h-2.5 w-2.5 rounded-full border ${dotColor[key]} border-opacity-100`}
           />
-          <span className="text-[11px] font-mono tracking-wide" style={{ color: 'rgba(237, 230, 245, 0.7)' }}>
+          <span className="text-[11px] font-mono tracking-wide" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
             {cfg.label}
           </span>
         </div>
@@ -402,7 +403,7 @@ const Timeline = ({ milestones, sections }: TimelineProps) => {
       <Legend />
 
       {/* Continuous glow line (desktop) */}
-      <div className="hidden md:block absolute left-1/2 top-48 bottom-16 w-px -translate-x-1/2" style={{ background: 'linear-gradient(to bottom, transparent, rgba(212, 180, 240, 0.25), transparent)' }} />
+      <div className="hidden md:block absolute left-1/2 top-48 bottom-16 w-px -translate-x-1/2" style={{ background: 'linear-gradient(to bottom, transparent, rgba(100, 100, 180, 0.25), transparent)' }} />
 
       {grouped.map((group) => (
         <div key={group.section}>
@@ -423,9 +424,9 @@ const Timeline = ({ milestones, sections }: TimelineProps) => {
 
       {/* Convergence summary at bottom */}
       <div className="mt-16 mb-8 text-center space-y-4">
-        <div className="h-px w-48 mx-auto" style={{ background: 'linear-gradient(to right, transparent, rgba(126, 232, 204, 0.5), transparent)' }} />
+        <div className="h-px w-48 mx-auto" style={{ background: 'linear-gradient(to right, transparent, rgba(100, 255, 212, 0.3), transparent)' }} />
 
-        <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(237, 230, 245, 0.7)' }}>
+        <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
           External, structured, modular memory with orchestration layers is the
           emerging architectural consensus for AI agent cognition.
         </p>

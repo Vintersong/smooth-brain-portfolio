@@ -31,7 +31,7 @@
             </div>
             
             <div class="modal-details">
-              <h3 class="details-heading">Project Details</h3>
+              <h3 class="details-heading">.details</h3>
               <p class="details-text">{{ project.details }}</p>
             </div>
           </div>
@@ -104,8 +104,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(13, 10, 20, 0.9);
-  backdrop-filter: blur(8px);
+  background: rgba(18, 18, 42, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,41 +114,41 @@ export default {
 }
 
 .modal-container {
-  background: var(--card);
-  border: 1px solid var(--lavender-border);
-  border-radius: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
   max-width: 800px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 0 60px var(--lavender-glow);
+  box-shadow: var(--shadow-card);
   position: relative;
 }
 
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--bg-deep);
-  border: 1px solid var(--lavender-border);
-  color: var(--lavender);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: var(--bg-raised);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  transition: all var(--ease-quick);
-  font-size: 1.2rem;
+  transition: all 0.15s ease;
+  font-size: 1rem;
+  font-family: var(--font-mono);
 }
 
 .modal-close:hover {
-  background: var(--card-hover);
-  border-color: var(--lavender);
-  box-shadow: 0 0 20px var(--lavender-glow);
-  transform: rotate(90deg);
+  background: var(--bg-overlay);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 .modal-content {
@@ -159,10 +158,13 @@ export default {
 
 .modal-image {
   width: 100%;
-  height: 300px;
+  height: 280px;
   overflow: hidden;
-  background: var(--bg-deep);
-  border-radius: 16px 16px 0 0;
+  background: var(--bg-raised);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-image img {
@@ -173,7 +175,7 @@ export default {
 
 .modal-icon {
   font-size: 8rem;
-  color: rgba(212, 180, 240, 0.6);
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,62 +183,67 @@ export default {
 }
 
 .modal-technologies {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
 }
 
 .technologies-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-  color: rgba(237, 230, 245, 0.8);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
 
 .technologies-list li {
-  padding: 0.25rem 0;
+  color: var(--accent-secondary);
+  border: 1px solid var(--accent-secondary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
 }
 
 .modal-body {
-  padding: 2rem;
+  padding: var(--space-8);
 }
 
 .modal-title {
-  font-family: var(--font-display);
-  font-size: 2rem;
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--lavender);
-  margin-bottom: 1rem;
-  text-shadow: 0 0 20px var(--lavender-glow);
+  color: var(--accent-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.02em;
 }
 
 .modal-description {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--accent);
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 10px var(--teal-glow);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
 }
 
 .modal-details {
-  border-top: 1px solid var(--lavender-border);
-  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-6);
 }
 
 .details-heading {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--teal);
-  margin-bottom: 1rem;
-  text-shadow: 0 0 15px var(--teal-glow);
+  color: var(--accent-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.02em;
 }
 
 .details-text {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: rgba(237, 230, 245, 0.8);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-primary);
   line-height: 1.8;
   margin: 0;
 }
@@ -244,7 +251,7 @@ export default {
 /* Modal transitions */
 .modal-enter-active,
 .modal-leave-active {
-  transition: opacity var(--ease-smooth);
+  transition: opacity 0.2s ease;
 }
 
 .modal-enter-from,
@@ -254,31 +261,31 @@ export default {
 
 .modal-enter-active .modal-container,
 .modal-leave-active .modal-container {
-  transition: transform var(--ease-smooth);
+  transition: transform 0.2s ease;
 }
 
 .modal-enter-from .modal-container,
 .modal-leave-to .modal-container {
-  transform: scale(0.9) translateY(20px);
+  transform: scale(0.95) translateY(16px);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .modal-container {
-    margin: 1rem;
+    margin: 0.5rem;
     max-height: 95vh;
   }
-  
+
   .modal-image {
     height: 200px;
   }
-  
+
   .modal-body {
-    padding: 1.5rem;
+    padding: var(--space-6);
   }
-  
+
   .modal-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 </style>

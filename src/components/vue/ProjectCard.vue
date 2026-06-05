@@ -34,67 +34,63 @@ export default {
 
 <style scoped>
 .project-card {
-  background: var(--card);
-  border: 1px solid var(--lavender-border);
-  border-radius: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
-  transition: all var(--ease-smooth);
-  box-shadow: 0 0 20px rgba(212, 180, 240, 0.1);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-card);
 }
 
 .project-card:hover {
-  background: var(--card-hover);
-  border-color: var(--lavender);
-  box-shadow: 0 0 30px var(--lavender-glow);
-  transform: translateY(-4px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-accent);
 }
 
 .project-card-image {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: var(--bg-deep);
+  background: var(--bg-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--ease-smooth);
 }
 
 .project-icon {
   font-size: 5rem;
-  color: rgba(212, 180, 240, 0.6);
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.project-card:hover .project-card-image img {
-  transform: scale(1.05);
-}
-
 .project-card-content {
-  padding: 1.5rem;
+  padding: var(--space-6);
 }
 
 .project-card-title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--lavender);
-  margin-bottom: 0.75rem;
-  text-shadow: 0 0 15px var(--lavender-glow);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.02em;
 }
 
 .project-card-description {
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: 0.9rem;
-  color: rgba(237, 230, 245, 0.75);
-  line-height: 1.6;
+  color: var(--text-secondary);
+  line-height: 1.7;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
