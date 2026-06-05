@@ -76,5 +76,18 @@ import Projects from '../components/vue/Projects.vue';
     <!-- Footer Spacer -->
     <div style="height: 4rem;"></div>
   </div>
+
+  <!--
+    WebMCP — Progressive enhancement for AI agents (Chrome 149+ / chrome://flags/#enable-webmcp-testing)
+    https://developer.chrome.com/docs/ai/webmcp
+    No-ops silently in all other browsers.
+  -->
+  <script>
+    // Wait for Vue component to mount before registering tools
+    window.addEventListener('load', async () => {
+      const { registerTools } = await import('../scripts/webmcp-projects.ts');
+    });
+  </script>
+  <script type="module" src="../scripts/webmcp-projects.ts"></script>
 </body>
 </html>
