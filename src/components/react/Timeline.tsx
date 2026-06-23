@@ -237,7 +237,7 @@ const TimelineCard = ({
   return (
     <div
       ref={ref}
-      className="opacity-0 translate-y-8 transition-all duration-700 ease-out grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-start"
+      className="opacity-0 translate-y-8 transition-all duration-700 ease-out grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-4 md:gap-8 items-start"
     >
       {/* Left column */}
       <div
