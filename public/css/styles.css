@@ -17,18 +17,23 @@
 
   /* Primary Accent — Mint/Cyan */
   --accent-primary:      #64ffd4;   /* headings, logo, key labels */
+  --accent-primary-rgb:  100, 255, 212;
   --accent-primary-dim:  #3dd4a8;   /* secondary headings, links */
   --accent-primary-glow: rgba(100, 255, 212, 0.12);
 
   /* Secondary Accent — Magenta/Pink */
   --accent-secondary:     #ff6eb4;  /* badges, points, highlights */
+  --accent-secondary-rgb: 255, 110, 180;
   --accent-secondary-dim: #d45090;  /* secondary pink usage */
+  --accent-secondary-glow: rgba(255, 110, 180, 0.2);
 
   /* Semantic States */
-  --state-pass:   #4ade80;   /* green — pass, success, ok */
+  --state-pass:     #4ade80;   /* green — pass, success, ok */
+  --state-pass-rgb: 74, 222, 128;
   --state-warn:   #fbbf24;   /* amber — warn, caution */
   --state-fail:   #f87171;   /* red — fail, error */
-  --state-info:   #60a5fa;   /* blue — info, neutral */
+  --state-info:     #60a5fa;   /* blue — info, neutral */
+  --state-info-rgb: 96, 165, 250;
 
   /* Text */
   --text-primary:   #e8e8f8;   /* main body text */
@@ -614,11 +619,6 @@ section .container {
   border-radius: var(--radius-md);
 }
 
-/* Modal icon colors — override old inline styles */
-.modal-body i[style*="font-size: 8rem"] {
-  color: var(--accent-primary) !important;
-}
-
 /* Design notes accordion inside modals */
 .modal-body .accordion-item {
   background-color: var(--bg-raised) !important;
@@ -658,16 +658,6 @@ section .container {
 .modal-body .accordion-body li {
   color: var(--text-primary) !important;
   font-family: var(--font-mono);
-}
-
-/* Override .why / .constraints cyan text in modals */
-.modal-body .mono[style*="color: #00FFFF"] {
-  color: var(--accent-primary) !important;
-}
-
-/* Override inline bg-color on accordion bodies */
-.modal-body .accordion-body[style*="background-color"] {
-  background-color: var(--bg-raised) !important;
 }
 
 /* ============================================================================
@@ -715,33 +705,6 @@ section .container {
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   font-size: 0.85rem;
-}
-
-/* Carousel slide placeholder backgrounds */
-.carousel-item .d-flex[style*="background-color: #112240"] {
-  background-color: var(--bg-raised) !important;
-}
-
-.carousel-item .d-flex[style*="background-color: #000000"] {
-  background-color: var(--bg-base) !important;
-}
-
-/* Carousel slide icon colors — override inline styles */
-.carousel-item i[style*="color: #B794F4"] {
-  color: var(--text-secondary) !important;
-}
-
-.carousel-item i[style*="color: #00FFFF"] {
-  color: var(--accent-primary) !important;
-}
-
-.carousel-item i[style*="color: rgba(255, 46, 46"] {
-  color: var(--state-fail) !important;
-}
-
-/* Carousel slide text color */
-.carousel-item p[style*="color: #FFFFFF"] {
-  color: var(--text-primary) !important;
 }
 
 iframe {
@@ -882,7 +845,7 @@ pre {
 .skill-tag-joke:hover {
   background: var(--bg-overlay);
   border-color: var(--accent-secondary);
-  box-shadow: 0 0 8px rgba(255, 110, 180, 0.2);
+  box-shadow: 0 0 8px var(--accent-secondary-glow);
 }
 
 /* ============================================================================

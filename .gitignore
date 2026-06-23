@@ -36,3 +36,6 @@ docs/USABILITY-AUDIT.md
 AUDIT_SUMMARY.md
 spec.md
 SKILL.md
+skill_audit.db
+skill_audit.db-wal
+skill_audit.db-shm

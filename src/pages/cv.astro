@@ -1,7 +1,7 @@
 ---
 import CVName  from '../components/astro/CVName.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CVNav from '../components/astro/CVNav.astro';
+import Nav from '../components/astro/Nav.astro';
 import CVEntry from '../components/astro/CVEntry.astro';
 import SkillTag from '../components/astro/SkillTag.astro';
 import CVFooter from '../components/astro/CVFooter.astro';
@@ -109,7 +109,7 @@ const fakeCertifications = [
   title=".cv | .smooth-brain-designs"
   description="Andrei Moldovean's CV - Systems designer and technical generalist with expertise in game design, UX, and AI-augmented development."
 >
-  <CVNav />
+  <Nav current="cv" />
 
   <main>
     <section id="cv" class="py-5" style="min-height: 100vh; padding-top: 5rem !important;">

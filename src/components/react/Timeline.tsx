@@ -12,30 +12,30 @@ const categoryConfig: Record<Milestone["category"], { label: string }> = {
 /* ── Color mapping helper — AIwave tokens ── */
 const getCategoryColor = (category: Milestone["category"]): string => {
   const colors = {
-    nova:        '#64ffd4',  /* accent-primary — mint */
-    research:    '#60a5fa',  /* state-info — blue */
-    industry:    '#ff6eb4',  /* accent-secondary — magenta */
-    convergence: '#4ade80',  /* state-pass — green */
+    nova:        'var(--accent-primary)',
+    research:    'var(--state-info)',
+    industry:    'var(--accent-secondary)',
+    convergence: 'var(--state-pass)',
   };
   return colors[category];
 };
 
 const getCategoryColorRgba = (category: Milestone["category"], opacity: number): string => {
-  const rgbaMap = {
-    nova:        `rgba(100, 255, 212, ${opacity})`,
-    research:    `rgba(96, 165, 250, ${opacity})`,
-    industry:    `rgba(255, 110, 180, ${opacity})`,
-    convergence: `rgba(74, 222, 128, ${opacity})`,
+  const rgbVarMap = {
+    nova:        'var(--accent-primary-rgb)',
+    research:    'var(--state-info-rgb)',
+    industry:    'var(--accent-secondary-rgb)',
+    convergence: 'var(--state-pass-rgb)',
   };
-  return rgbaMap[category];
+  return `rgba(${rgbVarMap[category]}, ${opacity})`;
 };
 
 /* ── Dot colour per category ── */
 const dotColor: Record<Milestone["category"], string> = {
-  nova:        "border-[#64ffd4] shadow-[0_0_12px_rgba(100,255,212,0.4)]",
-  research:    "border-[#60a5fa] shadow-[0_0_12px_rgba(96,165,250,0.4)]",
-  industry:    "border-[#ff6eb4] shadow-[0_0_12px_rgba(255,110,180,0.4)]",
-  convergence: "border-[#4ade80] shadow-[0_0_12px_rgba(74,222,128,0.4)]",
+  nova:        "border-[var(--accent-primary)] shadow-[0_0_12px_rgba(var(--accent-primary-rgb),0.4)]",
+  research:    "border-[var(--state-info)] shadow-[0_0_12px_rgba(var(--state-info-rgb),0.4)]",
+  industry:    "border-[var(--accent-secondary)] shadow-[0_0_12px_rgba(var(--accent-secondary-rgb),0.4)]",
+  convergence: "border-[var(--state-pass)] shadow-[0_0_12px_rgba(var(--state-pass-rgb),0.4)]",
 };
 
 /* ── Filter chip ── */

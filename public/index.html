@@ -87,6 +87,8 @@
           <li class="nav-item"><a class="nav-link retro-futurism" href="#gallery">.gallery</a></li>
           <li class="nav-item"><a class="nav-link ui-ux-design" href="#features">.features</a></li>
           <li class="nav-item"><a class="nav-link ui-ux-design" href="#testimonials">.testimonials</a></li>
+          <li class="nav-item"><a class="nav-link cv-link" href="/cv">.cv</a></li>
+          <li class="nav-item"><a class="nav-link timeline-link" href="/timeline">.timeline</a></li>
           <li class="nav-item"><a class="nav-link contact-info" href="#footer">.contact</a></li>
         </ul>
       </div>
@@ -183,14 +185,14 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header border-0">
-          <h5 class="modal-title project-name">.ai-readability-guard <span class="mono" style="color:#B794F4; font-size:0.7em;">BETA</span></h5>
+          <h5 class="modal-title project-name">.ai-readability-guard <span class="mono" style="color: var(--accent-secondary); font-size:0.7em;">BETA</span></h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="row gy-3">
             <div class="col-md-7">
-              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
-                <i class="bi bi-shield-check" style="font-size: 8rem; color: #00FFFF;"></i>
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: var(--bg-raised);">
+                <i class="bi bi-shield-check" style="font-size: 8rem; color: var(--accent-primary);"></i>
               </div>
             </div>
             <div class="col-md-5">
@@ -222,19 +224,19 @@
             </div>
           </div>
           <div class="accordion mt-3" id="aiReadabilityDesignNotes">
-            <div class="accordion-item" style="background-color: transparent; border: 1px solid rgba(183, 148, 244, 0.3);">
+            <div class="accordion-item" style="background-color: transparent; border: 1px solid var(--border-subtle);">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aiReadabilityNotesCollapse" style="background-color: rgba(0, 0, 0, 0.5); color: #B794F4; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 0.5rem 1rem;">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aiReadabilityNotesCollapse" style="background-color: var(--bg-raised); color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.85rem; padding: 0.5rem 1rem;">
                   .design-notes
                 </button>
               </h2>
               <div id="aiReadabilityNotesCollapse" class="accordion-collapse collapse" data-bs-parent="#aiReadabilityDesignNotes">
-                <div class="accordion-body" style="background-color: rgba(0, 0, 0, 0.5); font-size: 0.85rem;">
-                  <p class="mono mb-2" style="color: #00FFFF;">.idea</p>
+                <div class="accordion-body" style="background-color: var(--bg-raised); font-size: 0.85rem;">
+                  <p class="mono mb-2" style="color: var(--accent-primary);">.idea</p>
                   <p class="bahnschrift small">SEO tools model Google. AI Readability Guard reads your HTML. As AI-driven answer engines become the default discovery layer, whether your page is machine-legible determines whether it exists to those systems at all. The MLS score is a proposed heuristic standard — not vendor-official, but deterministic and reproducible.</p>
-                  <p class="mono mb-2 mt-3" style="color: #00FFFF;">.how-it-scores</p>
+                  <p class="mono mb-2 mt-3" style="color: var(--accent-primary);">.how-it-scores</p>
                   <p class="bahnschrift small">Nine checks, 20 pts each. Pass = full credit, warn = half, fail = zero. Score = earned ÷ 180 × 100. No LLM is called against your page — purely observable signals from the raw HTML response.</p>
-                  <p class="mono mb-2 mt-3" style="color: #00FFFF;">.constraints</p>
+                  <p class="mono mb-2 mt-3" style="color: var(--accent-primary);">.constraints</p>
                   <ul class="bahnschrift small mb-0">
                     <li>All checks run server-side — what crawlers actually see, not what the browser renders</li>
                     <li>Cloudflare Workers enforce strict CPU limits, so scoring had to be fast and deterministic</li>
@@ -260,8 +262,8 @@
         <div class="modal-body">
           <div class="row gy-3">
             <div class="col-md-7">
-              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
-                <i class="bi bi-cpu" style="font-size: 8rem; color: #00FFFF;"></i>
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: var(--bg-raised);">
+                <i class="bi bi-cpu" style="font-size: 8rem; color: var(--accent-primary);"></i>
               </div>
             </div>
             <div class="col-md-5">
@@ -280,17 +282,17 @@
             </div>
           </div>
           <div class="accordion mt-3" id="novaDesignNotes">
-            <div class="accordion-item" style="background-color: transparent; border: 1px solid rgba(183, 148, 244, 0.3);">
+            <div class="accordion-item" style="background-color: transparent; border: 1px solid var(--border-subtle);">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#novaNotesCollapse" style="background-color: rgba(0, 0, 0, 0.5); color: #B794F4; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 0.5rem 1rem;">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#novaNotesCollapse" style="background-color: var(--bg-raised); color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.85rem; padding: 0.5rem 1rem;">
                   .design-notes
                 </button>
               </h2>
               <div id="novaNotesCollapse" class="accordion-collapse collapse" data-bs-parent="#novaDesignNotes">
-                <div class="accordion-body" style="background-color: rgba(0, 0, 0, 0.5); font-size: 0.85rem;">
-                  <p class="mono mb-2" style="color: #00FFFF;">.why</p>
+                <div class="accordion-body" style="background-color: var(--bg-raised); font-size: 0.85rem;">
+                  <p class="mono mb-2" style="color: var(--accent-primary);">.why</p>
                   <p class="bahnschrift small">Explored whether LLMs could simulate persistent memory across sessions. Spoiler: sort of, with caveats.</p>
-                  <p class="mono mb-2 mt-3" style="color: #00FFFF;">.constraints</p>
+                  <p class="mono mb-2 mt-3" style="color: var(--accent-primary);">.constraints</p>
                   <ul class="bahnschrift small mb-0">
                     <li>Token limits forced aggressive summarization</li>
                     <li>API costs shaped batch vs. real-time decisions</li>
@@ -316,8 +318,8 @@
         <div class="modal-body">
           <div class="row gy-3">
             <div class="col-md-7">
-              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: #112240;">
-                <i class="bi bi-controller" style="font-size: 8rem; color: #B794F4;"></i>
+              <div class="d-flex align-items-center justify-content-center" style="aspect-ratio: 16/9; background-color: var(--bg-raised);">
+                <i class="bi bi-controller" style="font-size: 8rem; color: var(--accent-secondary);"></i>
               </div>
             </div>
             <div class="col-md-5">
@@ -344,17 +346,17 @@
             </div>
           </div>
           <div class="accordion mt-3" id="chromaticDesignNotes">
-            <div class="accordion-item" style="background-color: transparent; border: 1px solid rgba(183, 148, 244, 0.3);">
+            <div class="accordion-item" style="background-color: transparent; border: 1px solid var(--border-subtle);">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chromaticNotesCollapse" style="background-color: rgba(0, 0, 0, 0.5); color: #B794F4; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 0.5rem 1rem;">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chromaticNotesCollapse" style="background-color: var(--bg-raised); color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.85rem; padding: 0.5rem 1rem;">
                   .design-notes
                 </button>
               </h2>
               <div id="chromaticNotesCollapse" class="accordion-collapse collapse" data-bs-parent="#chromaticDesignNotes">
-                <div class="accordion-body" style="background-color: rgba(0, 0, 0, 0.5); font-size: 0.85rem;">
-                  <p class="mono mb-2" style="color: #00FFFF;">.concept</p>
+                <div class="accordion-body" style="background-color: var(--bg-raised); font-size: 0.85rem;">
+                  <p class="mono mb-2" style="color: var(--accent-primary);">.concept</p>
                   <p class="bahnschrift small">Color theory as a game mechanic. The commitment tree forces identity — you don't just pick a build, you pick a primary. The secondary palette emerging from two committed primaries mirrors real subtractive color mixing, which means players intuitively understand the unlock conditions before reading them.</p>
-                  <p class="mono mb-2 mt-3" style="color: #00FFFF;">.constraints</p>
+                  <p class="mono mb-2 mt-3" style="color: var(--accent-primary);">.constraints</p>
                   <ul class="bahnschrift small mb-0">
                     <li>LÖVE2D's Lua scripting kept scope tight — good for a jam, forces elegant solutions</li>
                     <li>BPM detection had to be lightweight enough to run without killing frame rate</li>
@@ -378,7 +380,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p class="mono mb-4" style="color: #B794F4; opacity: 0.7;">// design rationale</p>
+          <p class="mono mb-4" style="color: var(--accent-secondary); opacity: 0.7;">// design rationale</p>
           <h6 class="project-name mb-3">.about</h6>          
           <p class="bahnschrift">This is a <strong>student assignment</strong> for a Web Design course — a freelancing professional portfolio website built with multiple modern tech stacks.</p>
           <p class="bahnschrift">It's also <strong>deliberately over-the-top</strong> and satirical. The entire site is a tongue-in-cheek parody of cyberpunk aesthetics, vaporwave design trends, and self-aware tech humor. From the ".smooth-brain-designs" branding to the brain-morphing hamburger menu, nothing here should be taken too seriously.</p>
@@ -389,14 +391,14 @@
                 <button class="accordion-button collapsed accordion-btn-vapor" type="button" data-bs-toggle="collapse" data-bs-target="#techIndex" aria-expanded="false" aria-controls="techIndex">.index-page</button>
               </h2>
               <div id="techIndex" class="accordion-collapse collapse" data-bs-parent="#techStackAccordion">
-                <div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">
-                  <p><strong style="color: #B794F4;">Frontend:</strong></p>
+                <div class="accordion-body bahnschrift" style="background-color: var(--bg-raised); color: var(--text-primary);">
+                  <p><strong style="color: var(--accent-secondary);">Frontend:</strong></p>
                   <ul class="small mb-3">
                     <li><strong>HTML5</strong> — Semantic markup, accessibility features, meta tags for SEO</li>
                     <li><strong>CSS3</strong> — Custom stylesheets with gradients, animations, and glitch effects</li>
                     <li><strong>Bootstrap 5.3</strong> — Responsive grid system, modals, accordions, carousel components</li>
                   </ul>
-                  <p><strong style="color: #B794F4;">JavaScript:</strong></p>
+                  <p><strong style="color: var(--accent-secondary);">JavaScript:</strong></p>
                   <ul class="small mb-3">
                     <li><strong>Vanilla JS</strong> — Custom interactions, dynamic content injection, modal behaviors</li>
                     <li><strong>SVG Animations</strong> — Brain hamburger menu morphing effects</li>
@@ -410,8 +412,8 @@
                 <button class="accordion-button collapsed accordion-btn-vapor" type="button" data-bs-toggle="collapse" data-bs-target="#techCV" aria-expanded="false" aria-controls="techCV">.cv-page</button>
               </h2>
               <div id="techCV" class="accordion-collapse collapse" data-bs-parent="#techStackAccordion">
-                <div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">
-                  <p><strong style="color: #B794F4;">Astro Framework:</strong></p>
+                <div class="accordion-body bahnschrift" style="background-color: var(--bg-raised); color: var(--text-primary);">
+                  <p><strong style="color: var(--accent-secondary);">Astro Framework:</strong></p>
                   <ul class="small mb-3">
                     <li><strong>Astro</strong> — Static site generation with partial hydration</li>
                     <li><strong>.astro Components</strong> — CVEntry, CVFooter, CVName, CVNav, SkillTag</li>
@@ -425,8 +427,8 @@
                 <button class="accordion-button collapsed accordion-btn-vapor" type="button" data-bs-toggle="collapse" data-bs-target="#techTimeline" aria-expanded="false" aria-controls="techTimeline">.timeline-page</button>
               </h2>
               <div id="techTimeline" class="accordion-collapse collapse" data-bs-parent="#techStackAccordion">
-                <div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">
-                  <p><strong style="color: #B794F4;">React Integration:</strong></p>
+                <div class="accordion-body bahnschrift" style="background-color: var(--bg-raised); color: var(--text-primary);">
+                  <p><strong style="color: var(--accent-secondary);">React Integration:</strong></p>
                   <ul class="small mb-3">
                     <li><strong>React 19</strong> — Modern hooks and concurrent features</li>
                     <li><strong>TypeScript (.tsx)</strong> — Fully typed components</li>
@@ -440,8 +442,8 @@
                 <button class="accordion-button collapsed accordion-btn-vapor" type="button" data-bs-toggle="collapse" data-bs-target="#techProjects" aria-expanded="false" aria-controls="techProjects">.projects-page</button>
               </h2>
               <div id="techProjects" class="accordion-collapse collapse" data-bs-parent="#techStackAccordion">
-                <div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">
-                  <p><strong style="color: #B794F4;">Vue Integration:</strong></p>
+                <div class="accordion-body bahnschrift" style="background-color: var(--bg-raised); color: var(--text-primary);">
+                  <p><strong style="color: var(--accent-secondary);">Vue Integration:</strong></p>
                   <ul class="small mb-3">
                     <li><strong>Vue 3</strong> — Composition API, reactive state</li>
                     <li><strong>@astrojs/vue</strong> — Island architecture</li>
@@ -451,7 +453,7 @@
               </div>
             </div>
           </div>
-          <hr style="border-color: rgba(183, 148, 244, 0.3); margin: 1.5rem 0;">
+          <hr style="border-color: var(--border-subtle); margin: 1.5rem 0;">
           <p class="mono small" style="opacity: 0.7;">Made with questionable design decisions and even more questionable tech stack decisions.</p>
           <div class="d-flex justify-content-center mt-4">
             <a href="https://github.com/Vintersong/smooth-brain-portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-outline-pink bahnschrift">.github-repo</a>
@@ -468,48 +470,48 @@
       <div id="portfolioCarousel" class="carousel slide" data-bs-ride="false">
         <div class="carousel-inner">
           <div class="carousel-item active" role="img" aria-label="Retro-futurism design illustration">
-            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
-              <div class="text-center"><i class="bi bi-image" style="font-size: 6rem; color: #00FFFF;" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.retro-futurism</p></div>
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: var(--bg-raised);">
+              <div class="text-center"><i class="bi bi-image" style="font-size: 6rem; color: var(--accent-primary);" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: var(--text-primary);">.retro-futurism</p></div>
             </div>
           </div>
           <div class="carousel-item" role="img" aria-label="Sound design illustration">
-            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
-              <div class="text-center"><i class="bi bi-music-note-beamed" style="font-size: 6rem; color: #B794F4;" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.sound-design</p></div>
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: var(--bg-raised);">
+              <div class="text-center"><i class="bi bi-music-note-beamed" style="font-size: 6rem; color: var(--accent-secondary);" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: var(--text-primary);">.sound-design</p></div>
             </div>
           </div>
           <div class="carousel-item" role="img" aria-label="Systems design illustration">
-            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
-              <div class="text-center"><i class="bi bi-diagram-3" style="font-size: 6rem; color: #00FFFF;" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.systems-design</p></div>
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: var(--bg-raised);">
+              <div class="text-center"><i class="bi bi-diagram-3" style="font-size: 6rem; color: var(--accent-primary);" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: var(--text-primary);">.systems-design</p></div>
             </div>
           </div>
           <div class="carousel-item" role="img" aria-label="Design thinking illustration">
-            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
-              <div class="text-center"><i class="bi bi-lightbulb" style="font-size: 6rem; color: #B794F4;" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.design-thinking</p></div>
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: var(--bg-raised);">
+              <div class="text-center"><i class="bi bi-lightbulb" style="font-size: 6rem; color: var(--accent-secondary);" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: var(--text-primary);">.design-thinking</p></div>
             </div>
           </div>
           <div class="carousel-item" role="img" aria-label="Agile synergy illustration">
-            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
-              <div class="text-center"><i class="bi bi-arrow-repeat" style="font-size: 6rem; color: #00FFFF;" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.agile-synergy</p></div>
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: var(--bg-raised);">
+              <div class="text-center"><i class="bi bi-arrow-repeat" style="font-size: 6rem; color: var(--accent-primary);" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: var(--text-primary);">.agile-synergy</p></div>
             </div>
           </div>
           <div class="carousel-item" role="img" aria-label="Web3 enabled experiences illustration">
-            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
-              <div class="text-center"><i class="bi bi-wallet2" style="font-size: 6rem; color: #B794F4;" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.web3-enabled-experiences</p></div>
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: var(--bg-raised);">
+              <div class="text-center"><i class="bi bi-wallet2" style="font-size: 6rem; color: var(--accent-secondary);" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: var(--text-primary);">.web3-enabled-experiences</p></div>
             </div>
           </div>
           <div class="carousel-item" role="img" aria-label="Mercury retrograde compliant illustration">
-            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
-              <div class="text-center"><i class="bi bi-moon-stars" style="font-size: 6rem; color: #00FFFF;" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.mercury-retrograde-compliant</p></div>
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: var(--bg-raised);">
+              <div class="text-center"><i class="bi bi-moon-stars" style="font-size: 6rem; color: var(--accent-primary);" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: var(--text-primary);">.mercury-retrograde-compliant</p></div>
             </div>
           </div>
           <div class="carousel-item" role="img" aria-label="Lobster approved illustration">
-            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #112240;">
-              <div class="text-center"><i class="bi bi-bug" style="font-size: 6rem; color: rgba(255, 46, 46, 0.8);" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.lobster-approved</p></div>
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: var(--bg-raised);">
+              <div class="text-center"><i class="bi bi-bug" style="font-size: 6rem; color: var(--state-fail);" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: var(--text-primary);">.lobster-approved</p></div>
             </div>
           </div>
           <div class="carousel-item" role="img" aria-label="The calling illustration">
-            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: #000000;">
-              <div class="text-center"><i class="bi bi-infinity" style="font-size: 6rem; color: #B794F4; animation: glitch 2s infinite;" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: #FFFFFF;">.ẗ̷̖h̸͇̋ë̷̠-̵̣͌c̷̰̈́ả̴͜l̵̰͝l̶̖̀i̵̧̛n̴̰̎g̷̣͝</p></div>
+            <div class="d-flex align-items-center justify-content-center w-100" style="aspect-ratio: 2/1; background-color: var(--bg-raised);">
+              <div class="text-center"><i class="bi bi-infinity" style="font-size: 6rem; color: var(--accent-secondary); animation: glitch 2s infinite;" aria-hidden="true"></i><p class="mono mt-3" style="font-size: 1rem; color: var(--text-primary);">.ẗ̷̖h̸͇̋ë̷̠-̵̣͌c̷̰̈́ả̴͜l̵̰͝l̶̖̀i̵̧̛n̴̰̎g̷̣͝</p></div>
             </div>
           </div>
         </div>
@@ -541,10 +543,10 @@
     <div class="container">
       <h2 class="ui-ux-design mb-4 text-center">.company-goals</h2>
       <div class="accordion" id="faqAccordion">
-        <div class="accordion-item accordion-item-vapor"><h2 class="accordion-header"><button class="accordion-button collapsed accordion-btn-vapor" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">.2025-goals</button></h2><div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">Launch three mobile games with sustainable monetization models. Expand our UI/UX consulting services to five new clients. Complete our data analytics dashboard overhaul. Achieve work-life balance (aspirational).</div></div></div>
-        <div class="accordion-item accordion-item-vapor"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">.2027-vision</button></h2><div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">Establish a 15-person studio with dedicated art, design, and engineering teams. Develop our own game engine optimized for 2D pixel-art workflows. Secure Series A funding. Launch flagship IP across PC and console. Finally understand what "synergy" actually means.</div></div></div>
-        <div class="accordion-item accordion-item-vapor"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">.2030-objectives</button></h2><div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">Acquire three indie studios to form mega-conglomerate. IPO on NASDAQ with meme-worthy stock ticker. Partner with Netflix for animated series adaptation. Build corporate headquarters shaped like a giant D20. Develop AI that generates corporate buzzwords faster than humans can cringe at them.</div></div></div>
-        <div class="accordion-item accordion-item-vapor"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">.2035-moonshot</button></h2><div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body bahnschrift" style="background-color: rgba(0, 0, 0, 0.95); color: #FFFFFF;">Launch Earth's first orbital game development studio for zero-gravity pixel art. Establish aqua park on the moon's Sea of Tranquility (chlorinated, obviously). Develop neural-link VR that makes you actually good at Dark Souls. Clone myself to finally have enough bandwidth for all these meetings. Train lobsters to code. Achieve immortality through blockchain technology. Make "synergy" a legally protected word that requires a license to use.</div></div></div>
+        <div class="accordion-item accordion-item-vapor"><h2 class="accordion-header"><button class="accordion-button collapsed accordion-btn-vapor" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">.2025-goals</button></h2><div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body bahnschrift" style="background-color: var(--bg-raised); color: var(--text-primary);">Launch three mobile games with sustainable monetization models. Expand our UI/UX consulting services to five new clients. Complete our data analytics dashboard overhaul. Achieve work-life balance (aspirational).</div></div></div>
+        <div class="accordion-item accordion-item-vapor"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">.2027-vision</button></h2><div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body bahnschrift" style="background-color: var(--bg-raised); color: var(--text-primary);">Establish a 15-person studio with dedicated art, design, and engineering teams. Develop our own game engine optimized for 2D pixel-art workflows. Secure Series A funding. Launch flagship IP across PC and console. Finally understand what "synergy" actually means.</div></div></div>
+        <div class="accordion-item accordion-item-vapor"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">.2030-objectives</button></h2><div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body bahnschrift" style="background-color: var(--bg-raised); color: var(--text-primary);">Acquire three indie studios to form mega-conglomerate. IPO on NASDAQ with meme-worthy stock ticker. Partner with Netflix for animated series adaptation. Build corporate headquarters shaped like a giant D20. Develop AI that generates corporate buzzwords faster than humans can cringe at them.</div></div></div>
+        <div class="accordion-item accordion-item-vapor"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">.2035-moonshot</button></h2><div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body bahnschrift" style="background-color: var(--bg-raised); color: var(--text-primary);">Launch Earth's first orbital game development studio for zero-gravity pixel art. Establish aqua park on the moon's Sea of Tranquility (chlorinated, obviously). Develop neural-link VR that makes you actually good at Dark Souls. Clone myself to finally have enough bandwidth for all these meetings. Train lobsters to code. Achieve immortality through blockchain technology. Make "synergy" a legally protected word that requires a license to use.</div></div></div>
       </div>
     </div>
   </section>
@@ -601,7 +603,7 @@
       </div>
       <div class="row mt-5">
         <div class="col-12">
-          <hr style="border-color: rgba(183, 148, 244, 0.3); margin: 2rem 0;">
+          <hr style="border-color: var(--border-subtle); margin: 2rem 0;">
           <h6 class="skills mb-3 text-center">.contact</h6>
           <p class="mono text-center">
             <i class="bi bi-envelope"></i> <strong>.email</strong> — <a href="mailto:moldovean.i.andrei@gmail.com" class="link-light">moldovean.i.andrei@gmail.com</a><br>
@@ -615,7 +617,7 @@
             <i class="bi bi-moon-stars"></i> <strong>.ouija</strong> — response time varies by moon phase<br>
             <i class="bi bi-broadcast"></i> <strong>.void-screaming</strong> — I'm listening. I'm always listening.
           </p>
-          <hr style="border-color: rgba(183, 148, 244, 0.3); margin: 2rem 0;">
+          <hr style="border-color: var(--border-subtle); margin: 2rem 0;">
           <h6 class="skills mb-3 text-center">.disclaimer</h6>
           <p class="small text-center" style="opacity: 0.9;">This portfolio exists in a state of quantum superposition until observed by a recruiter. By reading this, you have collapsed the wavefunction. There is no undo. The lobsters have been notified. Any resemblance to actual methodologies, living or deprecated, is purely coincidental. Side effects may include: existential clarity, mass email anxiety, and an unshakeable feeling that the testimonials are watching you. They are.</p>
           <p class="small mono mt-4 text-center" style="opacity: 0.7;">© 2026 .smooth-brain-designs | All rights reserved | None of this is financial advice | The horse whispering division accepts no liability | Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</p>
