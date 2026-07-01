@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-# Block AI training crawlers
+# AI training crawlers (explicitly allowed)
 User-agent: GPTBot
 Allow: /
 
@@ -34,4 +34,4 @@ Allow: /
 User-agent: GoogleOther
 Allow: /
 
-Sitemap: https://smooth-brain-designs.com/sitemap-index.xml
+Sitemap: https://smooth-brain-designs.com/sitemap.xml

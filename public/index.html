@@ -3,9 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Andrei Moldovean - Game designer, UI/UX developer, and data analyst portfolio. Showcasing game development projects, interactive design work, and technical expertise in Love2D, Python, and web technologies.">
+  <meta name="description" content="Andrei Moldovean — game designer, UI/UX developer, and data analyst. Game dev, interactive design, and technical work in Love2D, Python, and web tech.">
   <meta name="keywords" content="smooth-brain-designs, smooth brain designs, Andrei Moldovean, game designer, UI/UX developer, technical artist, data analyst, portfolio, Love2D, Python, web development">
   <meta name="auditai-site-verification" content="7pVqVXRhARaTnnpQU1Et43ZSTW5o/AO1" />
+
+  <!-- AI content-use posture: rights not reserved, consistent with robots.txt AI-crawler allowances -->
+  <meta name="tdm-reservation" content="0">
+
+  <!-- Security headers not settable via GitHub Pages HTTP response; meta equivalents where the spec allows them -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content=".smooth-brain-designs | Andrei Moldovean | Game Designer & Technical Artist">
   <meta property="og:description" content="Game designer, UI/UX developer, and data analyst portfolio. Showcasing game development projects and technical expertise.">
@@ -63,6 +71,100 @@
     ],
     "image": "https://smooth-brain-designs.com/images/profile.jpg",
     "description": "Portfolio showcasing game development, UI/UX design, and data analysis projects built with modern tech stacks."
+  }
+  </script>
+
+  <!-- JSON-LD Schema for Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": ".smooth-brain-designs",
+    "url": "https://smooth-brain-designs.com",
+    "logo": "https://smooth-brain-designs.com/favicon.svg",
+    "founder": {
+      "@type": "Person",
+      "name": "Andrei Moldovean"
+    },
+    "sameAs": [
+      "https://github.com/Vintersong",
+      "https://www.linkedin.com/in/andrei-moldovean-b7462534a"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD Schema for Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Freelance UI/UX, Game Design & Technical Art Services",
+    "serviceType": "UI/UX Design, Game Design, Technical Art & Data Analysis",
+    "description": "Freelance UI/UX design, game design, technical art, and data analysis services, including rapid prototyping, systemic gameplay design, and custom developer tooling.",
+    "provider": {
+      "@type": "Person",
+      "name": "Andrei Moldovean"
+    },
+    "areaServed": "Worldwide",
+    "url": "https://smooth-brain-designs.com/#footer"
+  }
+  </script>
+
+  <!-- JSON-LD Schema for FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are you available for freelance work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, use the contact form. Response time: 24-48 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's your hourly rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depends on scope. Let's talk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you work with my existing team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. I integrate well with existing teams and workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you do revisions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reasonable revisions are included in project scope."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is it called smooth-brain-designs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A self-aware, tongue-in-cheek take on tech branding conventions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What game engine do you prefer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The one that ships. Experience spans Love2D, Unity, and Unreal Engine 5."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -139,7 +241,7 @@
           <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
               <i class="bi bi-shield-check icon-muted" style="font-size: 5rem;"></i>
-              <h5 class="card-title project-name">.ai-readability-guard</h5>
+              <h3 class="card-title project-name">.ai-readability-guard</h3>
               <p class="card-text bahnschrift">
                 Web app that audits how readable your content is to AI systems. Because if a bot can't parse it, did it even exist?</p>
               <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modalAiReadabilityGuard">.view</button>
@@ -152,7 +254,7 @@
           <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
               <i class="bi bi-cpu icon-muted icon-lg"></i>
-              <h5 class="card-title project-name">.nova-cognition-framework</h5>
+              <h3 class="card-title project-name">.nova-cognition-framework</h3>
               <p class="card-text bahnschrift">
                 Python LLM memory simulation framework with FastAPI and OpenAI API for meta-contextual chat data processing.</p>
               <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modal1">.view</button>
@@ -165,7 +267,7 @@
           <div class="card project-card h-100 bg-card-dark">
             <div class="card-body text-center" style="padding-top: 3rem;">
               <i class="bi bi-controller fs-1 icon-muted mb-3" style="font-size: 5rem !important;"></i>
-              <h5 class="card-title project-name">.chromatic</h5>
+              <h3 class="card-title project-name">.chromatic</h3>
               <p class="card-text bahnschrift">Bullet heaven built in LÖVE2D. Pick two primary colors and commit. The third one watches from the void.</p>
               <button class="btn btn-outline-pink bahnschrift" data-bs-toggle="modal" data-bs-target="#modalChromatic">.view</button>
             </div>
@@ -185,7 +287,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header border-0">
-          <h5 class="modal-title project-name">.ai-readability-guard <span class="mono" style="color: var(--accent-secondary); font-size:0.7em;">BETA</span></h5>
+          <h3 class="modal-title project-name">.ai-readability-guard <span class="mono" style="color: var(--accent-secondary); font-size:0.7em;">BETA</span></h3>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -197,7 +299,7 @@
             </div>
             <div class="col-md-5">
               <p class="bahnschrift mb-2">Web app that audits how readable your content is to AI systems like ChatGPT, Perplexity, and Claude. Runs nine server-side checks against raw HTML — no JS executed — and returns a Machine Legibility Score (MLS) out of 100 with exact fixes. Also generates a custom llms.txt for your site.</p>
-              <h6 class="mt-3">.checks</h6>
+              <h4 class="mt-3">.checks</h4>
               <ul class="list-unstyled mono" style="font-size:0.8rem;">
                 <li>.server-side-rendering</li>
                 <li>.content-clarity</li>
@@ -209,7 +311,7 @@
                 <li>.structured-data</li>
                 <li>.token-efficiency</li>
               </ul>
-              <h6 class="mt-3">.technologies</h6>
+              <h4 class="mt-3">.technologies</h4>
               <ul class="list-unstyled mono">
                 <li>.react</li>
                 <li>.typescript</li>
@@ -256,7 +358,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header border-0">
-          <h5 class="modal-title project-name">.nova-cognition-framework</h5>
+          <h3 class="modal-title project-name">.nova-cognition-framework</h3>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -268,7 +370,7 @@
             </div>
             <div class="col-md-5">
               <p class="bahnschrift mb-2">LLM memory simulation framework conceptualized and managed for meta-contextual chat data processing.</p>
-              <h6 class="mt-3">.technologies</h6>
+              <h4 class="mt-3">.technologies</h4>
               <ul class="list-unstyled mono">
                 <li>.python</li>
                 <li>.fastapi</li>
@@ -312,7 +414,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header border-0">
-          <h5 class="modal-title project-name">.chromatic</h5>
+          <h3 class="modal-title project-name">.chromatic</h3>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -324,7 +426,7 @@
             </div>
             <div class="col-md-5">
               <p class="bahnschrift mb-2">Bullet heaven built in LÖVE2D (Lua). Pick two primary colors and commit — RED, GREEN, or BLUE first; the third locks out for the run. Secondary palette (YELLOW, MAGENTA, CYAN) unlocks when both primaries are leveled. Music-reactive enemy spawning via BPM detection. 18 named synergies. Custom GLSL shaders with moonshine bloom pass and beat-reactive grid ripples.</p>
-              <h6 class="mt-3">.highlights</h6>
+              <h4 class="mt-3">.highlights</h4>
               <ul class="list-unstyled mono" style="font-size:0.8rem;">
                 <li>.2-primary color commitment tree</li>
                 <li>.music-reactive spawning</li>
@@ -333,7 +435,7 @@
                 <li>.custom GLSL shaders</li>
                 <li>.playable in browser via love.js</li>
               </ul>
-              <h6 class="mt-3">.technologies</h6>
+              <h4 class="mt-3">.technologies</h4>
               <ul class="list-unstyled mono">
                 <li>.lua</li>
                 <li>.löve2d</li>
@@ -376,15 +478,15 @@
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header border-0">
-          <h5 class="modal-title project-name">.source-code</h5>
+          <h3 class="modal-title project-name">.source-code</h3>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <p class="mono mb-4" style="color: var(--accent-secondary); opacity: 0.7;">// design rationale</p>
-          <h6 class="project-name mb-3">.about</h6>          
+          <h4 class="project-name mb-3">.about</h4>          
           <p class="bahnschrift">This is a <strong>student assignment</strong> for a Web Design course — a freelancing professional portfolio website built with multiple modern tech stacks.</p>
           <p class="bahnschrift">It's also <strong>deliberately over-the-top</strong> and satirical. The entire site is a tongue-in-cheek parody of cyberpunk aesthetics, vaporwave design trends, and self-aware tech humor. From the ".smooth-brain-designs" branding to the brain-morphing hamburger menu, nothing here should be taken too seriously.</p>
-          <h6 class="project-name mb-3 mt-4">.tech-stack-by-page</h6>
+          <h4 class="project-name mb-3 mt-4">.tech-stack-by-page</h4>
           <div class="accordion" id="techStackAccordion">
             <div class="accordion-item accordion-item-vapor">
               <h2 class="accordion-header">
@@ -526,14 +628,14 @@
     <div class="container">
       <h2 class="ui-ux-design mb-4 text-center">.features</h2>
       <div class="row g-4">
-        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body text-center"><i class="bi bi-palette2 fs-1 icon-muted"></i><h6 class="mt-3 ui-ux-design">.ui-ux-design</h6><p class="bahnschrift small">Rapid iteration and high-fidelity prototypes with user testing.</p></div></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-controller fs-1 icon-muted"></i><h6 class="mt-3 ui-ux-design">.game-design</h6><p class="bahnschrift small">Systemic gameplay, risk/reward loops, and balancing.</p></div></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-graph-up fs-1 icon-muted"></i><h6 class="mt-3 ui-ux-design">.data-analysis</h6><p class="bahnschrift small">Cohort analysis, funnel optimization, and A/B testing.</p></div></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-magic fs-1 icon-muted"></i><h6 class="mt-3 ui-ux-design">.tools</h6><p class="bahnschrift small">Custom editor tools for designers and producers.</p></div></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-egg-fried fs-1 icon-muted"></i><h6 class="mt-3 ui-ux-design">.exorcisms</h6><p class="bahnschrift small">Agile-certified demon removal for haunted codebases and legacy spaghetti.</p></div></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-gem fs-1 icon-muted"></i><h6 class="mt-3 ui-ux-design">.crystal-resonance</h6><p class="bahnschrift small">Chakra-aligned debugging using ethically sourced quartz arrays.</p></div></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-stars fs-1 icon-muted"></i><h6 class="mt-3 ui-ux-design">.aura-consulting</h6><p class="bahnschrift small">Full-spectrum energy audits for toxic team dynamics and bad git commits.</p></div></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-tsunami fs-1 icon-muted"></i><h6 class="mt-3 ui-ux-design">.lobster-divination</h6><p class="bahnschrift small">Sprint planning via crustacean entrail reading. 87% accuracy on Tuesdays.</p></div></div></div>
+        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body text-center"><i class="bi bi-palette2 fs-1 icon-muted"></i><h3 class="mt-3 ui-ux-design">.ui-ux-design</h3><p class="bahnschrift small">Rapid iteration and high-fidelity prototypes with user testing.</p></div></div></div>
+        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-controller fs-1 icon-muted"></i><h3 class="mt-3 ui-ux-design">.game-design</h3><p class="bahnschrift small">Systemic gameplay, risk/reward loops, and balancing.</p></div></div></div>
+        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-graph-up fs-1 icon-muted"></i><h3 class="mt-3 ui-ux-design">.data-analysis</h3><p class="bahnschrift small">Cohort analysis, funnel optimization, and A/B testing.</p></div></div></div>
+        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-magic fs-1 icon-muted"></i><h3 class="mt-3 ui-ux-design">.tools</h3><p class="bahnschrift small">Custom editor tools for designers and producers.</p></div></div></div>
+        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-egg-fried fs-1 icon-muted"></i><h3 class="mt-3 ui-ux-design">.exorcisms</h3><p class="bahnschrift small">Agile-certified demon removal for haunted codebases and legacy spaghetti.</p></div></div></div>
+        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-gem fs-1 icon-muted"></i><h3 class="mt-3 ui-ux-design">.crystal-resonance</h3><p class="bahnschrift small">Chakra-aligned debugging using ethically sourced quartz arrays.</p></div></div></div>
+        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-stars fs-1 icon-muted"></i><h3 class="mt-3 ui-ux-design">.aura-consulting</h3><p class="bahnschrift small">Full-spectrum energy audits for toxic team dynamics and bad git commits.</p></div></div></div>
+        <div class="col-md-6 col-lg-3"><div class="card h-100 text-center bg-transparent border-0"><div class="card-body"><i class="bi bi-tsunami fs-1 icon-muted"></i><h3 class="mt-3 ui-ux-design">.lobster-divination</h3><p class="bahnschrift small">Sprint planning via crustacean entrail reading. 87% accuracy on Tuesdays.</p></div></div></div>
       </div>
     </div>
   </section>
@@ -556,9 +658,9 @@
     <div class="container">
       <h2 class="ui-ux-design mb-4 text-center">.testimonials</h2>
       <div class="row g-4">
-        <div class="col-md-6 col-lg-4"><div class="card project-card h-100"><div class="card-body"><div class="d-flex align-items-center mb-3"><i class="bi bi-quote fs-2 text-accent me-2"></i><div><h6 class="mb-0 project-name">.chad-synergistics</h6><small class="mono text-lavender">Chief Vibes Officer, Paradigm Shift Solutions</small></div></div><p class="bahnschrift">"Andrei's ability to circle back on low-hanging fruit while maintaining bandwidth for deep dives is truly best-in-class. His deliverables consistently move the needle on our north star metrics. Let's take this offline and schedule a sync to align on next steps."</p></div></div></div>
-        <div class="col-md-6 col-lg-4"><div class="card project-card h-100"><div class="card-body"><div class="d-flex align-items-center mb-3"><i class="bi bi-quote fs-2 text-accent me-2"></i><div><h6 class="mb-0 project-name">.brenda-actionables</h6><small class="mono text-lavender">Synergy Architect, Disruption Dynamics Inc.</small></div></div><p class="bahnschrift">"Working with Andrei was a real game-changer for our agile transformation journey. His thought leadership and pivot expertise helped us leverage our core competencies to maximize stakeholder value. 10/10 would synergize again."</p></div></div></div>
-        <div class="col-md-6 col-lg-4"><div class="card project-card h-100"><div class="card-body"><div class="d-flex align-items-center mb-3"><i class="bi bi-quote fs-2 text-accent me-2"></i><div><h6 class="mb-0 project-name">.derek-pivotmaster</h6><small class="mono text-lavender">Innovation Ninja, Corporate Retreat Specialists</small></div></div><p class="bahnschrift">"Andrei seamlessly integrated into our culture-fit framework and delivered actionable insights that really moved the needle. His ability to think outside the box while staying in his lane is unparalleled. A true professional nodder and reply-all survivor."</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="card project-card h-100"><div class="card-body"><div class="d-flex align-items-center mb-3"><i class="bi bi-quote fs-2 text-accent me-2"></i><div><h3 class="mb-0 project-name">.chad-synergistics</h3><small class="mono text-lavender">Chief Vibes Officer, Paradigm Shift Solutions</small></div></div><p class="bahnschrift">"Andrei's ability to circle back on low-hanging fruit while maintaining bandwidth for deep dives is truly best-in-class. His deliverables consistently move the needle on our north star metrics. Let's take this offline and schedule a sync to align on next steps."</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="card project-card h-100"><div class="card-body"><div class="d-flex align-items-center mb-3"><i class="bi bi-quote fs-2 text-accent me-2"></i><div><h3 class="mb-0 project-name">.brenda-actionables</h3><small class="mono text-lavender">Synergy Architect, Disruption Dynamics Inc.</small></div></div><p class="bahnschrift">"Working with Andrei was a real game-changer for our agile transformation journey. His thought leadership and pivot expertise helped us leverage our core competencies to maximize stakeholder value. 10/10 would synergize again."</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="card project-card h-100"><div class="card-body"><div class="d-flex align-items-center mb-3"><i class="bi bi-quote fs-2 text-accent me-2"></i><div><h3 class="mb-0 project-name">.derek-pivotmaster</h3><small class="mono text-lavender">Innovation Ninja, Corporate Retreat Specialists</small></div></div><p class="bahnschrift">"Andrei seamlessly integrated into our culture-fit framework and delivered actionable insights that really moved the needle. His ability to think outside the box while staying in his lane is unparalleled. A true professional nodder and reply-all survivor."</p></div></div></div>
       </div>
     </div>
   </section>
@@ -584,33 +686,33 @@
         </div>
         <div class="col-lg-6">
           <h3 class="ui-ux-design mb-4 text-center">.frequently-asked-questions</h3>
-          <div class="bahnschrift small" style="line-height: 1.8;">
-            <p><strong class="text-lavender">Q: Are you available for freelance work?</strong><br>A: Yes, use the contact form. Response time: 24-48 hours.</p>
-            <p><strong class="text-lavender">Q: What's your hourly rate?</strong><br>A: Depends on scope. Let's talk. I don't bite. (The lobsters might.)</p>
-            <p><strong class="text-lavender">Q: Can you work with my existing team?</strong><br>A: Absolutely. I integrate well. I've been described as "surprisingly tolerable."</p>
-            <p><strong class="text-lavender">Q: Do you do revisions?</strong><br>A: Reasonable revisions included. Unreasonable ones require blood sacrifice or PayPal.</p>
-            <p><strong class="text-lavender">Q: Why is it called smooth-brain-designs?</strong><br>A: The wrinkles kept getting in the way of pure, unfiltered genius.</p>
-            <p><strong class="text-lavender">Q: What game engine do you prefer?</strong><br>A: The one that ships. They all hurt differently.</p>
-            <p><strong class="text-lavender">Q: Why are there lobsters everywhere?</strong><br>A: They were here before me. They will be here after. Do not question the lobsters.</p>
-            <p><strong class="text-lavender">Q: Is any of this real?</strong><br>A: Define "real." Define "this." Define "is." The simulation has no FAQ.</p>
-            <p><strong class="text-lavender">Q: What happens if I scroll too far?</strong><br>A: You reach the footer. But the footer is also watching. It remembers your IP address.</p>
-            <p><strong class="text-lavender">Q: Are the testimonials self-written?</strong><br>A: They write themselves now. I can't stop them. Please help.</p>
-            <p><strong class="text-lavender">Q: What if I want to close this tab?</strong><br>A: The X button works. Probably. Maybe. Try it. Report back. No one's reported back yet.</p>
-            <p><strong class="text-lavender">Q: How do I leave this website?</strong><br>A: You don't. The tab you opened? It's still open. Check. It's always been open.</p>
-            <p><strong class="text-lavender">Q: What's behind the 404 page?</strong><br>A: T̷͖͝h̵̰̀e̴̲͌ ̸̣̈́v̶̱̍o̴̞͝i̷͚͑d̶̰̊ ̸̣̈́r̵̰̀e̴̲͌m̶̱̍e̴̞͝m̷͚͑b̶̰̊ẹ̸̈́r̵̰̀s̴̲͌ ̶̱̍y̴̞͝o̷͚͑ṵ̶̊ṛ̸̈́ ̵̰̀n̴̲͌a̶̱̍m̴̞͝e̷͚͑.</p>
-          </div>
+          <dl class="bahnschrift small" style="line-height: 1.8;">
+            <dt class="text-lavender">Q: Are you available for freelance work?</dt><dd>A: Yes, use the contact form. Response time: 24-48 hours.</dd>
+            <dt class="text-lavender">Q: What's your hourly rate?</dt><dd>A: Depends on scope. Let's talk. I don't bite. (The lobsters might.)</dd>
+            <dt class="text-lavender">Q: Can you work with my existing team?</dt><dd>A: Absolutely. I integrate well. I've been described as "surprisingly tolerable."</dd>
+            <dt class="text-lavender">Q: Do you do revisions?</dt><dd>A: Reasonable revisions included. Unreasonable ones require blood sacrifice or PayPal.</dd>
+            <dt class="text-lavender">Q: Why is it called smooth-brain-designs?</dt><dd>A: The wrinkles kept getting in the way of pure, unfiltered genius.</dd>
+            <dt class="text-lavender">Q: What game engine do you prefer?</dt><dd>A: The one that ships. They all hurt differently.</dd>
+            <dt class="text-lavender">Q: Why are there lobsters everywhere?</dt><dd>A: They were here before me. They will be here after. Do not question the lobsters.</dd>
+            <dt class="text-lavender">Q: Is any of this real?</dt><dd>A: Define "real." Define "this." Define "is." The simulation has no FAQ.</dd>
+            <dt class="text-lavender">Q: What happens if I scroll too far?</dt><dd>A: You reach the footer. But the footer is also watching. It remembers your IP address.</dd>
+            <dt class="text-lavender">Q: Are the testimonials self-written?</dt><dd>A: They write themselves now. I can't stop them. Please help.</dd>
+            <dt class="text-lavender">Q: What if I want to close this tab?</dt><dd>A: The X button works. Probably. Maybe. Try it. Report back. No one's reported back yet.</dd>
+            <dt class="text-lavender">Q: How do I leave this website?</dt><dd>A: You don't. The tab you opened? It's still open. Check. It's always been open.</dd>
+            <dt class="text-lavender">Q: What's behind the 404 page?</dt><dd>A: T̷͖͝h̵̰̀e̴̲͌ ̸̣̈́v̶̱̍o̴̞͝i̷͚͑d̶̰̊ ̸̣̈́r̵̰̀e̴̲͌m̶̱̍e̴̞͝m̷͚͑b̶̰̊ẹ̸̈́r̵̰̀s̴̲͌ ̶̱̍y̴̞͝o̷͚͑ṵ̶̊ṛ̸̈́ ̵̰̀n̴̲͌a̶̱̍m̴̞͝e̷͚͑.</dd>
+          </dl>
         </div>
       </div>
       <div class="row mt-5">
         <div class="col-12">
           <hr style="border-color: var(--border-subtle); margin: 2rem 0;">
-          <h6 class="skills mb-3 text-center">.contact</h6>
+          <h4 class="skills mb-3 text-center">.contact</h4>
           <p class="mono text-center">
             <i class="bi bi-envelope"></i> <strong>.email</strong> — <a href="mailto:moldovean.i.andrei@gmail.com" class="link-light">moldovean.i.andrei@gmail.com</a><br>
             <i class="bi bi-linkedin"></i> <strong>.linkedin</strong> — <a href="https://www.linkedin.com/in/andrei-moldovean-b7462534a" class="link-light" target="_blank" rel="noopener noreferrer">linkedin.com/in/andrei-moldovean</a><br>
             <i class="bi bi-github"></i> <strong>.github</strong> — <a href="https://github.com/Vintersong" class="link-light" target="_blank" rel="noopener noreferrer">github.com/Vintersong</a>
           </p>
-          <h6 class="skills mb-3 mt-4 text-center">.other-ways-to-reach-me</h6>
+          <h4 class="skills mb-3 mt-4 text-center">.other-ways-to-reach-me</h4>
           <p class="mono text-center">
             <i class="bi bi-geo-alt"></i> <strong>.location</strong> — Cluj-Napoca, Romania<br>
             <i class="bi bi-send"></i> <strong>.carrier-pigeon</strong> — unreliable since the Incident<br>
@@ -618,7 +720,7 @@
             <i class="bi bi-broadcast"></i> <strong>.void-screaming</strong> — I'm listening. I'm always listening.
           </p>
           <hr style="border-color: var(--border-subtle); margin: 2rem 0;">
-          <h6 class="skills mb-3 text-center">.disclaimer</h6>
+          <h4 class="skills mb-3 text-center">.disclaimer</h4>
           <p class="small text-center" style="opacity: 0.9;">This portfolio exists in a state of quantum superposition until observed by a recruiter. By reading this, you have collapsed the wavefunction. There is no undo. The lobsters have been notified. Any resemblance to actual methodologies, living or deprecated, is purely coincidental. Side effects may include: existential clarity, mass email anxiety, and an unshakeable feeling that the testimonials are watching you. They are.</p>
           <p class="small mono mt-4 text-center" style="opacity: 0.7;">© 2026 .smooth-brain-designs | All rights reserved | None of this is financial advice | The horse whispering division accepts no liability | Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</p>
         </div>
