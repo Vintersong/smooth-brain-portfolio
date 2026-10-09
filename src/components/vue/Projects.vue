@@ -54,13 +54,13 @@ export default {
         },
         {
           id: 2,
-          title: '.chromatic',
-          description: 'Bullet heaven with a 2-primary color commitment tree, music-reactive enemy spawning, and 18 named synergies. Built in L\u00d6VE2D.',
+          title: '.studio',
+          description: 'The game studio behind my games in development. Playable builds, works in progress, and what comes next.',
           image: '/images/project-chromatic.svg',
           icon: 'bi-controller',
-          details: 'CHROMATIC is a Vampire Survivors-style bullet heaven built in L\u00d6VE2D (Lua). Auto-aim shooting with a 2-primary color commitment tree — pick RED, GREEN, or BLUE first; the third locks out for the run. Secondary palette (YELLOW, MAGENTA, CYAN) unlocks when both primaries are leveled. MusicReactor does BPM detection and feeds BASS/MIDS/TREBLE weights into formation-based enemy spawning. Eight artifacts (Prism, Halo, Mirror, Lens, Diffraction, Refraction, Diffusion, Supernova) scale up to Lv5. SynergySystem houses 18 named combo unlocks. Custom GLSL shaders with moonshine bloom pass, beat-reactive grid ripples, and a separate splash screen shader. Full state machine across 9 states. Playable in browser via love.js.',
-          technologies: ['.Lua', '.L\u00d6VE2D', '.GLSL', '.LangChain', '.GitHub Actions'],
-          link: 'https://vintersong.github.io/love2d-RGB/'
+          details: 'The games I am making, collected in one place.',
+          technologies: ['.Lua', '.L\u00d6VE2D', '.Godot', '.GLSL'],
+          link: '/studio'
         },
         {
           id: 3,
