@@ -36,11 +36,11 @@ const PROJECTS = [
   },
   {
     id: 2,
-    title: '.chromatic',
-    description: 'Bullet heaven with a 2-primary color commitment tree, music-reactive enemy spawning, and 18 named synergies. Built in LÖVE2D.',
-    details: 'CHROMATIC is a Vampire Survivors-style bullet heaven built in LÖVE2D (Lua). Auto-aim shooting with a 2-primary color commitment tree. MusicReactor does BPM detection and feeds BASS/MIDS/TREBLE weights into formation-based enemy spawning. Eight artifacts scale up to Lv5. SynergySystem houses 18 named combo unlocks. Custom GLSL shaders with moonshine bloom pass and beat-reactive grid ripples.',
-    technologies: ['.Lua', '.LÖVE2D', '.GLSL', '.LangChain', '.GitHub Actions'],
-    link: 'https://vintersong.github.io/love2d-RGB/',
+    title: '.studio',
+    description: 'The game studio behind my games in development. Playable builds, works in progress, and what comes next.',
+    details: 'The games I am making, collected in one place.',
+    technologies: ['.Lua', '.LÖVE2D', '.Godot', '.GLSL'],
+    link: '/studio',
     status: 'live',
   },
   {

@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/astro/Nav.astro';
+
+// Games shown on the studio page. Fill in or reorder as projects change.
+// status: 'live' | 'in-development' | 'concept'
+const games = [
+  {
+    title: '.chromatic',
+    tagline: 'Bullet heaven with a 2-primary color commitment tree.',
+    status: 'live',
+    link: 'https://vintersong.github.io/love2d-RGB/',
+    engine: 'LÖVE2D (Lua)',
+  },
+  {
+    title: '.game-title-two',
+    tagline: 'TODO: one-line pitch.',
+    status: 'in-development',
+    link: null,
+    engine: 'TODO',
+  },
+];
+
+const statusLabel: Record<string, string> = {
+  live: '.playable',
+  'in-development': '.in-development',
+  concept: '.concept',
+};
+---
+
+<BaseLayout
+  title=".studio | .smooth-brain-designs"
+  description="Smooth Brain Designs — the game studio behind the games in development by Andrei Moldovean."
+>
+  <Nav current="studio" />
+
+  <div class="min-h-screen">
+    <header class="flex flex-col items-center justify-center py-24 px-6 text-center max-w-4xl mx-auto" style="padding-top: 8rem;">
+      <h1 style="color: var(--accent-primary); font-family: var(--font-mono); font-weight: 700; font-size: clamp(1.75rem, 5vw, 3rem); letter-spacing: 0.02em; margin-bottom: 1rem;">
+        .studio
+      </h1>
+      <p style="color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.9rem; max-width: 40rem; line-height: 1.7;">
+        Smooth Brain Designs is the studio behind the games I'm making. TODO: a short paragraph about the studio's focus and approach.
+      </p>
+    </header>
+
+    <section class="max-w-5xl mx-auto px-6 pb-24">
+      <div class="grid gap-6" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+        {games.map((game) => (
+          <article
+            class="p-6"
+            style="background-color: var(--bg-raised); border: 1px solid var(--border-subtle);"
+          >
+            <p style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 0.5rem;">
+              {statusLabel[game.status] ?? game.status}
+            </p>
+            <h2 style="color: var(--accent-primary); font-family: var(--font-mono); font-weight: 700; font-size: 1.25rem; margin-bottom: 0.75rem;">
+              {game.title}
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+              {game.tagline}
+            </p>
+            <p style="color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 1rem;">
+              {game.engine}
+            </p>
+            {game.link && (
+              <a href={game.link} target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); font-family: var(--font-mono); font-size: 0.85rem;">
+                .play →
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
